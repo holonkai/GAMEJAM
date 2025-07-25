@@ -15,7 +15,11 @@ position = Vector2(2, 0)
 scale = Vector2(64, 32)
 shape = SubResource("RectangleShape2D_y32ns")
 
-[node name="background" type="Sprite2D" parent="."]
-position = Vector2(1.91998, 3.52859e-05)
-scale = Vector2(4.50648, 2.12667)
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2(40, 20)
 texture = ExtResource("1_wtcfe")
