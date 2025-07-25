@@ -1,3 +1,21 @@
-[gd_scene format=3 uid="uid://dg3x7mpdefapg"]
+[gd_scene load_steps=3 format=3 uid="uid://dg3x7mpdefapg"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://ituvwh1w0aos" path="res://mars-dunes-8col-16bit565-2.png" id="1_wtcfe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y32ns"]
+
+[node name="main" type="Node2D"]
+
+[node name="player" type="CharacterBody2D" parent="."]
+position = Vector2(2, 0)
+
+[node name="Sprite2D2" type="Sprite2D" parent="player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+scale = Vector2(64, 32)
+shape = SubResource("RectangleShape2D_y32ns")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(1.91998, 3.52859e-05)
+scale = Vector2(4.50648, 2.12667)
+texture = ExtResource("1_wtcfe")
