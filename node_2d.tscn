@@ -1,26 +1,78 @@
-[gd_scene load_steps=3 format=3 uid="uid://dg3x7mpdefapg"]
+[gd_scene load_steps=8 format=3 uid="uid://dg3x7mpdefapg"]
 
+[ext_resource type="Script" uid="uid://3c65oux4o45g" path="res://character_body_2d.gd" id="1_0hol4"]
 [ext_resource type="Texture2D" uid="uid://ituvwh1w0aos" path="res://mars-dunes-8col-16bit565-2.png" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://cbldfhx6iiq5c" path="res://icon.svg" id="3_0hol4"]
+[ext_resource type="PackedScene" uid="uid://wsbyuab5gqmv" path="res://minion.tscn" id="4_0hol4"]
+[ext_resource type="Script" uid="uid://ycak2q2r7es6" path="res://unit_selector.gd" id="5_q6r6c"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y32ns"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_0hol4"]
+radius = 51.1693
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_q6r6c"]
+vertices = PackedVector2Array(792.867, 473, -341.938, 473, -335.047, -151.008, 777.117, -154.977)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-340, -156, -347, 478, 798, 478, 782, -160)])
+agent_radius = 5.0
 
 [node name="main" type="Node2D"]
 
-[node name="player" type="CharacterBody2D" parent="."]
-position = Vector2(2, 0)
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(821.5, 421.5)
+scale = Vector2(0.210938, 0.210938)
+script = ExtResource("1_0hol4")
 
-[node name="Sprite2D2" type="Sprite2D" parent="player"]
+[node name="Goal" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("3_0hol4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
-scale = Vector2(64, 32)
-shape = SubResource("RectangleShape2D_y32ns")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_0hol4")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(-50.9998, 70)
-scale = Vector2(20, 10)
+position = Vector2(579, 324)
+scale = Vector2(4.08627, 2.195)
 texture = ExtResource("1_wtcfe")
+
+[node name="Minion" parent="." node_paths=PackedStringArray("Goal") instance=ExtResource("4_0hol4")]
+position = Vector2(355, 166)
+Goal = NodePath("../CharacterBody2D")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(580, 321)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(358, 158)
+navigation_polygon = SubResource("NavigationPolygon_q6r6c")
+
+[node name="Minion2" parent="." node_paths=PackedStringArray("Goal") instance=ExtResource("4_0hol4")]
+position = Vector2(221, 405)
+Goal = NodePath("../CharacterBody2D")
+
+[node name="Minion3" parent="." node_paths=PackedStringArray("Goal") instance=ExtResource("4_0hol4")]
+position = Vector2(965, 126)
+Goal = NodePath("../CharacterBody2D")
+
+[node name="Minion4" parent="." node_paths=PackedStringArray("Goal") instance=ExtResource("4_0hol4")]
+position = Vector2(164, 237)
+Goal = NodePath("../CharacterBody2D")
+
+[node name="Minion5" parent="." node_paths=PackedStringArray("Goal") instance=ExtResource("4_0hol4")]
+position = Vector2(417, 516)
+Goal = NodePath("../CharacterBody2D")
+
+[node name="Minion6" parent="." node_paths=PackedStringArray("Goal") instance=ExtResource("4_0hol4")]
+position = Vector2(1010, 582)
+Goal = NodePath("../CharacterBody2D")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_q6r6c")
