@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://b2qt0biuylxaf"]
+[gd_scene load_steps=11 format=3 uid="uid://b2qt0biuylxaf"]
 
 [ext_resource type="Script" uid="uid://vewhlig5jmkf" path="res://main_ui.gd" id="1_0hol4"]
 [ext_resource type="Texture2D" uid="uid://d02xfdehptq5l" path="res://mars-dunes-8col-16bit565-2.png" id="1_wtcfe"]
 [ext_resource type="Script" uid="uid://bkqvvhu5sbl27" path="res://panel.gd" id="2_0e48y"]
 [ext_resource type="Texture2D" uid="uid://5soa0xn4qsb3" path="res://desert-backgorund.png" id="3_epypp"]
+[ext_resource type="Texture2D" uid="uid://dueb0emu6agy2" path="res://Untitled_2.png" id="5_kdubu"]
+[ext_resource type="Texture2D" uid="uid://001mhdv7my7w" path="res://gun3.png" id="6_d21ai"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0hol4"]
 border_width_left = 2
@@ -20,6 +22,15 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d21ai"]
+bg_color = Color(0.6, 0.6, 0.6, 0.517647)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0, 0.0166664, 1)
 border_blend = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kdubu"]
@@ -98,12 +109,20 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_q6r6c")
 [node name="CanvasLayer" type="CanvasLayer" parent="mainUI/background/LittleGuyEconomy"]
 
 [node name="GoldLabel" type="Label" parent="mainUI/background/LittleGuyEconomy/CanvasLayer"]
-offset_left = 84.0
-offset_top = 130.0
-offset_right = 156.0
-offset_bottom = 179.0
+offset_left = 91.0
+offset_top = 134.0
+offset_right = 163.0
+offset_bottom = 183.0
+theme_override_colors/font_color = Color(1, 0, 0.0166664, 1)
 text = "gold: 2"
 uppercase = true
+
+[node name="Panel" type="Panel" parent="mainUI/background/LittleGuyEconomy/CanvasLayer"]
+offset_left = 86.0
+offset_top = 129.0
+offset_right = 253.0
+offset_bottom = 169.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_d21ai")
 
 [node name="shopbox" type="VBoxContainer" parent="mainUI/background/LittleGuyEconomy"]
 layout_mode = 0
@@ -159,9 +178,8 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 84.0
-offset_top = -44.0
-offset_right = 238.0
-offset_bottom = -2.0
+offset_top = -42.0
+offset_right = 231.0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kdubu")
 
@@ -169,9 +187,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_kdubu")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="mainUI/background/skills"]
 layout_mode = 0
-offset_left = 107.0
+offset_left = 99.0
 offset_top = 2.0
-offset_right = 151.0
+offset_right = 142.0
 offset_bottom = 40.0
 
 [node name="Button" type="Button" parent="mainUI/background/skills/VBoxContainer"]
@@ -181,15 +199,47 @@ size_flags_stretch_ratio = 20.0
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="mainUI/background/skills"]
 layout_mode = 0
-offset_left = 62.0
+offset_left = 51.0
 offset_top = 2.0
-offset_right = 105.0
+offset_right = 95.0
 offset_bottom = 40.0
 
-[node name="Button" type="Button" parent="mainUI/background/skills/VBoxContainer2"]
+[node name="buttonult" type="Button" parent="mainUI/background/skills/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 20.0
 
+[node name="ult" type="TextureRect" parent="mainUI/background/skills/VBoxContainer2/buttonult"]
+layout_mode = 0
+offset_left = -0.5
+offset_top = -0.649585
+offset_right = 119.5
+offset_bottom = 108.35
+scale = Vector2(0.38, 0.38)
+texture = ExtResource("5_kdubu")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="mainUI/background/skills"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 47.0
+offset_bottom = 40.0
+
+[node name="Buttonskill" type="Button" parent="mainUI/background/skills/VBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+
+[node name="skill" type="TextureRect" parent="mainUI/background/skills/VBoxContainer3/Buttonskill"]
+layout_mode = 0
+offset_left = 0.5
+offset_top = 0.875416
+offset_right = 465.5
+offset_bottom = 409.875
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("6_d21ai")
+
 [connection signal="button_down" from="mainUI/background/LittleGuyEconomy/shopbox/range minion" to="mainUI" method="_on_range_minion_button_down"]
 [connection signal="button_down" from="mainUI/background/LittleGuyEconomy/shopbox2/melee minion" to="mainUI" method="_on_melee_minion_button_down"]
+[connection signal="button_down" from="mainUI/background/skills/VBoxContainer2/buttonult" to="mainUI" method="_on_buttonult_button_down"]
+[connection signal="button_down" from="mainUI/background/skills/VBoxContainer3/Buttonskill" to="mainUI" method="_on_buttonskill_button_down"]

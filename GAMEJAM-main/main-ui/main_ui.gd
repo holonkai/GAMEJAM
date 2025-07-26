@@ -1,6 +1,7 @@
 extends Control
 
-var gold: int=2
+var gold: int=60
+
 
 @onready var gold_label = $background/LittleGuyEconomy/CanvasLayer/GoldLabel
 # @onready var range_minion_button = $background/LittleGuyEconomy/shopbox/range_minion
@@ -20,15 +21,42 @@ func _on_range_minion_button_down() -> void:
 	if gold >= cost:
 		gold -= cost 
 		update_gold_display()
-		print("range minion x1")
+		print("RANGE MINION x1")
 	else:
-		print("ur poor")
+		print("UR POOR")
 
 
 func _on_melee_minion_button_down() -> void:
 	var cost = 10
 	if gold >= cost:
+		gold -= cost 
 		update_gold_display()
-		print("melee minion x1")
+		print("MELEE MINION x1")
 	else:
-		print("ur poor")
+		print("UR POOR")
+
+
+
+
+
+		
+		
+
+
+func _on_buttonskill_button_down() -> void:
+	var cost = 6
+	if gold >= cost:
+		gold -= cost
+		update_gold_display()
+		print("SKILL")
+	else:
+		print("UR POOR")
+
+func _on_buttonult_button_down() -> void:
+	var cost = 12
+	if gold >= cost:
+		gold -= cost
+		update_gold_display()
+		print("ULT")
+	else:
+		print("UR POOR")
