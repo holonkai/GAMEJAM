@@ -1,9 +1,35 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2qt0biuylxaf"]
+[gd_scene load_steps=8 format=3 uid="uid://b2qt0biuylxaf"]
 
 [ext_resource type="Script" uid="uid://vewhlig5jmkf" path="res://main_ui.gd" id="1_0hol4"]
 [ext_resource type="Texture2D" uid="uid://d02xfdehptq5l" path="res://mars-dunes-8col-16bit565-2.png" id="1_wtcfe"]
 [ext_resource type="Script" uid="uid://bkqvvhu5sbl27" path="res://panel.gd" id="2_0e48y"]
 [ext_resource type="Texture2D" uid="uid://5soa0xn4qsb3" path="res://desert-backgorund.png" id="3_epypp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0hol4"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6r6c"]
+bg_color = Color(0.615686, 0.615686, 0.615686, 0.403922)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kdubu"]
+bg_color = Color(0.615686, 0.615686, 0.615686, 0.266667)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(560, 301)
@@ -47,12 +73,15 @@ offset_bottom = 137.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.994819, 1.00985)
+theme_override_styles/panel = SubResource("StyleBoxFlat_0hol4")
 script = ExtResource("2_0e48y")
 
 [node name="TextureRect" type="TextureRect" parent="mainUI/background/combat zone"]
 layout_mode = 0
-offset_right = 320.0
-offset_bottom = 230.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 319.0
+offset_bottom = 229.0
 texture = ExtResource("3_epypp")
 expand_mode = 3
 
@@ -60,10 +89,11 @@ expand_mode = 3
 
 [node name="LittleGuyEconomy" type="Panel" parent="mainUI/background"]
 layout_mode = 1
-offset_left = 3.0
+offset_left = 5.0
 offset_top = 4.0
 offset_right = 103.0
 offset_bottom = 53.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_q6r6c")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="mainUI/background/LittleGuyEconomy"]
 
@@ -87,6 +117,7 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 20.0
 toggle_mode = true
+text = "R"
 
 [node name="shopbox2" type="VBoxContainer" parent="mainUI/background/LittleGuyEconomy"]
 layout_mode = 0
@@ -99,6 +130,7 @@ offset_bottom = 44.75
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 22.3
+text = "M"
 
 [node name="littleguy" type="Panel" parent="mainUI/background"]
 layout_mode = 1
@@ -121,16 +153,43 @@ offset_right = -1.0
 offset_bottom = 80.95
 grow_horizontal = 0
 
-[node name="Panel" type="Panel" parent="mainUI/background"]
+[node name="skills" type="Panel" parent="mainUI/background"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 83.5
-offset_top = -44.4496
-offset_right = 256.5
-offset_bottom = -2.44958
+offset_left = 84.0
+offset_top = -44.0
+offset_right = 238.0
+offset_bottom = -2.0
 grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kdubu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="mainUI/background/skills"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="mainUI/background/skills"]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 2.0
+offset_right = 151.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="mainUI/background/skills/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="mainUI/background/skills"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 2.0
+offset_right = 105.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="mainUI/background/skills/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
 
 [connection signal="button_down" from="mainUI/background/LittleGuyEconomy/shopbox/range minion" to="mainUI" method="_on_range_minion_button_down"]
 [connection signal="button_down" from="mainUI/background/LittleGuyEconomy/shopbox2/melee minion" to="mainUI" method="_on_melee_minion_button_down"]
