@@ -1,10 +1,13 @@
 extends Control
 
+@onready var cam: Camera2D=get_viewport().get_camera_2d()
+@onready var map: RID =cam.get_world_2d().navigation_map
 var selecting: bool = false
 var dragStart: Vector2
 var selectBox: Rect2
 
 func _input(e: InputEvent) -> void:
+	### selecting units
 	if e is InputEventMouseButton and e.button_index==MOUSE_BUTTON_LEFT:
 		if(e.pressed):
 			selecting=true 
@@ -22,7 +25,24 @@ func _input(e: InputEvent) -> void:
 		selectBox=Rect2(x_min,y_min,max(dragStart.x,e.position.x)-x_min,max(dragStart.y,e.position.y)-y_min)
 		update_selected_units()
 		queue_redraw()
+	### moving units
+	if e is InputEventMouseButton and e.button_index==MOUSE_BUTTON_RIGHT and e.pressed:
+		move_selected_units(get_local_mouse_position())
 
+func move_selected_units(pos: Vector2):
+	#telling the units where to move (I'm scared :( )
+	var units=get_tree().get_nodes_in_group("selected-units")
+	pos=snap_to_map(pos)
+	var positions=UnitFormation.line(pos,units.size())
+	for i in units.size():
+		var path=NavigationServer2D.map_get_path(map, snap_to_map(units[i].global_position), snap_to_map(positions[i]),true)
+		print(path)
+		units[i].move(path)
+		
+func snap_to_map(pos: Vector2):
+	#gets the closest map point
+	return NavigationServer2D.map_get_closest_point(map,pos)
+	
 func _draw():
 	
 	if not selecting: return

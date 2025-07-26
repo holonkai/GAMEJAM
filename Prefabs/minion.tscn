@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://wsbyuab5gqmv"]
 
-[ext_resource type="Script" uid="uid://cf2med7k4bkni" path="res://player.gd" id="1_20mgi"]
-[ext_resource type="Texture2D" uid="uid://cbldfhx6iiq5c" path="res://icon.svg" id="2_777tc"]
+[ext_resource type="Script" uid="uid://cf2med7k4bkni" path="res://Scripts/Minion.gd" id="1_20mgi"]
+[ext_resource type="Texture2D" uid="uid://cbldfhx6iiq5c" path="res://Sprites/icon.svg" id="2_777tc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q6r6c"]
-radius = 26.0192
+radius = 13.3417
 
 [node name="Minion" type="CharacterBody2D" groups=["selectableUnits"]]
 script = ExtResource("1_20mgi")
@@ -17,12 +17,6 @@ texture = ExtResource("2_777tc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, -22)
 shape = SubResource("CircleShape2D_q6r6c")
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-path_desired_distance = 3.0
-target_desired_distance = 3.0
-path_postprocessing = 1
-debug_enabled = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.83
