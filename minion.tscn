@@ -28,4 +28,9 @@ debug_enabled = true
 wait_time = 0.83
 autostart = true
 
+[node name="Selector" type="Sprite2D" parent="."]
+rotation = -0.015708
+texture = ExtResource("2_777tc")
+centered = false
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
