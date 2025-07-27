@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dxyx5cgf2lc4x"]
 
 [ext_resource type="Script" uid="uid://rihwh8ovhuwr" path="res://Scripts/Enemy.gd" id="1_lgw76"]
-[ext_resource type="Texture2D" uid="uid://fv1bqm5pr4ha" path="res://Sprites/Screenshot 2025-07-26 201848.png" id="2_t4g6b"]
+[ext_resource type="Texture2D" uid="uid://4u8lbih57n0m" path="res://Sprites/onfieldmeleeminion.png" id="2_lgw76"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hqns4"]
 radius = 16.0312
@@ -17,8 +17,9 @@ script = ExtResource("1_lgw76")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.00002, -9)
+rotation = 4.71239
 scale = Vector2(0.190566, 0.190566)
-texture = ExtResource("2_t4g6b")
+texture = ExtResource("2_lgw76")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3, 8)

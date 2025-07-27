@@ -1,6 +1,6 @@
 extends Control
 
-var gold: int=60
+var gold: int=9000
 
 
 @onready var gold_label = $background/LittleGuyEconomy/CanvasLayer/GoldLabel

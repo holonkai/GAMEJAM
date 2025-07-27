@@ -1,12 +1,10 @@
-[gd_scene load_steps=13 format=4 uid="uid://b2qt0biuylxaf"]
+[gd_scene load_steps=11 format=4 uid="uid://b2qt0biuylxaf"]
 
-[ext_resource type="Script" uid="uid://vewhlig5jmkf" path="res://main_ui.gd" id="1_0hol4"]
-[ext_resource type="Texture2D" uid="uid://d02xfdehptq5l" path="res://mars-dunes-8col-16bit565-2.png" id="1_wtcfe"]
-[ext_resource type="Texture2D" uid="uid://5soa0xn4qsb3" path="res://desert-backgorund.png" id="3_epypp"]
-[ext_resource type="Texture2D" uid="uid://ba3mcrnnhp0cq" path="res://bigguymeleeminion.png" id="4_d21ai"]
-[ext_resource type="Texture2D" uid="uid://cugqjm30prmel" path="res://bigboss.png" id="5_d21ai"]
-[ext_resource type="Texture2D" uid="uid://dueb0emu6agy2" path="res://Untitled_2.png" id="5_kdubu"]
-[ext_resource type="Texture2D" uid="uid://001mhdv7my7w" path="res://gun3.png" id="6_d21ai"]
+[ext_resource type="Script" uid="uid://vewhlig5jmkf" path="res://Scripts/main_ui.gd" id="1_0hol4"]
+[ext_resource type="Texture2D" uid="uid://d02xfdehptq5l" path="res://GAMEJAM-main/main-ui/mars-dunes-8col-16bit565-2.png" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://5soa0xn4qsb3" path="res://GAMEJAM-main/main-ui/desert-backgorund.png" id="3_epypp"]
+[ext_resource type="Texture2D" uid="uid://dueb0emu6agy2" path="res://GAMEJAM-main/main-ui/Untitled_2.png" id="5_kdubu"]
+[ext_resource type="Texture2D" uid="uid://001mhdv7my7w" path="res://GAMEJAM-main/main-ui/gun3.png" id="6_d21ai"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6r6c"]
 bg_color = Color(0.615686, 0.615686, 0.615686, 0.403922)
@@ -468,7 +466,6 @@ offset_top = -2.85
 offset_right = 157.0
 offset_bottom = 162.15
 scale = Vector2(0.52, 0.52)
-texture = ExtResource("5_d21ai")
 
 [node name="BigGuyDialog" type="Label" parent="mainUI/background/bigguy"]
 layout_mode = 0
@@ -476,19 +473,6 @@ offset_left = -82.0
 offset_top = 3.0
 offset_right = -6.0
 offset_bottom = 26.0
-
-[node name="Panel" type="Panel" parent="mainUI/background/bigguy"]
-layout_mode = 0
-offset_top = 88.0
-offset_right = 34.0
-offset_bottom = 122.0
-
-[node name="TextureRect" type="TextureRect" parent="mainUI/background/bigguy/Panel"]
-layout_mode = 0
-offset_right = 121.0
-offset_bottom = 122.0
-scale = Vector2(0.28, 0.28)
-texture = ExtResource("4_d21ai")
 
 [node name="skills" type="Panel" parent="mainUI/background"]
 layout_mode = 1

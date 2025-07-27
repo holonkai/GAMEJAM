@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fv1bqm5pr4ha"
-path="res://.godot/imported/Screenshot 2025-07-26 201848.png-0dfef3f5dd789bfb2cee69d05099bb52.ctex"
+uid="uid://b13netm0d7v67"
+path="res://.godot/imported/bigguyrangeminion.png-b4ee66ac5065d467347536df57d638d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Screenshot 2025-07-26 201848.png"
-dest_files=["res://.godot/imported/Screenshot 2025-07-26 201848.png-0dfef3f5dd789bfb2cee69d05099bb52.ctex"]
+source_file="res://GAMEJAM-main/main-ui/bigguyrangeminion.png"
+dest_files=["res://.godot/imported/bigguyrangeminion.png-b4ee66ac5065d467347536df57d638d9.ctex"]
 
 [params]
 
