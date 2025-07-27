@@ -1,6 +1,6 @@
 extends Control
 
-var gold: int=9000
+var gold: int=50
 
 
 @onready var gold_label = $background/LittleGuyEconomy/CanvasLayer/GoldLabel
@@ -104,4 +104,25 @@ func _on_buttonult_button_down() -> void:
 	
 
 
+	
+
+@onready var evil_range_minion_pop_up = $"background/bigguy/evilrangeminion/evil range minion/EvilRangePopup"
+func _on_evil_range_minion_button_down() -> void:
+	evil_range_minion_pop_up.text = "BAD RANGE MINION"
+	evil_range_minion_pop_up.visible = true
+	
+	await get_tree().create_timer(0.5).timeout
+		
+	evil_range_minion_pop_up.visible = false
+	
+	
+
+@onready var evil_melee_minion_pop_up = $"background/bigguy/evilmeleeminion/evil melee minion/EvilMeleePopup"
+func _on_evil_melee_minion_button_down() -> void:
+	evil_melee_minion_pop_up.text = "BAD MELEE MINION"
+	evil_melee_minion_pop_up.visible = true
+	
+	await get_tree().create_timer(0.5).timeout
+		
+	evil_melee_minion_pop_up.visible = false
 	

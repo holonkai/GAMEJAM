@@ -18,7 +18,7 @@ script = ExtResource("1_lgw76")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.00002, -9)
 rotation = 4.71239
-scale = Vector2(0.190566, 0.190566)
+scale = Vector2(0.38, 0.38)
 texture = ExtResource("2_lgw76")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

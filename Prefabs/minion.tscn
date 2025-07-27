@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://wsbyuab5gqmv"]
 
 [ext_resource type="Script" uid="uid://cf2med7k4bkni" path="res://Scripts/Minion.gd" id="1_20mgi"]
-[ext_resource type="Texture2D" uid="uid://cbldfhx6iiq5c" path="res://Sprites/icon.svg" id="2_777tc"]
+[ext_resource type="Texture2D" uid="uid://dl7bjjn15numn" path="res://Sprites/onfieldmeleeminionfriend.png" id="2_bh24m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q6r6c"]
 radius = 27.074
@@ -24,8 +24,9 @@ color = Color(9.09671e-06, 0.662424, 0.037319, 1)
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(-1, -21)
+rotation = 1.5708
 scale = Vector2(0.382813, 0.382813)
-texture = ExtResource("2_777tc")
+texture = ExtResource("2_bh24m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, -22)
