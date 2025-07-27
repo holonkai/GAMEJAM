@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d02xfdehptq5l"
-path="res://.godot/imported/mars-dunes-8col-16bit565-2.png-e820f8bb280ac9f2f9ae788a908d0c0b.ctex"
+path="res://.godot/imported/mars-dunes-8col-16bit565-2.png-50325fa1cfa28b8aa0859feda1f8ebf1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mars-dunes-8col-16bit565-2.png"
-dest_files=["res://.godot/imported/mars-dunes-8col-16bit565-2.png-e820f8bb280ac9f2f9ae788a908d0c0b.ctex"]
+source_file="res://GAMEJAM-main/main-ui/mars-dunes-8col-16bit565-2.png"
+dest_files=["res://.godot/imported/mars-dunes-8col-16bit565-2.png-50325fa1cfa28b8aa0859feda1f8ebf1.ctex"]
 
 [params]
 
