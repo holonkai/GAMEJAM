@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://001mhdv7my7w"
-path="res://.godot/imported/gun3.png-2a95a78402708544861b5f063113c12b.ctex"
+uid="uid://dueb0emu6agy2"
+path="res://.godot/imported/Untitled_2.png-2b3713db6ab562c1616e34b6eddb2ab2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GAMEJAM-main/main-ui/gun3.png"
-dest_files=["res://.godot/imported/gun3.png-2a95a78402708544861b5f063113c12b.ctex"]
+source_file="res://Sprites/Ui and backgrounds/Untitled_2.png"
+dest_files=["res://.godot/imported/Untitled_2.png-2b3713db6ab562c1616e34b6eddb2ab2.ctex"]
 
 [params]
 

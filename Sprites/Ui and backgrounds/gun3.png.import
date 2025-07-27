@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4u8lbih57n0m"
-path="res://.godot/imported/onfieldmeleeminion.png-03c13680a05db965587c4252750b3077.ctex"
+uid="uid://001mhdv7my7w"
+path="res://.godot/imported/gun3.png-27ca6e8b54a48ed81b86abb71854d9d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/onfieldmeleeminion.png"
-dest_files=["res://.godot/imported/onfieldmeleeminion.png-03c13680a05db965587c4252750b3077.ctex"]
+source_file="res://Sprites/Ui and backgrounds/gun3.png"
+dest_files=["res://.godot/imported/gun3.png-27ca6e8b54a48ed81b86abb71854d9d2.ctex"]
 
 [params]
 

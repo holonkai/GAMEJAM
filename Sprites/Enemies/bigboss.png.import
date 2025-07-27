@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bp4b2gy8i4jwv"
-path="res://.godot/imported/levelbackground.jpg-7200eec73d4b789cf0266517e329a31e.ctex"
+uid="uid://cugqjm30prmel"
+path="res://.godot/imported/bigboss.png-5e3282b53fbd105a4cffe9b4d731ab17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GAMEJAM-main/main-ui/levelbackground.jpg"
-dest_files=["res://.godot/imported/levelbackground.jpg-7200eec73d4b789cf0266517e329a31e.ctex"]
+source_file="res://Sprites/Enemies/bigboss.png"
+dest_files=["res://.godot/imported/bigboss.png-5e3282b53fbd105a4cffe9b4d731ab17.ctex"]
 
 [params]
 

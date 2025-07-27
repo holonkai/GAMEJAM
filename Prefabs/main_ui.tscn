@@ -1,0 +1,358 @@
+[gd_scene load_steps=13 format=3 uid="uid://1yojrq8tjr1n"]
+
+[ext_resource type="Script" uid="uid://vewhlig5jmkf" path="res://Scripts/main_ui.gd" id="1_vvnq0"]
+[ext_resource type="Texture2D" uid="uid://cgtgts1ssqnq4" path="res://Sprites/Ui and backgrounds/Space Background.png" id="2_7voaq"]
+[ext_resource type="Texture2D" uid="uid://ccbkgeuj0a76y" path="res://Sprites/Friendlies/newfriendrangeminion.png" id="3_g5gk6"]
+[ext_resource type="Texture2D" uid="uid://dl7bjjn15numn" path="res://Sprites/Friendlies/onfieldmeleeminionfriend.png" id="4_s8vc5"]
+[ext_resource type="Texture2D" uid="uid://dedlfaugd2u5j" path="res://Sprites/Enemies/bigguyonfieldrangeminion.png" id="5_36xyc"]
+[ext_resource type="Texture2D" uid="uid://4u8lbih57n0m" path="res://Sprites/Enemies/onfieldmeleeminion.png" id="6_2tul4"]
+[ext_resource type="Texture2D" uid="uid://br7jc0yt7pps0" path="res://Sprites/Ui and backgrounds/vile.png" id="7_3hs73"]
+[ext_resource type="Texture2D" uid="uid://dueb0emu6agy2" path="res://Sprites/Ui and backgrounds/Untitled_2.png" id="8_v54gd"]
+[ext_resource type="Texture2D" uid="uid://001mhdv7my7w" path="res://Sprites/Ui and backgrounds/gun3.png" id="9_6ev4f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6r6c"]
+bg_color = Color(0.615686, 0.615686, 0.615686, 0.403922)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d21ai"]
+bg_color = Color(0.6, 0.6, 0.6, 0.517647)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kdubu"]
+bg_color = Color(0.615686, 0.615686, 0.615686, 0.266667)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[node name="mainUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 2.0
+offset_right = 42.0
+offset_bottom = 40.0
+script = ExtResource("1_vvnq0")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -264.0
+offset_top = -166.0
+offset_right = 236.0
+offset_bottom = 134.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.05263)
+texture = ExtResource("2_7voaq")
+
+[node name="LittleGuyEconomy" type="Panel" parent="background"]
+layout_mode = 1
+offset_left = 3.0
+offset_top = 18.525
+offset_right = 101.0
+offset_bottom = 67.525
+theme_override_styles/panel = SubResource("StyleBoxFlat_q6r6c")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="background/LittleGuyEconomy"]
+
+[node name="GoldLabel" type="Label" parent="background/LittleGuyEconomy/CanvasLayer"]
+offset_left = 90.0
+offset_top = 166.0
+offset_right = 195.0
+offset_bottom = 215.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "gold count
+"
+uppercase = true
+
+[node name="Panel" type="Panel" parent="background/LittleGuyEconomy/CanvasLayer"]
+offset_left = 83.0
+offset_top = 158.0
+offset_right = 250.0
+offset_bottom = 198.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_d21ai")
+
+[node name="shopbox" type="VBoxContainer" parent="background/LittleGuyEconomy"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 5.0
+offset_right = 48.0
+offset_bottom = 45.0
+
+[node name="range minion" type="Button" parent="background/LittleGuyEconomy/shopbox"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+toggle_mode = true
+text = "R"
+
+[node name="RangePopup" type="Label" parent="background/LittleGuyEconomy/shopbox/range minion"]
+layout_mode = 0
+offset_left = 102.0
+offset_right = 222.0
+offset_bottom = 23.0
+
+[node name="TextureRect" type="TextureRect" parent="background/LittleGuyEconomy/shopbox/range minion"]
+layout_mode = 0
+offset_right = 144.0
+offset_bottom = 128.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_g5gk6")
+
+[node name="shopbox2" type="VBoxContainer" parent="background/LittleGuyEconomy"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 4.75
+offset_right = 92.0
+offset_bottom = 44.75
+
+[node name="melee minion" type="Button" parent="background/LittleGuyEconomy/shopbox2"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 22.3
+text = "M"
+
+[node name="MeleePopup" type="Label" parent="background/LittleGuyEconomy/shopbox2/melee minion"]
+layout_mode = 0
+offset_left = 56.0
+offset_right = 175.0
+offset_bottom = 23.0
+
+[node name="TextureRect" type="TextureRect" parent="background/LittleGuyEconomy/shopbox2/melee minion"]
+layout_mode = 0
+offset_left = -0.5
+offset_top = -0.199987
+offset_right = 133.5
+offset_bottom = 114.8
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_s8vc5")
+
+[node name="Label" type="Label" parent="background/LittleGuyEconomy"]
+layout_mode = 0
+offset_left = 0.5
+offset_top = -22.325
+offset_right = 56.5
+offset_bottom = 0.674967
+theme_override_colors/font_color = Color(0.984314, 0, 0, 1)
+text = "shop"
+
+[node name="littleguy" type="Panel" parent="background"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -81.0
+offset_right = 82.0
+offset_bottom = 1.0
+grow_vertical = 0
+
+[node name="littleguydialog" type="Label" parent="background/littleguy"]
+layout_mode = 0
+offset_left = 0.5
+offset_top = -26.1497
+offset_right = 92.5
+offset_bottom = -3.1497
+text = "placeholder"
+
+[node name="bigguy" type="Panel" parent="background"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -81.0
+offset_top = 0.95
+offset_right = -1.0
+offset_bottom = 80.95
+grow_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="background/bigguy"]
+layout_mode = 0
+offset_top = -3.8
+offset_right = 158.0
+offset_bottom = 161.2
+scale = Vector2(0.52, 0.52)
+
+[node name="BigGuyDialog" type="Label" parent="background/bigguy"]
+layout_mode = 0
+offset_left = -12.5
+offset_top = 77.9001
+offset_right = 79.5
+offset_bottom = 100.9
+text = "placeholder"
+
+[node name="evilrangeminion" type="Panel" parent="background/bigguy"]
+layout_mode = 0
+offset_left = -40.5
+offset_top = 4.27501
+offset_right = -4.5
+offset_bottom = 37.275
+
+[node name="evil range minion" type="Button" parent="background/bigguy/evilrangeminion"]
+layout_mode = 0
+offset_right = 37.0
+offset_bottom = 32.0
+
+[node name="EvilRangePopup" type="Label" parent="background/bigguy/evilrangeminion/evil range minion"]
+layout_mode = 0
+offset_left = -161.0
+offset_top = -1.425
+offset_right = -117.0
+offset_bottom = 21.575
+
+[node name="TextureRect" type="TextureRect" parent="background/bigguy/evilrangeminion/evil range minion"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -3.80001
+offset_right = 164.0
+offset_bottom = 151.2
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_36xyc")
+
+[node name="evilmeleeminion" type="Panel" parent="background/bigguy"]
+layout_mode = 0
+offset_left = -40.0
+offset_top = 39.9001
+offset_right = -4.0
+offset_bottom = 73.9001
+
+[node name="evil melee minion" type="Button" parent="background/bigguy/evilmeleeminion"]
+layout_mode = 0
+offset_right = 37.0
+offset_bottom = 34.0
+
+[node name="EvilMeleePopup" type="Label" parent="background/bigguy/evilmeleeminion/evil melee minion"]
+layout_mode = 0
+offset_left = -158.0
+offset_top = -36.1001
+offset_right = -118.0
+offset_bottom = -13.1001
+
+[node name="TextureRect" type="TextureRect" parent="background/bigguy/evilmeleeminion/evil melee minion"]
+layout_mode = 0
+offset_left = -0.5
+offset_top = 0.475002
+offset_right = 148.5
+offset_bottom = 131.475
+scale = Vector2(0.25, 0.24)
+texture = ExtResource("6_2tul4")
+
+[node name="skills" type="Panel" parent="background"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 84.0
+offset_top = -42.0
+offset_right = 231.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kdubu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="background/skills"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="background/skills"]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 2.0
+offset_right = 142.0
+offset_bottom = 40.0
+
+[node name="vile" type="Button" parent="background/skills/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+
+[node name="TextureRect" type="TextureRect" parent="background/skills/VBoxContainer/vile"]
+layout_mode = 0
+offset_left = -0.5
+offset_top = -6.3496
+offset_right = 150.5
+offset_bottom = 160.65
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_3hs73")
+
+[node name="VilePopup" type="Label" parent="background/skills/VBoxContainer/vile"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = -0.174588
+offset_right = 91.0
+offset_bottom = 22.8254
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="background/skills"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 2.0
+offset_right = 95.0
+offset_bottom = 40.0
+
+[node name="buttonult" type="Button" parent="background/skills/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+
+[node name="ult" type="TextureRect" parent="background/skills/VBoxContainer2/buttonult"]
+layout_mode = 0
+offset_left = -0.5
+offset_top = -0.649585
+offset_right = 119.5
+offset_bottom = 108.35
+scale = Vector2(0.38, 0.38)
+texture = ExtResource("8_v54gd")
+
+[node name="UltPopup" type="Label" parent="background/skills/VBoxContainer2/buttonult"]
+layout_mode = 0
+offset_left = 99.0
+offset_top = -2.07459
+offset_right = 177.0
+offset_bottom = 37.9254
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="background/skills"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 47.0
+offset_bottom = 40.0
+
+[node name="Buttonskill" type="Button" parent="background/skills/VBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+
+[node name="skill" type="TextureRect" parent="background/skills/VBoxContainer3/Buttonskill"]
+layout_mode = 0
+offset_left = 0.5
+offset_top = 0.875416
+offset_right = 465.5
+offset_bottom = 409.875
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("9_6ev4f")
+
+[node name="SkillPopup" type="Label" parent="background/skills/VBoxContainer3/Buttonskill"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = -3.97459
+offset_right = 227.0
+offset_bottom = 38.0254
+
+[connection signal="button_down" from="background/LittleGuyEconomy/shopbox/range minion" to="." method="_on_range_minion_button_down"]
+[connection signal="button_down" from="background/LittleGuyEconomy/shopbox2/melee minion" to="." method="_on_melee_minion_button_down"]
+[connection signal="button_down" from="background/bigguy/evilrangeminion/evil range minion" to="." method="_on_evil_range_minion_button_down"]
+[connection signal="button_down" from="background/bigguy/evilmeleeminion/evil melee minion" to="." method="_on_evil_melee_minion_button_down"]
+[connection signal="button_down" from="background/skills/VBoxContainer/vile" to="." method="_on_vile_button_down"]
+[connection signal="button_down" from="background/skills/VBoxContainer2/buttonult" to="." method="_on_buttonult_button_down"]
+[connection signal="button_down" from="background/skills/VBoxContainer3/Buttonskill" to="." method="_on_buttonskill_button_down"]

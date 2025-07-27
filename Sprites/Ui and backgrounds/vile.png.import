@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba3mcrnnhp0cq"
-path="res://.godot/imported/bigguymeleeminion.png-4b0b1c84db72970fa2e865fcf7215029.ctex"
+uid="uid://br7jc0yt7pps0"
+path="res://.godot/imported/vile.png-93ffff9cac561634401e15fe38b21fd7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GAMEJAM-main/main-ui/bigguymeleeminion.png"
-dest_files=["res://.godot/imported/bigguymeleeminion.png-4b0b1c84db72970fa2e865fcf7215029.ctex"]
+source_file="res://Sprites/Ui and backgrounds/vile.png"
+dest_files=["res://.godot/imported/vile.png-93ffff9cac561634401e15fe38b21fd7.ctex"]
 
 [params]
 

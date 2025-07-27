@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://1wtx3ew7y6d4"]
+[gd_scene load_steps=5 format=3 uid="uid://meu8i13mpg"]
 
-[ext_resource type="Script" uid="uid://3c65oux4o45g" path="res://character_body_2d.gd" id="1_0xm2m"]
-[ext_resource type="Texture2D" uid="uid://cbldfhx6iiq5c" path="res://icon.svg" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://3c65oux4o45g" path="res://Scripts/character_body_2d.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://cbldfhx6iiq5c" path="res://Sprites/icon.svg" id="2_h2yge"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1bvp3"]
 radius = 88.2043

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cugqjm30prmel"
-path="res://.godot/imported/bigboss.png-fb790388cb08da31114ac2743272a8ae.ctex"
+uid="uid://dl7bjjn15numn"
+path="res://.godot/imported/onfieldmeleeminionfriend.png-60f7a2d3396fdc8a978fe7de52e9c95a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GAMEJAM-main/main-ui/bigboss.png"
-dest_files=["res://.godot/imported/bigboss.png-fb790388cb08da31114ac2743272a8ae.ctex"]
+source_file="res://Sprites/Friendlies/onfieldmeleeminionfriend.png"
+dest_files=["res://.godot/imported/onfieldmeleeminionfriend.png-60f7a2d3396fdc8a978fe7de52e9c95a.ctex"]
 
 [params]
 

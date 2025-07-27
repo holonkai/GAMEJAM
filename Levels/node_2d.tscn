@@ -1,15 +1,15 @@
 [gd_scene load_steps=16 format=4 uid="uid://b2qt0biuylxaf"]
 
-[ext_resource type="Script" uid="uid://vewhlig5jmkf" path="res://Scripts/main_ui.gd" id="1_0hol4"]
-[ext_resource type="Texture2D" uid="uid://d02xfdehptq5l" path="res://GAMEJAM-main/main-ui/mars-dunes-8col-16bit565-2.png" id="1_wtcfe"]
-[ext_resource type="Texture2D" uid="uid://cgtgts1ssqnq4" path="res://Sprites/Space Background.png" id="2_o3b0i"]
-[ext_resource type="Texture2D" uid="uid://dl7bjjn15numn" path="res://Sprites/onfieldmeleeminionfriend.png" id="3_og6uj"]
-[ext_resource type="Texture2D" uid="uid://ccbkgeuj0a76y" path="res://Sprites/newfriendrangeminion.png" id="3_wu8e6"]
-[ext_resource type="Texture2D" uid="uid://dedlfaugd2u5j" path="res://Sprites/bigguyonfieldrangeminion.png" id="4_1yk3q"]
-[ext_resource type="Texture2D" uid="uid://dueb0emu6agy2" path="res://GAMEJAM-main/main-ui/Untitled_2.png" id="5_kdubu"]
-[ext_resource type="Texture2D" uid="uid://001mhdv7my7w" path="res://GAMEJAM-main/main-ui/gun3.png" id="6_d21ai"]
-[ext_resource type="Texture2D" uid="uid://4u8lbih57n0m" path="res://Sprites/onfieldmeleeminion.png" id="6_o3b0i"]
-[ext_resource type="Texture2D" uid="uid://br7jc0yt7pps0" path="res://Sprites/vile.png" id="7_326c1"]
+[ext_resource type="Script" uid="uid://vewhlig5jmkf" path="res://Scripts/main_ui.gd" id="1_0hhiv"]
+[ext_resource type="Texture2D" uid="uid://cgtgts1ssqnq4" path="res://Sprites/Ui and backgrounds/Space Background.png" id="2_roogt"]
+[ext_resource type="Texture2D" uid="uid://ccbkgeuj0a76y" path="res://Sprites/Friendlies/newfriendrangeminion.png" id="3_wdxtt"]
+[ext_resource type="Texture2D" uid="uid://dl7bjjn15numn" path="res://Sprites/Friendlies/onfieldmeleeminionfriend.png" id="4_dp0n4"]
+[ext_resource type="Texture2D" uid="uid://dedlfaugd2u5j" path="res://Sprites/Enemies/bigguyonfieldrangeminion.png" id="5_sepx5"]
+[ext_resource type="Texture2D" uid="uid://4u8lbih57n0m" path="res://Sprites/Enemies/onfieldmeleeminion.png" id="6_3mws4"]
+[ext_resource type="Texture2D" uid="uid://br7jc0yt7pps0" path="res://Sprites/Ui and backgrounds/vile.png" id="7_nachc"]
+[ext_resource type="Texture2D" uid="uid://dueb0emu6agy2" path="res://Sprites/Ui and backgrounds/Untitled_2.png" id="8_p7poi"]
+[ext_resource type="Texture2D" uid="uid://001mhdv7my7w" path="res://Sprites/Ui and backgrounds/gun3.png" id="9_1wfw2"]
+[ext_resource type="Texture2D" uid="uid://d02xfdehptq5l" path="res://Sprites/Ui and backgrounds/mars-dunes-8col-16bit565-2.png" id="10_opuq0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6r6c"]
 bg_color = Color(0.615686, 0.615686, 0.615686, 0.403922)
@@ -39,7 +39,7 @@ border_color = Color(0, 0, 0, 1)
 border_blend = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q6r6c"]
-texture = ExtResource("1_wtcfe")
+texture = ExtResource("10_opuq0")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -360,7 +360,7 @@ anchors_preset = 0
 offset_left = 2.0
 offset_right = 42.0
 offset_bottom = 40.0
-script = ExtResource("1_0hol4")
+script = ExtResource("1_0hhiv")
 
 [node name="background" type="TextureRect" parent="mainUI"]
 layout_mode = 1
@@ -376,7 +376,7 @@ offset_bottom = 134.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 1.05263)
-texture = ExtResource("2_o3b0i")
+texture = ExtResource("2_roogt")
 
 [node name="LittleGuyEconomy" type="Panel" parent="mainUI/background"]
 layout_mode = 1
@@ -430,7 +430,7 @@ layout_mode = 0
 offset_right = 144.0
 offset_bottom = 128.0
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("3_wu8e6")
+texture = ExtResource("3_wdxtt")
 
 [node name="shopbox2" type="VBoxContainer" parent="mainUI/background/LittleGuyEconomy"]
 layout_mode = 0
@@ -458,7 +458,7 @@ offset_top = -0.199987
 offset_right = 133.5
 offset_bottom = 114.8
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("3_og6uj")
+texture = ExtResource("4_dp0n4")
 
 [node name="Label" type="Label" parent="mainUI/background/LittleGuyEconomy"]
 layout_mode = 0
@@ -539,7 +539,7 @@ offset_top = -3.80001
 offset_right = 164.0
 offset_bottom = 151.2
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("4_1yk3q")
+texture = ExtResource("5_sepx5")
 
 [node name="evilmeleeminion" type="Panel" parent="mainUI/background/bigguy"]
 layout_mode = 0
@@ -567,7 +567,7 @@ offset_top = 0.475002
 offset_right = 148.5
 offset_bottom = 131.475
 scale = Vector2(0.25, 0.24)
-texture = ExtResource("6_o3b0i")
+texture = ExtResource("6_3mws4")
 
 [node name="skills" type="Panel" parent="mainUI/background"]
 layout_mode = 1
@@ -601,7 +601,7 @@ offset_top = -6.3496
 offset_right = 150.5
 offset_bottom = 160.65
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("7_326c1")
+texture = ExtResource("7_nachc")
 
 [node name="VilePopup" type="Label" parent="mainUI/background/skills/VBoxContainer/vile"]
 layout_mode = 0
@@ -629,7 +629,7 @@ offset_top = -0.649585
 offset_right = 119.5
 offset_bottom = 108.35
 scale = Vector2(0.38, 0.38)
-texture = ExtResource("5_kdubu")
+texture = ExtResource("8_p7poi")
 
 [node name="UltPopup" type="Label" parent="mainUI/background/skills/VBoxContainer2/buttonult"]
 layout_mode = 0
@@ -657,7 +657,7 @@ offset_top = 0.875416
 offset_right = 465.5
 offset_bottom = 409.875
 scale = Vector2(0.09, 0.09)
-texture = ExtResource("6_d21ai")
+texture = ExtResource("9_1wfw2")
 
 [node name="SkillPopup" type="Label" parent="mainUI/background/skills/VBoxContainer3/Buttonskill"]
 layout_mode = 0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dueb0emu6agy2"
-path="res://.godot/imported/Untitled_2.png-ec57d1a37a1957bae8ae68993d06814c.ctex"
+uid="uid://bp4b2gy8i4jwv"
+path="res://.godot/imported/levelbackground.jpg-1ad5bb5a9884c7e1945c5c6d908105b8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GAMEJAM-main/main-ui/Untitled_2.png"
-dest_files=["res://.godot/imported/Untitled_2.png-ec57d1a37a1957bae8ae68993d06814c.ctex"]
+source_file="res://Sprites/Ui and backgrounds/levelbackground.jpg"
+dest_files=["res://.godot/imported/levelbackground.jpg-1ad5bb5a9884c7e1945c5c6d908105b8.ctex"]
 
 [params]
 

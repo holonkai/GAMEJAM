@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5soa0xn4qsb3"
-path="res://.godot/imported/desert-backgorund.png-aaafc266832d0554548a69b06bc275b7.ctex"
+uid="uid://dedlfaugd2u5j"
+path="res://.godot/imported/bigguyonfieldrangeminion.png-09867a62f2c85cd88e01cabdc40a8a7e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GAMEJAM-main/main-ui/desert-backgorund.png"
-dest_files=["res://.godot/imported/desert-backgorund.png-aaafc266832d0554548a69b06bc275b7.ctex"]
+source_file="res://Sprites/Enemies/bigguyonfieldrangeminion.png"
+dest_files=["res://.godot/imported/bigguyonfieldrangeminion.png-09867a62f2c85cd88e01cabdc40a8a7e.ctex"]
 
 [params]
 

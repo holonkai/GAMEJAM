@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b13netm0d7v67"
-path="res://.godot/imported/bigguyrangeminion.png-b4ee66ac5065d467347536df57d638d9.ctex"
+uid="uid://5soa0xn4qsb3"
+path="res://.godot/imported/desert-backgorund.png-92b031c23ef64898ab0ff294e5e976e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GAMEJAM-main/main-ui/bigguyrangeminion.png"
-dest_files=["res://.godot/imported/bigguyrangeminion.png-b4ee66ac5065d467347536df57d638d9.ctex"]
+source_file="res://Sprites/Ui and backgrounds/desert-backgorund.png"
+dest_files=["res://.godot/imported/desert-backgorund.png-92b031c23ef64898ab0ff294e5e976e7.ctex"]
 
 [params]
 

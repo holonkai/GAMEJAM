@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d02xfdehptq5l"
-path="res://.godot/imported/mars-dunes-8col-16bit565-2.png-50325fa1cfa28b8aa0859feda1f8ebf1.ctex"
+uid="uid://ccbkgeuj0a76y"
+path="res://.godot/imported/newfriendrangeminion.png-80362e10d52443019b61e5bab969e155.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GAMEJAM-main/main-ui/mars-dunes-8col-16bit565-2.png"
-dest_files=["res://.godot/imported/mars-dunes-8col-16bit565-2.png-50325fa1cfa28b8aa0859feda1f8ebf1.ctex"]
+source_file="res://Sprites/Friendlies/newfriendrangeminion.png"
+dest_files=["res://.godot/imported/newfriendrangeminion.png-80362e10d52443019b61e5bab969e155.ctex"]
 
 [params]
 

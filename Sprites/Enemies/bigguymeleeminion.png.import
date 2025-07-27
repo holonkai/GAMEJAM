@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dedlfaugd2u5j"
-path="res://.godot/imported/bigguyonfieldrangeminion.png-7e119d0025361546905daada34b6ed66.ctex"
+uid="uid://ba3mcrnnhp0cq"
+path="res://.godot/imported/bigguymeleeminion.png-2ab29c321d1fe39431f8eeda0b08fa84.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/bigguyonfieldrangeminion.png"
-dest_files=["res://.godot/imported/bigguyonfieldrangeminion.png-7e119d0025361546905daada34b6ed66.ctex"]
+source_file="res://Sprites/Enemies/bigguymeleeminion.png"
+dest_files=["res://.godot/imported/bigguymeleeminion.png-2ab29c321d1fe39431f8eeda0b08fa84.ctex"]
 
 [params]
 

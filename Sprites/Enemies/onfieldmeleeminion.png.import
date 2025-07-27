@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccbkgeuj0a76y"
-path="res://.godot/imported/newfriendrangeminion.png-ed4be793327d007c4af5909ac0c5615c.ctex"
+uid="uid://4u8lbih57n0m"
+path="res://.godot/imported/onfieldmeleeminion.png-be91c53b9bc79f652e4bab1538015374.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/newfriendrangeminion.png"
-dest_files=["res://.godot/imported/newfriendrangeminion.png-ed4be793327d007c4af5909ac0c5615c.ctex"]
+source_file="res://Sprites/Enemies/onfieldmeleeminion.png"
+dest_files=["res://.godot/imported/onfieldmeleeminion.png-be91c53b9bc79f652e4bab1538015374.ctex"]
 
 [params]
 

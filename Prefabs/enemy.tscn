@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dxyx5cgf2lc4x"]
 
 [ext_resource type="Script" uid="uid://rihwh8ovhuwr" path="res://Scripts/Enemy.gd" id="1_lgw76"]
-[ext_resource type="Texture2D" uid="uid://4u8lbih57n0m" path="res://Sprites/onfieldmeleeminion.png" id="2_lgw76"]
+[ext_resource type="Texture2D" uid="uid://4u8lbih57n0m" path="res://Sprites/Enemies/onfieldmeleeminion.png" id="2_lgw76"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hqns4"]
 radius = 16.0312

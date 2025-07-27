@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://br7jc0yt7pps0"
-path="res://.godot/imported/vile.png-62bd0f6f2ae0f5e1d26725ba93799e23.ctex"
+uid="uid://d02xfdehptq5l"
+path="res://.godot/imported/mars-dunes-8col-16bit565-2.png-83664a0e0103c659357213b38611962a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/vile.png"
-dest_files=["res://.godot/imported/vile.png-62bd0f6f2ae0f5e1d26725ba93799e23.ctex"]
+source_file="res://Sprites/Ui and backgrounds/mars-dunes-8col-16bit565-2.png"
+dest_files=["res://.godot/imported/mars-dunes-8col-16bit565-2.png-83664a0e0103c659357213b38611962a.ctex"]
 
 [params]
 
