@@ -14,3 +14,7 @@ config/name="gamejam"
 run/main_scene="uid://dg3x7mpdefapg"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://Sprites/icon.svg"
+
+[global_group]
+
+Enemies=""

@@ -36,7 +36,7 @@ func move_selected_units(pos: Vector2):
 	var positions=UnitFormation.line(pos,units.size())
 	for i in units.size():
 		var path=NavigationServer2D.map_get_path(map, snap_to_map(units[i].global_position), snap_to_map(positions[i]),true)
-		print(path)
+		#print(path)
 		units[i].move(path)
 		
 func snap_to_map(pos: Vector2):

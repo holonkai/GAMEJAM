@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxyx5cgf2lc4x"]
+
+[ext_resource type="Script" uid="uid://rihwh8ovhuwr" path="res://Scripts/Enemy.gd" id="1_lgw76"]
+[ext_resource type="Texture2D" uid="uid://fv1bqm5pr4ha" path="res://Sprites/Screenshot 2025-07-26 201848.png" id="2_t4g6b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hqns4"]
+radius = 16.0312
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lgw76"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t4g6b"]
+bg_color = Color(0.42404, 0.120291, 0.0953147, 1)
+
+[node name="Enemy" type="CharacterBody2D" groups=["Enemies"]]
+script = ExtResource("1_lgw76")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.00002, -9)
+scale = Vector2(0.190566, 0.190566)
+texture = ExtResource("2_t4g6b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 8)
+shape = SubResource("CircleShape2D_hqns4")
+
+[node name="HPBAR" type="ProgressBar" parent="."]
+offset_left = -31.0
+offset_top = -57.0
+offset_right = 29.0
+offset_bottom = -49.0
+theme_override_styles/background = SubResource("StyleBoxFlat_lgw76")
+theme_override_styles/fill = SubResource("StyleBoxFlat_t4g6b")
+show_percentage = false
+
+[node name="DamageLabel" type="Label" parent="."]
+offset_left = -23.0
+offset_top = -68.0
+offset_right = 17.0
+offset_bottom = -45.0
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
