@@ -44,12 +44,13 @@ func snap_to_map(pos: Vector2):
 	return NavigationServer2D.map_get_closest_point(map,pos)
 	
 func _draw():
-	
+	#drawing the rectangle for the selection box
 	if not selecting: return
 	draw_rect(selectBox,Color("#00ff0066"))
 	draw_rect(selectBox,Color('#00ff00'),false,2.0)
 
 func update_selected_units():
+	#identifying which units are and arent selected
 	for unit in get_tree().get_nodes_in_group("selectableUnits"):
 		if(unit.is_in_selection_box(selectBox)):
 			unit.select()

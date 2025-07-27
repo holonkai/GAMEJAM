@@ -4,10 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://cbldfhx6iiq5c" path="res://Sprites/icon.svg" id="2_777tc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q6r6c"]
-radius = 13.3417
+radius = 27.074
 
 [node name="Minion" type="CharacterBody2D" groups=["selectableUnits"]]
 script = ExtResource("1_20mgi")
+
+[node name="Selector" type="ColorRect" parent="."]
+offset_left = -27.0
+offset_top = -48.0
+offset_right = 25.0
+offset_bottom = 6.0
+color = Color(9.09671e-06, 0.662424, 0.037319, 1)
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(-1, -21)
@@ -21,10 +28,5 @@ shape = SubResource("CircleShape2D_q6r6c")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.83
 autostart = true
-
-[node name="Selector" type="Sprite2D" parent="."]
-rotation = -0.015708
-texture = ExtResource("2_777tc")
-centered = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
