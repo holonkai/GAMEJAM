@@ -381,36 +381,35 @@ texture = ExtResource("2_roogt")
 [node name="LittleGuyEconomy" type="Panel" parent="mainUI/background"]
 layout_mode = 1
 offset_left = 3.0
-offset_top = 18.525
-offset_right = 101.0
-offset_bottom = 67.525
+offset_top = 19.0
+offset_right = 92.0
+offset_bottom = 53.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_q6r6c")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="mainUI/background/LittleGuyEconomy"]
 
 [node name="GoldLabel" type="Label" parent="mainUI/background/LittleGuyEconomy/CanvasLayer"]
-offset_left = 90.0
-offset_top = 166.0
-offset_right = 195.0
-offset_bottom = 215.0
+offset_left = 87.0
+offset_top = 389.0
+offset_right = 192.0
+offset_bottom = 438.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "gold count
 "
 uppercase = true
 
 [node name="Panel" type="Panel" parent="mainUI/background/LittleGuyEconomy/CanvasLayer"]
-offset_left = 83.0
-offset_top = 158.0
-offset_right = 250.0
-offset_bottom = 198.0
+offset_left = 82.0
+offset_top = 381.0
+offset_right = 249.0
+offset_bottom = 421.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_d21ai")
 
 [node name="shopbox" type="VBoxContainer" parent="mainUI/background/LittleGuyEconomy"]
 layout_mode = 0
-offset_left = 6.0
-offset_top = 5.0
-offset_right = 48.0
-offset_bottom = 45.0
+offset_left = 4.0
+offset_right = 43.0
+offset_bottom = 33.0
 
 [node name="range minion" type="Button" parent="mainUI/background/LittleGuyEconomy/shopbox"]
 layout_mode = 2
@@ -427,17 +426,19 @@ offset_bottom = 23.0
 
 [node name="TextureRect" type="TextureRect" parent="mainUI/background/LittleGuyEconomy/shopbox/range minion"]
 layout_mode = 0
+offset_left = -2.0
+offset_top = -2.37497
 offset_right = 144.0
-offset_bottom = 128.0
+offset_bottom = 129.625
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_wdxtt")
 
 [node name="shopbox2" type="VBoxContainer" parent="mainUI/background/LittleGuyEconomy"]
 layout_mode = 0
-offset_left = 52.0
-offset_top = 4.75
-offset_right = 92.0
-offset_bottom = 44.75
+offset_left = 47.0
+offset_top = 1.0
+offset_right = 86.0
+offset_bottom = 34.0
 
 [node name="melee minion" type="Button" parent="mainUI/background/LittleGuyEconomy/shopbox2"]
 layout_mode = 2
@@ -447,16 +448,17 @@ text = "M"
 
 [node name="MeleePopup" type="Label" parent="mainUI/background/LittleGuyEconomy/shopbox2/melee minion"]
 layout_mode = 0
-offset_left = 56.0
-offset_right = 175.0
-offset_bottom = 23.0
+offset_left = 44.0
+offset_top = -11.875
+offset_right = 163.0
+offset_bottom = 11.125
 
 [node name="TextureRect" type="TextureRect" parent="mainUI/background/LittleGuyEconomy/shopbox2/melee minion"]
 layout_mode = 0
-offset_left = -0.5
-offset_top = -0.199987
-offset_right = 133.5
-offset_bottom = 114.8
+offset_left = -1.5
+offset_top = -3.37497
+offset_right = 132.5
+offset_bottom = 111.625
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_dp0n4")
 
