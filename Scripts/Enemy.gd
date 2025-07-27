@@ -6,6 +6,7 @@ var Health: int=20
 var damage=1
 var dmg_tw: Tween = null
 func _ready() -> void:
+	#instantiating object
 	set_process(false)
 	$HPBAR.max_value=Health
 	$HPBAR.value=Health
@@ -32,6 +33,7 @@ func _process(delta: float) -> void:
 			look_at(path[0])
 
 func DamageText(amount: int, duration:float =0.5):
+	#tweens and animates the damage numbers
 	if dmg_tw:
 		dmg_tw.kill()
 	$DamageLabel.text=str(amount)
@@ -47,6 +49,7 @@ func DamageText(amount: int, duration:float =0.5):
 
 
 func TakeDamage(amount: int):
+	#reduces health and activates the visual effects
 	Health-=amount
 	DamageText(amount)
 	$HPBAR.value=Health
@@ -57,6 +60,7 @@ func TakeDamage(amount: int):
 
 
 func _on_timer_timeout() -> void:
+	#attacks the player minions after a random amount of time
 	var Enemies=get_tree().get_nodes_in_group("selectableUnits")
 	var rng= RandomNumberGenerator.new()
 	$Timer.wait_time=rng.randf_range(1,1.5)

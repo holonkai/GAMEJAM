@@ -62,6 +62,7 @@ func deselect():
 	remove_from_group("selected-units")
 
 func DamageText(amount: int, duration:float =0.5):
+	#activates the tweens for the damage numbers
 	if dmg_tw:
 		dmg_tw.kill()
 	$DamageLabel.text=str(amount)
@@ -77,15 +78,16 @@ func DamageText(amount: int, duration:float =0.5):
 	pass
 
 func TakeDamage(amount: int):
+	#reduces health and plays visual effects
 	Health-=amount
 	DamageText(amount)
 	$HPBAR.value=Health
 	$HPBAR.visible=true
 	if(Health<=0):
 		queue_free()
-	
 
 func _on_timer_timeout() -> void:
+	#hits enemies after a random amount of time
 	var Enemies=get_tree().get_nodes_in_group("Enemies")
 	
 	var rng= RandomNumberGenerator.new()
