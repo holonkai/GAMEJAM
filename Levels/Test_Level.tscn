@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ituvwh1w0aos" path="res://mars-dunes-8col-16bit565-2.png" id="3_vctyh"]
 [ext_resource type="PackedScene" uid="uid://dxyx5cgf2lc4x" path="res://Prefabs/enemy.tscn" id="4_06isw"]
 [ext_resource type="PackedScene" uid="uid://wsbyuab5gqmv" path="res://Prefabs/minion.tscn" id="5_sderq"]
-[ext_resource type="PackedScene" uid="uid://rx6crdc14vrq" path="res://Prefabs/control.tscn" id="6_3k0j6"]
+[ext_resource type="PackedScene" uid="uid://rx6crdc14vrq" path="res://Prefabs/MinionControl.tscn" id="6_3k0j6"]
 [ext_resource type="PackedScene" uid="uid://b7cvmm237m0dq" path="res://Prefabs/enemy_control.tscn" id="7_tmva4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0hol4"]
@@ -471,3 +471,12 @@ position = Vector2(100, 485)
 
 [node name="Enemy5" parent="." instance=ExtResource("4_06isw")]
 position = Vector2(897, 61)
+
+[node name="Enemy4" parent="." instance=ExtResource("4_06isw")]
+position = Vector2(839, 240)
+
+[node name="Enemy6" parent="." instance=ExtResource("4_06isw")]
+position = Vector2(1068, 223)
+
+[node name="Enemy7" parent="." instance=ExtResource("4_06isw")]
+position = Vector2(1057, 405)
