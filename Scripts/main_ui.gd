@@ -126,3 +126,22 @@ func _on_evil_melee_minion_button_down() -> void:
 		
 	evil_melee_minion_pop_up.visible = false
 	
+
+@onready var vile_pop_up = $background/skills/VBoxContainer/vile/VilePopup
+func _on_vile_button_down() -> void:
+	var cost = 4
+	if gold >= cost:
+		gold -= cost
+		update_gold_display()
+	
+		vile_pop_up.text = "HEAL"
+		vile_pop_up.visible = true
+		
+		await get_tree().create_timer(0.5).timeout
+		vile_pop_up.visible = false
+	else:
+		vile_pop_up.text = "UR POOR"
+		vile_pop_up.visible = true
+		
+		await get_tree().create_timer(0.5).timeout
+		vile_pop_up.visible = false
