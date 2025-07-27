@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://vewhlig5jmkf" path="res://Scripts/main_ui.gd" id="1_0hol4"]
 [ext_resource type="Texture2D" uid="uid://d02xfdehptq5l" path="res://GAMEJAM-main/main-ui/mars-dunes-8col-16bit565-2.png" id="1_wtcfe"]
-[ext_resource type="Texture2D" uid="uid://5soa0xn4qsb3" path="res://GAMEJAM-main/main-ui/desert-backgorund.png" id="3_epypp"]
+[ext_resource type="Texture2D" uid="uid://cgtgts1ssqnq4" path="res://Sprites/Space Background.png" id="2_o3b0i"]
 [ext_resource type="Texture2D" uid="uid://dl7bjjn15numn" path="res://Sprites/onfieldmeleeminionfriend.png" id="3_og6uj"]
 [ext_resource type="Texture2D" uid="uid://ccbkgeuj0a76y" path="res://Sprites/newfriendrangeminion.png" id="3_wu8e6"]
 [ext_resource type="Texture2D" uid="uid://dedlfaugd2u5j" path="res://Sprites/bigguyonfieldrangeminion.png" id="4_1yk3q"]
@@ -375,7 +375,7 @@ offset_bottom = 134.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 1.05263)
-texture = ExtResource("3_epypp")
+texture = ExtResource("2_o3b0i")
 
 [node name="LittleGuyEconomy" type="Panel" parent="mainUI/background"]
 layout_mode = 1
