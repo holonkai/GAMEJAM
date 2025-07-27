@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7cvmm237m0dq"]
+
+[ext_resource type="Script" uid="uid://d3dbflmkvgsh4" path="res://Scripts/EnemyControl.gd" id="1_skg3m"]
+
+[node name="EnemyControl" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 291.0
+offset_top = 319.0
+offset_right = 331.0
+offset_bottom = 359.0
+script = ExtResource("1_skg3m")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

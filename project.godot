@@ -11,6 +11,10 @@ config_version=5
 [application]
 
 config/name="gamejam"
-run/main_scene="uid://1wtx3ew7y6d4"
+run/main_scene="uid://dg3x7mpdefapg"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Sprites/icon.svg"
+
+[global_group]
+
+Enemies=""
