@@ -1,0 +1,583 @@
+[gd_scene load_steps=13 format=4 uid="uid://b2qt0biuylxaf"]
+
+[ext_resource type="Script" uid="uid://vewhlig5jmkf" path="res://main_ui.gd" id="1_0hol4"]
+[ext_resource type="Texture2D" uid="uid://d02xfdehptq5l" path="res://mars-dunes-8col-16bit565-2.png" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://5soa0xn4qsb3" path="res://desert-backgorund.png" id="3_epypp"]
+[ext_resource type="Texture2D" uid="uid://ba3mcrnnhp0cq" path="res://bigguymeleeminion.png" id="4_d21ai"]
+[ext_resource type="Texture2D" uid="uid://cugqjm30prmel" path="res://bigboss.png" id="5_d21ai"]
+[ext_resource type="Texture2D" uid="uid://dueb0emu6agy2" path="res://Untitled_2.png" id="5_kdubu"]
+[ext_resource type="Texture2D" uid="uid://001mhdv7my7w" path="res://gun3.png" id="6_d21ai"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6r6c"]
+bg_color = Color(0.615686, 0.615686, 0.615686, 0.403922)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d21ai"]
+bg_color = Color(0.6, 0.6, 0.6, 0.517647)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kdubu"]
+bg_color = Color(0.615686, 0.615686, 0.615686, 0.266667)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q6r6c"]
+texture = ExtResource("1_wtcfe")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+16:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+16:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+16:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+12:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+16:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+12:11/0 = 0
+13:11/0 = 0
+14:11/0 = 0
+15:11/0 = 0
+16:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+9:12/0 = 0
+10:12/0 = 0
+11:12/0 = 0
+12:12/0 = 0
+13:12/0 = 0
+14:12/0 = 0
+15:12/0 = 0
+16:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+6:13/0 = 0
+7:13/0 = 0
+8:13/0 = 0
+9:13/0 = 0
+10:13/0 = 0
+11:13/0 = 0
+12:13/0 = 0
+13:13/0 = 0
+14:13/0 = 0
+15:13/0 = 0
+16:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+5:14/0 = 0
+6:14/0 = 0
+7:14/0 = 0
+8:14/0 = 0
+9:14/0 = 0
+10:14/0 = 0
+11:14/0 = 0
+12:14/0 = 0
+13:14/0 = 0
+14:14/0 = 0
+15:14/0 = 0
+16:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+3:15/0 = 0
+4:15/0 = 0
+5:15/0 = 0
+6:15/0 = 0
+7:15/0 = 0
+8:15/0 = 0
+9:15/0 = 0
+10:15/0 = 0
+11:15/0 = 0
+12:15/0 = 0
+13:15/0 = 0
+14:15/0 = 0
+15:15/0 = 0
+16:15/0 = 0
+0:16/0 = 0
+1:16/0 = 0
+2:16/0 = 0
+3:16/0 = 0
+4:16/0 = 0
+5:16/0 = 0
+6:16/0 = 0
+7:16/0 = 0
+8:16/0 = 0
+9:16/0 = 0
+10:16/0 = 0
+11:16/0 = 0
+12:16/0 = 0
+13:16/0 = 0
+14:16/0 = 0
+15:16/0 = 0
+16:16/0 = 0
+0:17/0 = 0
+1:17/0 = 0
+2:17/0 = 0
+3:17/0 = 0
+4:17/0 = 0
+5:17/0 = 0
+6:17/0 = 0
+7:17/0 = 0
+8:17/0 = 0
+9:17/0 = 0
+10:17/0 = 0
+11:17/0 = 0
+12:17/0 = 0
+13:17/0 = 0
+14:17/0 = 0
+15:17/0 = 0
+16:17/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_kdubu"]
+sources/0 = SubResource("TileSetAtlasSource_q6r6c")
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(560, 301)
+scale = Vector2(2, 2)
+
+[node name="mainUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 2.0
+offset_right = 42.0
+offset_bottom = 40.0
+script = ExtResource("1_0hol4")
+
+[node name="background" type="TextureRect" parent="mainUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -264.0
+offset_top = -166.0
+offset_right = 236.0
+offset_bottom = 134.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.05263)
+texture = ExtResource("3_epypp")
+
+[node name="LittleGuyEconomy" type="Panel" parent="mainUI/background"]
+layout_mode = 1
+offset_left = 5.0
+offset_top = 4.0
+offset_right = 103.0
+offset_bottom = 53.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_q6r6c")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="mainUI/background/LittleGuyEconomy"]
+
+[node name="GoldLabel" type="Label" parent="mainUI/background/LittleGuyEconomy/CanvasLayer"]
+offset_left = 91.0
+offset_top = 134.0
+offset_right = 163.0
+offset_bottom = 183.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "gold: 2"
+uppercase = true
+
+[node name="Panel" type="Panel" parent="mainUI/background/LittleGuyEconomy/CanvasLayer"]
+offset_left = 86.0
+offset_top = 129.0
+offset_right = 253.0
+offset_bottom = 169.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_d21ai")
+
+[node name="shopbox" type="VBoxContainer" parent="mainUI/background/LittleGuyEconomy"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 5.0
+offset_right = 48.0
+offset_bottom = 45.0
+
+[node name="range minion" type="Button" parent="mainUI/background/LittleGuyEconomy/shopbox"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+toggle_mode = true
+text = "R"
+
+[node name="RangePopup" type="Label" parent="mainUI/background/LittleGuyEconomy/shopbox/range minion"]
+layout_mode = 0
+offset_left = 102.0
+offset_right = 222.0
+offset_bottom = 23.0
+
+[node name="shopbox2" type="VBoxContainer" parent="mainUI/background/LittleGuyEconomy"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 4.75
+offset_right = 92.0
+offset_bottom = 44.75
+
+[node name="melee minion" type="Button" parent="mainUI/background/LittleGuyEconomy/shopbox2"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 22.3
+text = "M"
+
+[node name="MeleePopup" type="Label" parent="mainUI/background/LittleGuyEconomy/shopbox2/melee minion"]
+layout_mode = 0
+offset_left = 56.0
+offset_right = 175.0
+offset_bottom = 23.0
+
+[node name="littleguy" type="Panel" parent="mainUI/background"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -81.0
+offset_right = 82.0
+offset_bottom = 1.0
+grow_vertical = 0
+
+[node name="bigguy" type="Panel" parent="mainUI/background"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -81.0
+offset_top = 0.95
+offset_right = -1.0
+offset_bottom = 80.95
+grow_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="mainUI/background/bigguy"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -2.85
+offset_right = 157.0
+offset_bottom = 162.15
+scale = Vector2(0.52, 0.52)
+texture = ExtResource("5_d21ai")
+
+[node name="BigGuyDialog" type="Label" parent="mainUI/background/bigguy"]
+layout_mode = 0
+offset_left = -82.0
+offset_top = 3.0
+offset_right = -6.0
+offset_bottom = 26.0
+
+[node name="Panel" type="Panel" parent="mainUI/background/bigguy"]
+layout_mode = 0
+offset_top = 88.0
+offset_right = 34.0
+offset_bottom = 122.0
+
+[node name="TextureRect" type="TextureRect" parent="mainUI/background/bigguy/Panel"]
+layout_mode = 0
+offset_right = 121.0
+offset_bottom = 122.0
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("4_d21ai")
+
+[node name="skills" type="Panel" parent="mainUI/background"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 84.0
+offset_top = -42.0
+offset_right = 231.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kdubu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="mainUI/background/skills"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="mainUI/background/skills"]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 2.0
+offset_right = 142.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="mainUI/background/skills/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="mainUI/background/skills"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 2.0
+offset_right = 95.0
+offset_bottom = 40.0
+
+[node name="buttonult" type="Button" parent="mainUI/background/skills/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+
+[node name="ult" type="TextureRect" parent="mainUI/background/skills/VBoxContainer2/buttonult"]
+layout_mode = 0
+offset_left = -0.5
+offset_top = -0.649585
+offset_right = 119.5
+offset_bottom = 108.35
+scale = Vector2(0.38, 0.38)
+texture = ExtResource("5_kdubu")
+
+[node name="UltPopup" type="Label" parent="mainUI/background/skills/VBoxContainer2/buttonult"]
+layout_mode = 0
+offset_left = -134.0
+offset_top = -81.0
+offset_right = -56.0
+offset_bottom = -41.0
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="mainUI/background/skills"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 47.0
+offset_bottom = 40.0
+
+[node name="Buttonskill" type="Button" parent="mainUI/background/skills/VBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+
+[node name="skill" type="TextureRect" parent="mainUI/background/skills/VBoxContainer3/Buttonskill"]
+layout_mode = 0
+offset_left = 0.5
+offset_top = 0.875416
+offset_right = 465.5
+offset_bottom = 409.875
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("6_d21ai")
+
+[node name="SkillPopup" type="Label" parent="mainUI/background/skills/VBoxContainer3/Buttonskill"]
+layout_mode = 0
+offset_left = -88.0
+offset_top = -83.0
+offset_right = -6.0
+offset_bottom = -41.0
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(-242, -146)
+scale = Vector2(1, 1.05263)
+tile_map_data = PackedByteArray("AAAEAAcAAAAJAA0AAAAFAAYAAAAJAA0AAAAFAAcAAAAFAAkAAAAGAAYAAAAJAA0AAAAGAAcAAAAJAA0AAAAHAAYAAAAJAA0AAAAHAAUAAAAFAAoAAAAcAA4AAAAJAA0AAAAcAA8AAAAJAA0AAAAaAA8AAAAJAA0AAAAbAA8AAAAJAA0AAAAaAA4AAAAJAA0AAAAZAA8AAAAJAA0AAAAZAA4AAAAJAA0AAAAdAA4AAAAJAA0AAAAZABAAAAAJAA0AAAANAAoAAAAJAA0AAAANAAsAAAAJAA0AAAAOAAsAAAAJAA0AAAAQAAsAAAAJAA0AAAAPAAwAAAAJAA0AAAAOAAwAAAAJAA0AAAAQAAIAAAAJAA0AAAARAAIAAAAJAA0AAAASAAIAAAAJAA0AAAATAAIAAAAJAA0AAAATAAMAAAAJAA0AAAAUAAMAAAAJAA0AAAATAAQAAAAJAA0AAAATAAUAAAAJAA0AAAAVAAUAAAAJAA0AAAAVAAQAAAAJAA0AAAAUAAQAAAAJAA0AAAARAAMAAAAJAA0AAAARAAQAAAAJAA0AAAASAAQAAAAJAA0AAAAKAAUAAAAJAA0AAAALAAUAAAAJAA0AAAAMAAUAAAAJAA0AAAALAAQAAAAJAA0AAAAIAA4AAAAJAA0AAAAHAA4AAAAJAA0AAAASAAMAAAAJAA0AAAAIAA0AAAAJAA0AAAAGAA0AAAAJAA0AAAAHAA0AAAAJAA0AAAAJAA4AAAAJAA0AAAA=")
+tile_set = SubResource("TileSet_kdubu")
+
+[connection signal="button_down" from="mainUI/background/LittleGuyEconomy/shopbox/range minion" to="mainUI" method="_on_range_minion_button_down"]
+[connection signal="button_down" from="mainUI/background/LittleGuyEconomy/shopbox2/melee minion" to="mainUI" method="_on_melee_minion_button_down"]
+[connection signal="button_down" from="mainUI/background/skills/VBoxContainer2/buttonult" to="mainUI" method="_on_buttonult_button_down"]
+[connection signal="button_down" from="mainUI/background/skills/VBoxContainer3/Buttonskill" to="mainUI" method="_on_buttonskill_button_down"]
