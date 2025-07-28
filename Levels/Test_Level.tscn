@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://cbldfhx6iiq5c" path="res://Sprites/icon.svg" id="2_b2taf"]
 [ext_resource type="Texture2D" uid="uid://ituvwh1w0aos" path="res://mars-dunes-8col-16bit565-2.png" id="3_vctyh"]
 [ext_resource type="PackedScene" uid="uid://dxyx5cgf2lc4x" path="res://Prefabs/enemy.tscn" id="4_06isw"]
-[ext_resource type="PackedScene" uid="uid://wsbyuab5gqmv" path="res://Prefabs/minion.tscn" id="5_sderq"]
+[ext_resource type="PackedScene" uid="uid://wsbyuab5gqmv" path="res://Prefabs/Meleeminion.tscn" id="5_sderq"]
 [ext_resource type="PackedScene" uid="uid://rx6crdc14vrq" path="res://Prefabs/MinionControl.tscn" id="6_3k0j6"]
 [ext_resource type="PackedScene" uid="uid://b7cvmm237m0dq" path="res://Prefabs/enemy_control.tscn" id="7_tmva4"]
-[ext_resource type="Texture2D" uid="uid://ccbkgeuj0a76y" path="res://Sprites/newfriendrangeminion.png" id="8_b2taf"]
+[ext_resource type="PackedScene" uid="uid://ctfvjwh8awc86" path="res://Prefabs/RangeMinion.tscn" id="8_b2taf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0hol4"]
 radius = 51.1693
@@ -482,9 +482,20 @@ position = Vector2(1068, 223)
 [node name="Enemy7" parent="." instance=ExtResource("4_06isw")]
 position = Vector2(1057, 405)
 
-[node name="Newfriendrangeminion" type="Sprite2D" parent="."]
-position = Vector2(-858, 873)
-texture = ExtResource("8_b2taf")
-
 [node name="Minion4" parent="." instance=ExtResource("5_sderq")]
 position = Vector2(1051, 531)
+
+[node name="RangeMinion" parent="." groups=["selectableUnits"] instance=ExtResource("8_b2taf")]
+position = Vector2(1049, 615)
+
+[node name="RangeMinion2" parent="." groups=["selectableUnits"] instance=ExtResource("8_b2taf")]
+position = Vector2(919, 552)
+
+[node name="Enemy8" parent="." instance=ExtResource("4_06isw")]
+position = Vector2(95, 414)
+
+[node name="Enemy9" parent="." instance=ExtResource("4_06isw")]
+position = Vector2(157, 331)
+
+[node name="Enemy10" parent="." instance=ExtResource("4_06isw")]
+position = Vector2(152, 423)

@@ -45,7 +45,8 @@ func _process(delta: float) -> void:
 			#print("huh? part 2")
 			set_process(false)
 		else:
-			look_at(path[0])
+			$Icon.look_at(path[0])
+			$Icon.rotation_degrees-=90
 
 func is_in_selection_box(box:Rect2):
 	#checking to see if the unit is selected
@@ -89,12 +90,18 @@ func TakeDamage(amount: int):
 func _on_timer_timeout() -> void:
 	#hits enemies after a random amount of time
 	var Enemies=get_tree().get_nodes_in_group("Enemies")
-	
+	if(Enemies.size()<1):
+		return
+	var closest=Enemies[0]
 	var rng= RandomNumberGenerator.new()
 	$Timer.wait_time=rng.randf_range(1,1.5)
 	for Enemy in Enemies:
-		if((global_position-Enemy.global_position).length()<100):
-			Enemy.TakeDamage(rng.randi_range(ceili(damage/1.5),damage*1.5))
-			moveSpeed=25
-			break
-	moveSpeed=50
+		if((global_position-Enemy.global_position).length()<(global_position-closest.global_position).length()):
+			closest=Enemy
+	if((global_position-closest.global_position).length()<100):
+		closest.TakeDamage(rng.randi_range(ceili(damage/1.5),damage*1.5))
+		$Icon.look_at(closest.global_position)
+		$Icon.rotation_degrees-=90
+		moveSpeed=25
+	else:
+		moveSpeed=50

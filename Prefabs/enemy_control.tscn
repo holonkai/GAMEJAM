@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b7cvmm237m0dq"]
 
-[ext_resource type="Script" uid="uid://d3dbflmkvgsh4" path="res://Scripts/EnemyControl.gd" id="1_skg3m"]
+[ext_resource type="Script" uid="uid://d3dbflmkvgsh4" path="res://Scripts/AIBehavior/EnemyControl.gd" id="1_skg3m"]
 
 [node name="EnemyControl" type="Control"]
 layout_mode = 3
