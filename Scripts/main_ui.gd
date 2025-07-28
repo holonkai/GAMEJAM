@@ -3,7 +3,7 @@ extends Control
 var gold: int=50
 
 
-@onready var gold_label = $background/goldscountpanel/GoldLabel
+@onready var gold_label = $background/CanvasLayer/goldscountpanel/GoldLabel
 # @onready var range_minion_button = $background/LittleGuyEconomy/shopbox/range_minion
 # @onready var melee_minion_button = $background/LittleGuyEconomy/shopbox2/melee_minion
 
@@ -19,7 +19,7 @@ func add_gold(amount: int):
 	gold += amount 
 	update_gold_display()
 
-@onready var range_pop_up = $"background/LittleGuyEconomy/shopbox/range minion/RangePopup"
+@onready var range_pop_up = $"background/CanvasLayer/LittleGuyEconomy/shopbox/range minion/RangePopup"
 func _on_range_minion_button_down() -> void:
 	var cost = 8
 	if gold >= cost:
@@ -44,7 +44,7 @@ func _on_range_minion_button_down() -> void:
 	#else:
 		#print("UR POOR")
 
-@onready var melee_pop_up = $"background/LittleGuyEconomy/shopbox2/melee minion/MeleePopup"
+@onready var melee_pop_up = $"background/CanvasLayer/LittleGuyEconomy/shopbox2/melee minion/MeleePopup"
 func _on_melee_minion_button_down() -> void:
 	var cost = 10
 	if gold >= cost:
@@ -65,7 +65,7 @@ func _on_melee_minion_button_down() -> void:
 		melee_pop_up.visible = false
 		
 
-@onready var skill_pop_up = $background/skills/VBoxContainer3/Buttonskill/SkillPopup
+@onready var skill_pop_up = $background/CanvasLayer/skills/VBoxContainer3/Buttonskill/SkillPopup
 
 func _on_buttonskill_button_down() -> void:
 	var cost = 6
@@ -85,7 +85,7 @@ func _on_buttonskill_button_down() -> void:
 		await get_tree().create_timer(0.5).timeout
 		skill_pop_up.visible = false
 	
-@onready var ult_pop_up = $"background/skills/VBoxContainer2/buttonult/UltPopup"
+@onready var ult_pop_up = $"background/CanvasLayer/skills/VBoxContainer2/buttonult/UltPopup"
 
 func _on_buttonult_button_down() -> void:
 	var cost = 12
@@ -110,7 +110,7 @@ func _on_buttonult_button_down() -> void:
 
 	
 
-@onready var evil_range_minion_pop_up = $"background/bigguy/evilrangeminion/evil range minion/EvilRangePopup"
+@onready var evil_range_minion_pop_up = $"background/CanvasLayer/bigguy/evilrangeminion/evil range minion/EvilRangePopup"
 func _on_evil_range_minion_button_down() -> void:
 	evil_range_minion_pop_up.text = "BAD RANGE MINION"
 	evil_range_minion_pop_up.visible = true
@@ -121,7 +121,7 @@ func _on_evil_range_minion_button_down() -> void:
 	
 	
 
-@onready var evil_melee_minion_pop_up = $"background/bigguy/evilmeleeminion/evil melee minion/EvilMeleePopup"
+@onready var evil_melee_minion_pop_up = $"background/CanvasLayer/bigguy/evilmeleeminion/evil melee minion/EvilMeleePopup"
 func _on_evil_melee_minion_button_down() -> void:
 	evil_melee_minion_pop_up.text = "BAD MELEE MINION"
 	evil_melee_minion_pop_up.visible = true
@@ -131,7 +131,7 @@ func _on_evil_melee_minion_button_down() -> void:
 	evil_melee_minion_pop_up.visible = false
 	
 
-@onready var vile_pop_up = $background/skills/VBoxContainer/vile/VilePopup
+@onready var vile_pop_up = $background/CanvasLayer/skills/VBoxContainer/vile/VilePopup
 func _on_vile_button_down() -> void:
 	var cost = 4
 	if gold >= cost:

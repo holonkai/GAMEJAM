@@ -54,45 +54,44 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -301.0
-offset_top = -169.0
-offset_right = 270.0
-offset_bottom = 135.0
+offset_left = 269.0
+offset_top = 139.0
+offset_right = 840.0
+offset_bottom = 443.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 1.05263)
 script = ExtResource("2_g5gk6")
 
-[node name="LittleGuyEconomy" type="Panel" parent="background"]
-layout_mode = 1
-offset_left = 3.0
-offset_top = 19.0
-offset_right = 92.0
-offset_bottom = 53.0
+[node name="CanvasLayer" type="CanvasLayer" parent="background"]
+
+[node name="LittleGuyEconomy" type="Panel" parent="background/CanvasLayer"]
+offset_left = 6.0
+offset_top = 21.0
+offset_right = 95.0
+offset_bottom = 55.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_q6r6c")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="background/LittleGuyEconomy"]
-
-[node name="shopbox" type="VBoxContainer" parent="background/LittleGuyEconomy"]
+[node name="shopbox" type="VBoxContainer" parent="background/CanvasLayer/LittleGuyEconomy"]
 layout_mode = 0
 offset_left = 4.0
 offset_right = 43.0
 offset_bottom = 33.0
 
-[node name="range minion" type="Button" parent="background/LittleGuyEconomy/shopbox"]
+[node name="range minion" type="Button" parent="background/CanvasLayer/LittleGuyEconomy/shopbox"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 20.0
 toggle_mode = true
 text = "R"
 
-[node name="RangePopup" type="Label" parent="background/LittleGuyEconomy/shopbox/range minion"]
+[node name="RangePopup" type="Label" parent="background/CanvasLayer/LittleGuyEconomy/shopbox/range minion"]
 layout_mode = 0
 offset_left = 102.0
 offset_right = 222.0
 offset_bottom = 23.0
 
-[node name="TextureRect" type="TextureRect" parent="background/LittleGuyEconomy/shopbox/range minion"]
+[node name="TextureRect" type="TextureRect" parent="background/CanvasLayer/LittleGuyEconomy/shopbox/range minion"]
 layout_mode = 0
 offset_left = -2.0
 offset_top = -2.37497
@@ -101,27 +100,27 @@ offset_bottom = 129.625
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_g5gk6")
 
-[node name="shopbox2" type="VBoxContainer" parent="background/LittleGuyEconomy"]
+[node name="shopbox2" type="VBoxContainer" parent="background/CanvasLayer/LittleGuyEconomy"]
 layout_mode = 0
 offset_left = 47.0
 offset_top = 1.0
 offset_right = 86.0
 offset_bottom = 34.0
 
-[node name="melee minion" type="Button" parent="background/LittleGuyEconomy/shopbox2"]
+[node name="melee minion" type="Button" parent="background/CanvasLayer/LittleGuyEconomy/shopbox2"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 22.3
 text = "M"
 
-[node name="MeleePopup" type="Label" parent="background/LittleGuyEconomy/shopbox2/melee minion"]
+[node name="MeleePopup" type="Label" parent="background/CanvasLayer/LittleGuyEconomy/shopbox2/melee minion"]
 layout_mode = 0
 offset_left = 44.0
 offset_top = -11.875
 offset_right = 163.0
 offset_bottom = 11.125
 
-[node name="TextureRect" type="TextureRect" parent="background/LittleGuyEconomy/shopbox2/melee minion"]
+[node name="TextureRect" type="TextureRect" parent="background/CanvasLayer/LittleGuyEconomy/shopbox2/melee minion"]
 layout_mode = 0
 offset_left = -1.5
 offset_top = -3.37497
@@ -129,8 +128,9 @@ offset_right = 132.5
 offset_bottom = 111.625
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_s8vc5")
+metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="background/LittleGuyEconomy"]
+[node name="Label" type="Label" parent="background/CanvasLayer/LittleGuyEconomy"]
 layout_mode = 0
 offset_left = 1.0
 offset_top = -25.0
@@ -139,19 +139,18 @@ offset_bottom = 1.0
 theme_override_colors/font_color = Color(0.984314, 0, 0, 1)
 text = "shop"
 
-[node name="littleguy" type="Panel" parent="background"]
-layout_mode = 1
+[node name="littleguy" type="Panel" parent="background/CanvasLayer"]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 2.5
-offset_top = -91.6747
-offset_right = 84.5
-offset_bottom = -9.67468
+offset_left = 19.0
+offset_top = -92.9998
+offset_right = 101.0
+offset_bottom = -10.9998
 grow_vertical = 0
 script = ExtResource("5_s8vc5")
 
-[node name="littleguydialog" type="Label" parent="background/littleguy"]
+[node name="littleguydialog" type="Label" parent="background/CanvasLayer/littleguy"]
 layout_mode = 0
 offset_left = 8.0
 offset_top = -26.0
@@ -160,23 +159,22 @@ offset_bottom = 23.0
 text = "placeholder
 "
 
-[node name="littledialogtimer" type="Timer" parent="background/littleguy/littleguydialog"]
+[node name="littledialogtimer" type="Timer" parent="background/CanvasLayer/littleguy/littleguydialog"]
 wait_time = 12.0
 autostart = true
 
-[node name="bigguy" type="Panel" parent="background"]
-layout_mode = 1
+[node name="bigguy" type="Panel" parent="background/CanvasLayer"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -81.0
-offset_top = 0.95
-offset_right = -1.0
-offset_bottom = 80.95
+offset_left = -104.0
+offset_top = 25.0
+offset_right = -24.0
+offset_bottom = 105.0
 grow_horizontal = 0
 script = ExtResource("6_36xyc")
 
-[node name="BigGuyDialog" type="Label" parent="background/bigguy"]
+[node name="BigGuyDialog" type="Label" parent="background/CanvasLayer/bigguy"]
 layout_mode = 0
 offset_left = -93.0
 offset_top = 78.0
@@ -184,30 +182,30 @@ offset_right = 41.0
 offset_bottom = 101.0
 text = "placeholder"
 
-[node name="BigGuyTimer" type="Timer" parent="background/bigguy/BigGuyDialog"]
+[node name="BigGuyTimer" type="Timer" parent="background/CanvasLayer/bigguy/BigGuyDialog"]
 wait_time = 10.0
 autostart = true
 
-[node name="evilrangeminion" type="Panel" parent="background/bigguy"]
+[node name="evilrangeminion" type="Panel" parent="background/CanvasLayer/bigguy"]
 layout_mode = 0
 offset_left = -40.5
 offset_top = 4.27501
 offset_right = -4.5
 offset_bottom = 37.275
 
-[node name="evil range minion" type="Button" parent="background/bigguy/evilrangeminion"]
+[node name="evil range minion" type="Button" parent="background/CanvasLayer/bigguy/evilrangeminion"]
 layout_mode = 0
 offset_right = 37.0
 offset_bottom = 32.0
 
-[node name="EvilRangePopup" type="Label" parent="background/bigguy/evilrangeminion/evil range minion"]
+[node name="EvilRangePopup" type="Label" parent="background/CanvasLayer/bigguy/evilrangeminion/evil range minion"]
 layout_mode = 0
 offset_left = -161.0
 offset_top = -1.425
 offset_right = -117.0
 offset_bottom = 21.575
 
-[node name="TextureRect" type="TextureRect" parent="background/bigguy/evilrangeminion/evil range minion"]
+[node name="TextureRect" type="TextureRect" parent="background/CanvasLayer/bigguy/evilrangeminion/evil range minion"]
 layout_mode = 0
 offset_left = -2.0
 offset_top = -3.80001
@@ -216,26 +214,26 @@ offset_bottom = 151.2
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("5_36xyc")
 
-[node name="evilmeleeminion" type="Panel" parent="background/bigguy"]
+[node name="evilmeleeminion" type="Panel" parent="background/CanvasLayer/bigguy"]
 layout_mode = 0
 offset_left = -40.0
 offset_top = 39.9001
 offset_right = -4.0
 offset_bottom = 73.9001
 
-[node name="evil melee minion" type="Button" parent="background/bigguy/evilmeleeminion"]
+[node name="evil melee minion" type="Button" parent="background/CanvasLayer/bigguy/evilmeleeminion"]
 layout_mode = 0
 offset_right = 37.0
 offset_bottom = 34.0
 
-[node name="EvilMeleePopup" type="Label" parent="background/bigguy/evilmeleeminion/evil melee minion"]
+[node name="EvilMeleePopup" type="Label" parent="background/CanvasLayer/bigguy/evilmeleeminion/evil melee minion"]
 layout_mode = 0
 offset_left = -158.0
 offset_top = -36.1001
 offset_right = -118.0
 offset_bottom = -13.1001
 
-[node name="TextureRect" type="TextureRect" parent="background/bigguy/evilmeleeminion/evil melee minion"]
+[node name="TextureRect" type="TextureRect" parent="background/CanvasLayer/bigguy/evilmeleeminion/evil melee minion"]
 layout_mode = 0
 offset_left = -0.5
 offset_top = 0.475002
@@ -244,33 +242,33 @@ offset_bottom = 131.475
 scale = Vector2(0.25, 0.24)
 texture = ExtResource("6_2tul4")
 
-[node name="skills" type="Panel" parent="background"]
-layout_mode = 1
-anchors_preset = 2
+[node name="skills" type="Panel" parent="background/CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 86.0
-offset_top = -46.0
-offset_right = 232.0
-offset_bottom = -3.0
+offset_left = -102.0
+offset_top = -67.0
+offset_right = 44.0
+offset_bottom = -24.0
+grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kdubu")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="background/skills"]
-
-[node name="VBoxContainer" type="VBoxContainer" parent="background/skills"]
+[node name="VBoxContainer" type="VBoxContainer" parent="background/CanvasLayer/skills"]
 layout_mode = 0
 offset_left = 99.0
 offset_top = 2.0
 offset_right = 142.0
 offset_bottom = 40.0
 
-[node name="vile" type="Button" parent="background/skills/VBoxContainer"]
+[node name="vile" type="Button" parent="background/CanvasLayer/skills/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 20.0
 
-[node name="TextureRect" type="TextureRect" parent="background/skills/VBoxContainer/vile"]
+[node name="TextureRect" type="TextureRect" parent="background/CanvasLayer/skills/VBoxContainer/vile"]
 layout_mode = 0
 offset_left = -0.5
 offset_top = -6.3496
@@ -279,26 +277,26 @@ offset_bottom = 160.65
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("7_3hs73")
 
-[node name="VilePopup" type="Label" parent="background/skills/VBoxContainer/vile"]
+[node name="VilePopup" type="Label" parent="background/CanvasLayer/skills/VBoxContainer/vile"]
 layout_mode = 0
 offset_left = 51.0
 offset_top = -0.174588
 offset_right = 91.0
 offset_bottom = 22.8254
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="background/skills"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="background/CanvasLayer/skills"]
 layout_mode = 0
 offset_left = 51.0
 offset_top = 2.0
 offset_right = 95.0
 offset_bottom = 40.0
 
-[node name="buttonult" type="Button" parent="background/skills/VBoxContainer2"]
+[node name="buttonult" type="Button" parent="background/CanvasLayer/skills/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 20.0
 
-[node name="ult" type="TextureRect" parent="background/skills/VBoxContainer2/buttonult"]
+[node name="ult" type="TextureRect" parent="background/CanvasLayer/skills/VBoxContainer2/buttonult"]
 layout_mode = 0
 offset_left = -0.5
 offset_top = -0.649585
@@ -307,26 +305,26 @@ offset_bottom = 108.35
 scale = Vector2(0.38, 0.38)
 texture = ExtResource("8_v54gd")
 
-[node name="UltPopup" type="Label" parent="background/skills/VBoxContainer2/buttonult"]
+[node name="UltPopup" type="Label" parent="background/CanvasLayer/skills/VBoxContainer2/buttonult"]
 layout_mode = 0
 offset_left = 99.0
 offset_top = -2.07459
 offset_right = 177.0
 offset_bottom = 37.9254
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="background/skills"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="background/CanvasLayer/skills"]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 2.0
 offset_right = 47.0
 offset_bottom = 40.0
 
-[node name="Buttonskill" type="Button" parent="background/skills/VBoxContainer3"]
+[node name="Buttonskill" type="Button" parent="background/CanvasLayer/skills/VBoxContainer3"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 20.0
 
-[node name="skill" type="TextureRect" parent="background/skills/VBoxContainer3/Buttonskill"]
+[node name="skill" type="TextureRect" parent="background/CanvasLayer/skills/VBoxContainer3/Buttonskill"]
 layout_mode = 0
 offset_left = 0.5
 offset_top = 0.875416
@@ -335,22 +333,21 @@ offset_bottom = 409.875
 scale = Vector2(0.09, 0.09)
 texture = ExtResource("9_6ev4f")
 
-[node name="SkillPopup" type="Label" parent="background/skills/VBoxContainer3/Buttonskill"]
+[node name="SkillPopup" type="Label" parent="background/CanvasLayer/skills/VBoxContainer3/Buttonskill"]
 layout_mode = 0
 offset_left = 145.0
 offset_top = -3.97459
 offset_right = 227.0
 offset_bottom = 38.0254
 
-[node name="goldscountpanel" type="Panel" parent="background"]
-layout_mode = 0
-offset_left = 1.5
-offset_top = 155.325
-offset_right = 117.5
-offset_bottom = 183.325
+[node name="goldscountpanel" type="Panel" parent="background/CanvasLayer"]
+offset_left = 18.0
+offset_top = 495.0
+offset_right = 134.0
+offset_bottom = 523.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_d21ai")
 
-[node name="GoldLabel" type="Label" parent="background/goldscountpanel"]
+[node name="GoldLabel" type="Label" parent="background/CanvasLayer/goldscountpanel"]
 layout_mode = 0
 offset_left = 6.0
 offset_top = 2.375
@@ -364,10 +361,10 @@ uppercase = true
 [node name="Camera2D" type="Camera2D" parent="background"]
 position = Vector2(284.5, 151.05)
 
-[connection signal="button_down" from="background/LittleGuyEconomy/shopbox/range minion" to="." method="_on_range_minion_button_down"]
-[connection signal="button_down" from="background/LittleGuyEconomy/shopbox2/melee minion" to="." method="_on_melee_minion_button_down"]
-[connection signal="button_down" from="background/bigguy/evilrangeminion/evil range minion" to="." method="_on_evil_range_minion_button_down"]
-[connection signal="button_down" from="background/bigguy/evilmeleeminion/evil melee minion" to="." method="_on_evil_melee_minion_button_down"]
-[connection signal="button_down" from="background/skills/VBoxContainer/vile" to="." method="_on_vile_button_down"]
-[connection signal="button_down" from="background/skills/VBoxContainer2/buttonult" to="." method="_on_buttonult_button_down"]
-[connection signal="button_down" from="background/skills/VBoxContainer3/Buttonskill" to="." method="_on_buttonskill_button_down"]
+[connection signal="button_down" from="background/CanvasLayer/LittleGuyEconomy/shopbox/range minion" to="." method="_on_range_minion_button_down"]
+[connection signal="button_down" from="background/CanvasLayer/LittleGuyEconomy/shopbox2/melee minion" to="." method="_on_melee_minion_button_down"]
+[connection signal="button_down" from="background/CanvasLayer/bigguy/evilrangeminion/evil range minion" to="." method="_on_evil_range_minion_button_down"]
+[connection signal="button_down" from="background/CanvasLayer/bigguy/evilmeleeminion/evil melee minion" to="." method="_on_evil_melee_minion_button_down"]
+[connection signal="button_down" from="background/CanvasLayer/skills/VBoxContainer/vile" to="." method="_on_vile_button_down"]
+[connection signal="button_down" from="background/CanvasLayer/skills/VBoxContainer2/buttonult" to="." method="_on_buttonult_button_down"]
+[connection signal="button_down" from="background/CanvasLayer/skills/VBoxContainer3/Buttonskill" to="." method="_on_buttonskill_button_down"]
