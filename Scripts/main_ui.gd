@@ -3,7 +3,7 @@ extends Control
 var gold: int=50
 
 
-@onready var gold_label = $background/LittleGuyEconomy/CanvasLayer/GoldLabel
+@onready var gold_label = $background/goldscountpanel/GoldLabel
 # @onready var range_minion_button = $background/LittleGuyEconomy/shopbox/range_minion
 # @onready var melee_minion_button = $background/LittleGuyEconomy/shopbox2/melee_minion
 
@@ -14,6 +14,10 @@ func _ready():
 	
 func update_gold_display():
 	gold_label.text = "Gold: %d" %gold
+	
+func add_gold(amount: int):
+	gold += amount 
+	update_gold_display()
 
 @onready var range_pop_up = $"background/LittleGuyEconomy/shopbox/range minion/RangePopup"
 func _on_range_minion_button_down() -> void:

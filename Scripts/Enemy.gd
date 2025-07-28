@@ -56,8 +56,13 @@ func TakeDamage(amount: int):
 	$HPBAR.visible=true
 	if(Health<=0):
 		queue_free()
-	
 
+#adds gold when minion dies(?)
+@onready var main_ui = get_node("/root/Test_Level/main_ui")
+
+func die():
+	main_ui.add_gold(2)
+	queue_free()
 
 func _on_timer_timeout() -> void:
 	#attacks the player minions after a random amount of time

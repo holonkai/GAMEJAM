@@ -1,18 +1,30 @@
-[gd_scene load_steps=16 format=4 uid="uid://b2qt0biuylxaf"]
+[gd_scene load_steps=19 format=4 uid="uid://b2qt0biuylxaf"]
 
 [ext_resource type="Script" uid="uid://vewhlig5jmkf" path="res://Scripts/main_ui.gd" id="1_0hhiv"]
 [ext_resource type="Texture2D" uid="uid://cgtgts1ssqnq4" path="res://Sprites/Ui and backgrounds/Space Background.png" id="2_roogt"]
+[ext_resource type="Script" uid="uid://cg7wbwhet72g0" path="res://Levels/background.gd" id="2_wdxtt"]
 [ext_resource type="Texture2D" uid="uid://ccbkgeuj0a76y" path="res://Sprites/Friendlies/newfriendrangeminion.png" id="3_wdxtt"]
 [ext_resource type="Texture2D" uid="uid://dl7bjjn15numn" path="res://Sprites/Friendlies/onfieldmeleeminionfriend.png" id="4_dp0n4"]
+[ext_resource type="Script" uid="uid://jshr27v37ve0" path="res://Levels/littleguy.gd" id="5_dp0n4"]
 [ext_resource type="Texture2D" uid="uid://dedlfaugd2u5j" path="res://Sprites/Enemies/bigguyonfieldrangeminion.png" id="5_sepx5"]
 [ext_resource type="Texture2D" uid="uid://4u8lbih57n0m" path="res://Sprites/Enemies/onfieldmeleeminion.png" id="6_3mws4"]
 [ext_resource type="Texture2D" uid="uid://br7jc0yt7pps0" path="res://Sprites/Ui and backgrounds/vile.png" id="7_nachc"]
 [ext_resource type="Texture2D" uid="uid://dueb0emu6agy2" path="res://Sprites/Ui and backgrounds/Untitled_2.png" id="8_p7poi"]
 [ext_resource type="Texture2D" uid="uid://001mhdv7my7w" path="res://Sprites/Ui and backgrounds/gun3.png" id="9_1wfw2"]
 [ext_resource type="Texture2D" uid="uid://d02xfdehptq5l" path="res://Sprites/Ui and backgrounds/mars-dunes-8col-16bit565-2.png" id="10_opuq0"]
+[ext_resource type="PackedScene" uid="uid://wsbyuab5gqmv" path="res://Prefabs/minion.tscn" id="12_wdxtt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6r6c"]
 bg_color = Color(0.615686, 0.615686, 0.615686, 0.403922)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kdubu"]
+bg_color = Color(0.615686, 0.615686, 0.615686, 0.266667)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -27,15 +39,6 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(1, 1, 1, 1)
-border_blend = true
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kdubu"]
-bg_color = Color(0.615686, 0.615686, 0.615686, 0.266667)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
 border_blend = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q6r6c"]
@@ -369,14 +372,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -264.0
-offset_top = -166.0
-offset_right = 236.0
-offset_bottom = 134.0
+offset_left = -301.0
+offset_top = -169.0
+offset_right = 270.0
+offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 1.05263)
-texture = ExtResource("2_roogt")
+script = ExtResource("2_wdxtt")
 
 [node name="LittleGuyEconomy" type="Panel" parent="mainUI/background"]
 layout_mode = 1
@@ -387,23 +390,6 @@ offset_bottom = 53.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_q6r6c")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="mainUI/background/LittleGuyEconomy"]
-
-[node name="GoldLabel" type="Label" parent="mainUI/background/LittleGuyEconomy/CanvasLayer"]
-offset_left = 87.0
-offset_top = 389.0
-offset_right = 192.0
-offset_bottom = 438.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "gold count
-"
-uppercase = true
-
-[node name="Panel" type="Panel" parent="mainUI/background/LittleGuyEconomy/CanvasLayer"]
-offset_left = 82.0
-offset_top = 381.0
-offset_right = 249.0
-offset_bottom = 421.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_d21ai")
 
 [node name="shopbox" type="VBoxContainer" parent="mainUI/background/LittleGuyEconomy"]
 layout_mode = 0
@@ -464,10 +450,10 @@ texture = ExtResource("4_dp0n4")
 
 [node name="Label" type="Label" parent="mainUI/background/LittleGuyEconomy"]
 layout_mode = 0
-offset_left = 0.5
-offset_top = -22.325
-offset_right = 56.5
-offset_bottom = 0.674967
+offset_left = 1.0
+offset_top = -25.0
+offset_right = 57.0
+offset_bottom = 1.0
 theme_override_colors/font_color = Color(0.984314, 0, 0, 1)
 text = "shop"
 
@@ -476,18 +462,24 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -81.0
-offset_right = 82.0
-offset_bottom = 1.0
+offset_left = 2.5
+offset_top = -91.6747
+offset_right = 84.5
+offset_bottom = -9.67468
 grow_vertical = 0
+script = ExtResource("5_dp0n4")
 
 [node name="littleguydialog" type="Label" parent="mainUI/background/littleguy"]
 layout_mode = 0
-offset_left = 0.5
-offset_top = -26.1497
-offset_right = 92.5
-offset_bottom = -3.1497
-text = "placeholder"
+offset_left = -2.5
+offset_top = -26.125
+offset_right = 89.5
+offset_bottom = -3.12504
+text = "DONT BE SO MEAN"
+
+[node name="littledialogtimer" type="Timer" parent="mainUI/background/littleguy/littleguydialog"]
+wait_time = 5.0
+autostart = true
 
 [node name="bigguy" type="Panel" parent="mainUI/background"]
 layout_mode = 1
@@ -576,9 +568,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 84.0
-offset_top = -42.0
-offset_right = 231.0
+offset_left = 86.0
+offset_top = -46.0
+offset_right = 232.0
+offset_bottom = -3.0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kdubu")
 
@@ -668,11 +661,44 @@ offset_top = -3.97459
 offset_right = 227.0
 offset_bottom = 38.0254
 
+[node name="goldscountpanel" type="Panel" parent="mainUI/background"]
+layout_mode = 0
+offset_left = 1.5
+offset_top = 155.325
+offset_right = 117.5
+offset_bottom = 183.325
+theme_override_styles/panel = SubResource("StyleBoxFlat_d21ai")
+
+[node name="GoldLabel" type="Label" parent="mainUI/background/goldscountpanel"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 2.375
+offset_right = 111.0
+offset_bottom = 51.375
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "gold count
+"
+uppercase = true
+
+[node name="Camera2D" type="Camera2D" parent="mainUI/background"]
+position = Vector2(284.5, 151.05)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(6.00001, 12)
+scale = Vector2(2.865, 1.63)
+texture = ExtResource("2_roogt")
+
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-position = Vector2(-242, -146)
-scale = Vector2(1, 1.05263)
+position = Vector2(-299.665, -151.12)
+scale = Vector2(1.1475, 1.12105)
 tile_map_data = PackedByteArray("AAAEAAcAAAAJAA0AAAAFAAYAAAAJAA0AAAAFAAcAAAAFAAkAAAAGAAYAAAAJAA0AAAAGAAcAAAAJAA0AAAAHAAYAAAAJAA0AAAAHAAUAAAAFAAoAAAAcAA4AAAAJAA0AAAAcAA8AAAAJAA0AAAAaAA8AAAAJAA0AAAAbAA8AAAAJAA0AAAAaAA4AAAAJAA0AAAAZAA8AAAAJAA0AAAAZAA4AAAAJAA0AAAAdAA4AAAAJAA0AAAAZABAAAAAJAA0AAAANAAoAAAAJAA0AAAANAAsAAAAJAA0AAAAOAAsAAAAJAA0AAAAQAAsAAAAJAA0AAAAPAAwAAAAJAA0AAAAOAAwAAAAJAA0AAAAQAAIAAAAJAA0AAAARAAIAAAAJAA0AAAASAAIAAAAJAA0AAAATAAIAAAAJAA0AAAATAAMAAAAJAA0AAAAUAAMAAAAJAA0AAAATAAQAAAAJAA0AAAATAAUAAAAJAA0AAAAVAAUAAAAJAA0AAAAVAAQAAAAJAA0AAAAUAAQAAAAJAA0AAAARAAMAAAAJAA0AAAARAAQAAAAJAA0AAAASAAQAAAAJAA0AAAAKAAUAAAAJAA0AAAALAAUAAAAJAA0AAAAMAAUAAAAJAA0AAAALAAQAAAAJAA0AAAAIAA4AAAAJAA0AAAAHAA4AAAAJAA0AAAASAAMAAAAJAA0AAAAIAA0AAAAJAA0AAAAGAA0AAAAJAA0AAAAHAA0AAAAJAA0AAAAJAA4AAAAJAA0AAAA=")
 tile_set = SubResource("TileSet_kdubu")
+
+[node name="Minion" parent="." instance=ExtResource("12_wdxtt")]
+position = Vector2(-109.5, 36)
+rotation = 3.14159
+scale = Vector2(0.7, 0.5)
 
 [connection signal="button_down" from="mainUI/background/LittleGuyEconomy/shopbox/range minion" to="mainUI" method="_on_range_minion_button_down"]
 [connection signal="button_down" from="mainUI/background/LittleGuyEconomy/shopbox2/melee minion" to="mainUI" method="_on_melee_minion_button_down"]
