@@ -340,17 +340,13 @@ offset_top = -3.97459
 offset_right = 227.0
 offset_bottom = 38.0254
 
-[node name="skillart" parent="background/CanvasLayer/skills/VBoxContainer3/Buttonskill"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-script = null
+[node name="skillart" type="CanvasLayer" parent="background/CanvasLayer/skills/VBoxContainer3/Buttonskill"]
+
+[node name="skillartpanel" type="Panel" parent="background/CanvasLayer/skills/VBoxContainer3/Buttonskill/skillart"]
+offset_left = 478.0
+offset_top = 583.0
+offset_right = 518.0
+offset_bottom = 623.0
 
 [node name="goldscountpanel" type="Panel" parent="background/CanvasLayer"]
 offset_left = 18.0
@@ -380,3 +376,4 @@ position = Vector2(284.5, 151.05)
 [connection signal="button_down" from="background/CanvasLayer/skills/VBoxContainer/vile" to="." method="_on_vile_button_down"]
 [connection signal="button_down" from="background/CanvasLayer/skills/VBoxContainer2/buttonult" to="." method="_on_buttonult_button_down"]
 [connection signal="button_down" from="background/CanvasLayer/skills/VBoxContainer3/Buttonskill" to="." method="_on_buttonskill_button_down"]
+[connection signal="pressed" from="background/CanvasLayer/skills/VBoxContainer3/Buttonskill" to="." method="_on_buttonskill_pressed"]

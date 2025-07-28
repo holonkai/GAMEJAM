@@ -149,3 +149,12 @@ func _on_vile_button_down() -> void:
 		
 		await get_tree().create_timer(0.5).timeout
 		vile_pop_up.visible = false
+
+
+@onready var button_skill = $background/CanvasLayer/skills/VBoxContainer3/Buttonskill
+func _on_buttonskill_pressed() -> void:
+	_on_buttonskill_button_down.call()
+	
+
+   
+  
