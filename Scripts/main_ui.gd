@@ -159,7 +159,7 @@ var skill_art_active := false
 #func _ready(): 
 	#art.visible = false 
 	
-#work on sprite2d and work (ult/health)
+#work on sprite2d and effecton enemy minions / work on (ult/health)
 func _on_button_skill_pressed() -> void:
 	skill_art.visible = true
 	#skill_art.active = true
