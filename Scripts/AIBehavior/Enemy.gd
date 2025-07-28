@@ -17,6 +17,8 @@ func move(_path:PackedVector2Array):
 	set_process(true)
 
 func _process(delta: float) -> void:
+	if(path.size()<1):
+		return
 	#finding the distance between target and global position and moving towards target
 	var targetPos=path[0]
 	var diff= targetPos-global_position
@@ -58,10 +60,10 @@ func TakeDamage(amount: int):
 		queue_free()
 
 #adds gold when minion dies(?)
-@onready var main_ui = get_node("/root/Test_Level/main_ui")
+
 
 func die():
-	main_ui.add_gold(2)
+	%mainUI.add_gold(2)
 	queue_free()
 
 func _on_timer_timeout() -> void:

@@ -18,3 +18,4 @@ config/icon="res://Sprites/icon.svg"
 [global_group]
 
 Enemies=""
+selectableUnits=""

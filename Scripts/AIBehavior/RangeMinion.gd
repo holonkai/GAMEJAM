@@ -89,6 +89,7 @@ func TakeDamage(amount: int):
 		queue_free()
 
 func _on_timer_timeout() -> void:
+	#print(position)
 	#hits enemies after a random amount of time
 	var Enemies=get_tree().get_nodes_in_group("Enemies")
 	if(Enemies.size()<1):

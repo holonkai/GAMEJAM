@@ -16,7 +16,7 @@ bg_color = Color(0.245977, 0.539651, 0.058528, 1)
 [sub_resource type="Gradient" id="Gradient_8ddwt"]
 colors = PackedColorArray(0.685733, 3.10443e-06, 5.77569e-07, 1, 0.669757, 0.417762, 5.77569e-07, 1)
 
-[node name="RangeMinion" type="CharacterBody2D"]
+[node name="RangeMinion" type="CharacterBody2D" groups=["selectableUnits"]]
 script = ExtResource("1_xnklo")
 
 [node name="Selector" type="ColorRect" parent="."]

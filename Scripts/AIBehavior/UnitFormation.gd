@@ -1,6 +1,6 @@
 class_name UnitFormation
 extends Object
-static func line(pos: Vector2, amount: int, max_per_line: int=4, spacing: float=50):
+static func line(pos: Vector2, amount: int, max_per_line: int=6, spacing: float=20):
 	#ngl just copied the tutorial, it just makes the units stand in a formation
 	var n_lines= ceili(amount/float(max_per_line))
 	var x_half = floori(max_per_line/2.0)

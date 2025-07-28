@@ -19,7 +19,7 @@ func move_enemies():
 	if(units.size()>1):
 		for i in units.size():
 			var position=targetSelection(units[i].global_position)
-			print(units.size())
+			#print(units.size())
 			var path=NavigationServer2D.map_get_path(map, snap_to_map(units[i].global_position), snap_to_map(position),true)
 			#print(path)
 			units[i].move(path)
