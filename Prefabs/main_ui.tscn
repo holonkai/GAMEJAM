@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://buu3s7p880em8"]
+[gd_scene load_steps=15 format=3 uid="uid://buu3s7p880em8"]
 
 [ext_resource type="Script" uid="uid://vewhlig5jmkf" path="res://Scripts/main_ui.gd" id="1_vvnq0"]
 [ext_resource type="Script" uid="uid://cg7wbwhet72g0" path="res://Levels/background.gd" id="2_g5gk6"]
@@ -11,8 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://br7jc0yt7pps0" path="res://Sprites/Ui and backgrounds/vile.png" id="7_3hs73"]
 [ext_resource type="Texture2D" uid="uid://dueb0emu6agy2" path="res://Sprites/Ui and backgrounds/Untitled_2.png" id="8_v54gd"]
 [ext_resource type="Texture2D" uid="uid://001mhdv7my7w" path="res://Sprites/Ui and backgrounds/gun3.png" id="9_6ev4f"]
-[ext_resource type="Script" uid="uid://uqb0whkh2xxa" path="res://Prefabs/buttonskill.gd" id="11_36xyc"]
-[ext_resource type="PackedScene" uid="uid://bmk568gnctgdl" path="res://Prefabs/skillart.tscn" id="13_2tul4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6r6c"]
 bg_color = Color(0.615686, 0.615686, 0.615686, 0.403922)
@@ -325,7 +323,6 @@ offset_bottom = 40.0
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 20.0
-script = ExtResource("11_36xyc")
 
 [node name="skill" type="TextureRect" parent="background/CanvasLayer/skills/VBoxContainer3/Buttonskill"]
 layout_mode = 0
@@ -343,7 +340,17 @@ offset_top = -3.97459
 offset_right = 227.0
 offset_bottom = 38.0254
 
-[node name="skillart" parent="background/CanvasLayer/skills/VBoxContainer3/Buttonskill" instance=ExtResource("13_2tul4")]
+[node name="skillart" parent="background/CanvasLayer/skills/VBoxContainer3/Buttonskill"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+script = null
 
 [node name="goldscountpanel" type="Panel" parent="background/CanvasLayer"]
 offset_left = 18.0
