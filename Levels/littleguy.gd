@@ -5,7 +5,7 @@ extends Panel
 
 var dialog_lines = [
 	"dont be so mean!",
-	"fight little minions!",
+	"fight little guys!",
 ]
 
 var current_index = 0 

@@ -1,17 +1,28 @@
-[gd_scene load_steps=13 format=3 uid="uid://1yojrq8tjr1n"]
+[gd_scene load_steps=15 format=3 uid="uid://buu3s7p880em8"]
 
 [ext_resource type="Script" uid="uid://vewhlig5jmkf" path="res://Scripts/main_ui.gd" id="1_vvnq0"]
-[ext_resource type="Texture2D" uid="uid://cgtgts1ssqnq4" path="res://Sprites/Ui and backgrounds/Space Background.png" id="2_7voaq"]
+[ext_resource type="Script" uid="uid://cg7wbwhet72g0" path="res://Levels/background.gd" id="2_g5gk6"]
 [ext_resource type="Texture2D" uid="uid://ccbkgeuj0a76y" path="res://Sprites/Friendlies/newfriendrangeminion.png" id="3_g5gk6"]
 [ext_resource type="Texture2D" uid="uid://dl7bjjn15numn" path="res://Sprites/Friendlies/onfieldmeleeminionfriend.png" id="4_s8vc5"]
 [ext_resource type="Texture2D" uid="uid://dedlfaugd2u5j" path="res://Sprites/Enemies/bigguyonfieldrangeminion.png" id="5_36xyc"]
+[ext_resource type="Script" uid="uid://jshr27v37ve0" path="res://Levels/littleguy.gd" id="5_s8vc5"]
 [ext_resource type="Texture2D" uid="uid://4u8lbih57n0m" path="res://Sprites/Enemies/onfieldmeleeminion.png" id="6_2tul4"]
+[ext_resource type="Script" uid="uid://cw6srh5hurfp8" path="res://Levels/bigguy.gd" id="6_36xyc"]
 [ext_resource type="Texture2D" uid="uid://br7jc0yt7pps0" path="res://Sprites/Ui and backgrounds/vile.png" id="7_3hs73"]
 [ext_resource type="Texture2D" uid="uid://dueb0emu6agy2" path="res://Sprites/Ui and backgrounds/Untitled_2.png" id="8_v54gd"]
 [ext_resource type="Texture2D" uid="uid://001mhdv7my7w" path="res://Sprites/Ui and backgrounds/gun3.png" id="9_6ev4f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6r6c"]
 bg_color = Color(0.615686, 0.615686, 0.615686, 0.403922)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kdubu"]
+bg_color = Color(0.615686, 0.615686, 0.615686, 0.266667)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -26,15 +37,6 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(1, 1, 1, 1)
-border_blend = true
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kdubu"]
-bg_color = Color(0.615686, 0.615686, 0.615686, 0.266667)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
 border_blend = true
 
 [node name="mainUI" type="Control"]
@@ -52,48 +54,30 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -264.0
-offset_top = -166.0
-offset_right = 236.0
-offset_bottom = 134.0
+offset_left = -301.0
+offset_top = -169.0
+offset_right = 270.0
+offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 1.05263)
-texture = ExtResource("2_7voaq")
+script = ExtResource("2_g5gk6")
 
 [node name="LittleGuyEconomy" type="Panel" parent="background"]
 layout_mode = 1
 offset_left = 3.0
-offset_top = 18.525
-offset_right = 101.0
-offset_bottom = 67.525
+offset_top = 19.0
+offset_right = 92.0
+offset_bottom = 53.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_q6r6c")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="background/LittleGuyEconomy"]
 
-[node name="GoldLabel" type="Label" parent="background/LittleGuyEconomy/CanvasLayer"]
-offset_left = 90.0
-offset_top = 166.0
-offset_right = 195.0
-offset_bottom = 215.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "gold count
-"
-uppercase = true
-
-[node name="Panel" type="Panel" parent="background/LittleGuyEconomy/CanvasLayer"]
-offset_left = 83.0
-offset_top = 158.0
-offset_right = 250.0
-offset_bottom = 198.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_d21ai")
-
 [node name="shopbox" type="VBoxContainer" parent="background/LittleGuyEconomy"]
 layout_mode = 0
-offset_left = 6.0
-offset_top = 5.0
-offset_right = 48.0
-offset_bottom = 45.0
+offset_left = 4.0
+offset_right = 43.0
+offset_bottom = 33.0
 
 [node name="range minion" type="Button" parent="background/LittleGuyEconomy/shopbox"]
 layout_mode = 2
@@ -110,17 +94,19 @@ offset_bottom = 23.0
 
 [node name="TextureRect" type="TextureRect" parent="background/LittleGuyEconomy/shopbox/range minion"]
 layout_mode = 0
+offset_left = -2.0
+offset_top = -2.37497
 offset_right = 144.0
-offset_bottom = 128.0
+offset_bottom = 129.625
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_g5gk6")
 
 [node name="shopbox2" type="VBoxContainer" parent="background/LittleGuyEconomy"]
 layout_mode = 0
-offset_left = 52.0
-offset_top = 4.75
-offset_right = 92.0
-offset_bottom = 44.75
+offset_left = 47.0
+offset_top = 1.0
+offset_right = 86.0
+offset_bottom = 34.0
 
 [node name="melee minion" type="Button" parent="background/LittleGuyEconomy/shopbox2"]
 layout_mode = 2
@@ -130,25 +116,26 @@ text = "M"
 
 [node name="MeleePopup" type="Label" parent="background/LittleGuyEconomy/shopbox2/melee minion"]
 layout_mode = 0
-offset_left = 56.0
-offset_right = 175.0
-offset_bottom = 23.0
+offset_left = 44.0
+offset_top = -11.875
+offset_right = 163.0
+offset_bottom = 11.125
 
 [node name="TextureRect" type="TextureRect" parent="background/LittleGuyEconomy/shopbox2/melee minion"]
 layout_mode = 0
-offset_left = -0.5
-offset_top = -0.199987
-offset_right = 133.5
-offset_bottom = 114.8
+offset_left = -1.5
+offset_top = -3.37497
+offset_right = 132.5
+offset_bottom = 111.625
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_s8vc5")
 
 [node name="Label" type="Label" parent="background/LittleGuyEconomy"]
 layout_mode = 0
-offset_left = 0.5
-offset_top = -22.325
-offset_right = 56.5
-offset_bottom = 0.674967
+offset_left = 1.0
+offset_top = -25.0
+offset_right = 57.0
+offset_bottom = 1.0
 theme_override_colors/font_color = Color(0.984314, 0, 0, 1)
 text = "shop"
 
@@ -157,18 +144,25 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -81.0
-offset_right = 82.0
-offset_bottom = 1.0
+offset_left = 2.5
+offset_top = -91.6747
+offset_right = 84.5
+offset_bottom = -9.67468
 grow_vertical = 0
+script = ExtResource("5_s8vc5")
 
 [node name="littleguydialog" type="Label" parent="background/littleguy"]
 layout_mode = 0
-offset_left = 0.5
-offset_top = -26.1497
-offset_right = 92.5
-offset_bottom = -3.1497
-text = "placeholder"
+offset_left = 8.0
+offset_top = -26.0
+offset_right = 146.0
+offset_bottom = 23.0
+text = "placeholder
+"
+
+[node name="littledialogtimer" type="Timer" parent="background/littleguy/littleguydialog"]
+wait_time = 12.0
+autostart = true
 
 [node name="bigguy" type="Panel" parent="background"]
 layout_mode = 1
@@ -180,21 +174,19 @@ offset_top = 0.95
 offset_right = -1.0
 offset_bottom = 80.95
 grow_horizontal = 0
-
-[node name="TextureRect" type="TextureRect" parent="background/bigguy"]
-layout_mode = 0
-offset_top = -3.8
-offset_right = 158.0
-offset_bottom = 161.2
-scale = Vector2(0.52, 0.52)
+script = ExtResource("6_36xyc")
 
 [node name="BigGuyDialog" type="Label" parent="background/bigguy"]
 layout_mode = 0
-offset_left = -12.5
-offset_top = 77.9001
-offset_right = 79.5
-offset_bottom = 100.9
+offset_left = -93.0
+offset_top = 78.0
+offset_right = 41.0
+offset_bottom = 101.0
 text = "placeholder"
+
+[node name="BigGuyTimer" type="Timer" parent="background/bigguy/BigGuyDialog"]
+wait_time = 10.0
+autostart = true
 
 [node name="evilrangeminion" type="Panel" parent="background/bigguy"]
 layout_mode = 0
@@ -257,9 +249,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 84.0
-offset_top = -42.0
-offset_right = 231.0
+offset_left = 86.0
+offset_top = -46.0
+offset_right = 232.0
+offset_bottom = -3.0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kdubu")
 
@@ -348,6 +341,28 @@ offset_left = 145.0
 offset_top = -3.97459
 offset_right = 227.0
 offset_bottom = 38.0254
+
+[node name="goldscountpanel" type="Panel" parent="background"]
+layout_mode = 0
+offset_left = 1.5
+offset_top = 155.325
+offset_right = 117.5
+offset_bottom = 183.325
+theme_override_styles/panel = SubResource("StyleBoxFlat_d21ai")
+
+[node name="GoldLabel" type="Label" parent="background/goldscountpanel"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 2.375
+offset_right = 111.0
+offset_bottom = 51.375
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "gold count
+"
+uppercase = true
+
+[node name="Camera2D" type="Camera2D" parent="background"]
+position = Vector2(284.5, 151.05)
 
 [connection signal="button_down" from="background/LittleGuyEconomy/shopbox/range minion" to="." method="_on_range_minion_button_down"]
 [connection signal="button_down" from="background/LittleGuyEconomy/shopbox2/melee minion" to="." method="_on_melee_minion_button_down"]
