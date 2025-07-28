@@ -340,6 +340,8 @@ offset_top = -3.97459
 offset_right = 227.0
 offset_bottom = 38.0254
 
+[node name="skillart" type="Sprite2D" parent="background/CanvasLayer/skills/VBoxContainer3"]
+
 [node name="goldscountpanel" type="Panel" parent="background/CanvasLayer"]
 offset_left = 18.0
 offset_top = 495.0
@@ -368,3 +370,4 @@ position = Vector2(284.5, 151.05)
 [connection signal="button_down" from="background/CanvasLayer/skills/VBoxContainer/vile" to="." method="_on_vile_button_down"]
 [connection signal="button_down" from="background/CanvasLayer/skills/VBoxContainer2/buttonult" to="." method="_on_buttonult_button_down"]
 [connection signal="button_down" from="background/CanvasLayer/skills/VBoxContainer3/Buttonskill" to="." method="_on_buttonskill_button_down"]
+[connection signal="pressed" from="background/CanvasLayer/skills/VBoxContainer3/Buttonskill" to="." method="_on_buttonskill_pressed"]
