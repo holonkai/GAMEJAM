@@ -166,10 +166,10 @@ autostart = true
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -414.5
-offset_top = 163.0
-offset_right = -334.5
-offset_bottom = 243.0
+offset_left = -106.0
+offset_top = 23.0
+offset_right = -26.0
+offset_bottom = 103.0
 grow_horizontal = 0
 script = ExtResource("6_36xyc")
 
@@ -360,6 +360,7 @@ text = "gold count
 uppercase = true
 
 [node name="Camera2D" type="Camera2D" parent="background"]
+position = Vector2(0, -0.950001)
 
 [connection signal="button_down" from="background/CanvasLayer/LittleGuyEconomy/shopbox/range minion" to="." method="_on_range_minion_button_down"]
 [connection signal="button_down" from="background/CanvasLayer/LittleGuyEconomy/shopbox2/melee minion" to="." method="_on_melee_minion_button_down"]
