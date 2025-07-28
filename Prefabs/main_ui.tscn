@@ -340,13 +340,7 @@ offset_top = -3.97459
 offset_right = 227.0
 offset_bottom = 38.0254
 
-[node name="skillart" type="CanvasLayer" parent="background/CanvasLayer/skills/VBoxContainer3/Buttonskill"]
-
-[node name="skillartpanel" type="Panel" parent="background/CanvasLayer/skills/VBoxContainer3/Buttonskill/skillart"]
-offset_left = 478.0
-offset_top = 583.0
-offset_right = 518.0
-offset_bottom = 623.0
+[node name="skillart" type="Sprite2D" parent="background/CanvasLayer/skills/VBoxContainer3"]
 
 [node name="goldscountpanel" type="Panel" parent="background/CanvasLayer"]
 offset_left = 18.0

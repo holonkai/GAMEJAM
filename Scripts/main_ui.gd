@@ -152,8 +152,24 @@ func _on_vile_button_down() -> void:
 
 
 @onready var button_skill = $background/CanvasLayer/skills/VBoxContainer3/Buttonskill
-func _on_buttonskill_pressed() -> void:
-	_on_buttonskill_button_down.call()
+@onready var skill_art = $background/CanvasLayer/skills/VBoxContainer3/skillart
+
+var skill_art_active := false
+
+#func _ready(): 
+	#art.visible = false 
+	
+#work on sprite2d and work (ult/health)
+func _on_button_skill_pressed() -> void:
+	skill_art.visible = true
+	#skill_art.active = true
+	
+func _unhandle_input(event: InputEvent) -> void:
+	if skill_art_active and event is InputEventMouseButton and event.pressed:
+		var offset = skill_art.texture.get_size() * skill_art.scale * 0.5
+		skill_art.global_position = event.position - offset
+	
+	#_on_buttonskill_button_down.call()
 	
 
    
