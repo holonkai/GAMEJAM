@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://ctfvjwh8awc86"]
+
+[ext_resource type="Script" uid="uid://wg54vx6ta7rc" path="res://Scripts/AIBehavior/RangeMinion.gd" id="1_xnklo"]
+[ext_resource type="Texture2D" uid="uid://ccbkgeuj0a76y" path="res://Sprites/Friendlies/newfriendrangeminion.png" id="2_3yehr"]
+[ext_resource type="Script" uid="uid://diq1hhemblpte" path="res://Scripts/LaserRay.gd" id="3_3yehr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ddwt"]
+radius = 27.074
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g0627"]
+bg_color = Color(0.364706, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fxm56"]
+bg_color = Color(0.245977, 0.539651, 0.058528, 1)
+
+[sub_resource type="Gradient" id="Gradient_8ddwt"]
+colors = PackedColorArray(0.685733, 3.10443e-06, 5.77569e-07, 1, 0.669757, 0.417762, 5.77569e-07, 1)
+
+[node name="RangeMinion" type="CharacterBody2D"]
+script = ExtResource("1_xnklo")
+
+[node name="Selector" type="ColorRect" parent="."]
+offset_left = -27.0
+offset_top = -48.0
+offset_right = 25.0
+offset_bottom = 6.0
+color = Color(9.09671e-06, 0.662424, 0.037319, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-1, -21)
+scale = Vector2(0.382813, 0.382813)
+texture = ExtResource("2_3yehr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -22)
+shape = SubResource("CircleShape2D_8ddwt")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="HPBAR" type="ProgressBar" parent="."]
+offset_left = -31.0
+offset_top = -57.0
+offset_right = 29.0
+offset_bottom = -49.0
+theme_override_styles/background = SubResource("StyleBoxFlat_g0627")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fxm56")
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="DamageLabel" type="Label" parent="."]
+offset_left = -23.0
+offset_top = -68.0
+offset_right = 17.0
+offset_bottom = -45.0
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="LaserRay" type="RayCast2D" parent="."]
+position = Vector2(-1, -21)
+target_position = Vector2(1400, 0)
+collision_mask = 2
+script = ExtResource("3_3yehr")
+
+[node name="Line2D" type="Line2D" parent="LaserRay"]
+visible = false
+points = PackedVector2Array(0, 0, 1400, 0)
+gradient = SubResource("Gradient_8ddwt")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

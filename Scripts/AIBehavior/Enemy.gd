@@ -67,13 +67,18 @@ func die():
 func _on_timer_timeout() -> void:
 	#attacks the player minions after a random amount of time
 	var Enemies=get_tree().get_nodes_in_group("selectableUnits")
+	if(Enemies.size()<1):
+		return
+	var closest=Enemies[0]
 	var rng= RandomNumberGenerator.new()
 	$Timer.wait_time=rng.randf_range(1,1.5)
-	#print("enemy attack")
 	for Enemy in Enemies:
-		if((global_position-Enemy.global_position).length()<100):
-			Enemy.TakeDamage(rng.randi_range(ceili(damage/1.5),ceili(damage*1.5)))
-			moveSpeed=15
-			#print("enemy attack")
-			break
-	moveSpeed=30
+		if((global_position-Enemy.global_position).length()<(global_position-closest.global_position).length()):
+			closest=Enemy
+	if((global_position-closest.global_position).length()<100):
+		closest.TakeDamage(rng.randi_range(ceili(damage/1.5),damage*1.5))
+		$Sprite2D.look_at(closest.global_position)
+		$Sprite2D.rotation_degrees-=90
+		moveSpeed=15
+	else:
+		moveSpeed=30
