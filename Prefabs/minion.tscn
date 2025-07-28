@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpf7eno71dwho"]
+
+[ext_resource type="Texture2D" uid="uid://dl7bjjn15numn" path="res://Sprites/Friendlies/onfieldmeleeminionfriend.png" id="2_bh24m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q6r6c"]
+radius = 27.074
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bh24m"]
+bg_color = Color(0.364706, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xcheo"]
+bg_color = Color(0.245977, 0.539651, 0.058528, 1)
+
+[node name="Minion" type="CharacterBody2D" groups=["selectableUnits"]]
+
+[node name="Selector" type="ColorRect" parent="."]
+offset_left = -27.0
+offset_top = -48.0
+offset_right = 25.0
+offset_bottom = 6.0
+color = Color(9.09671e-06, 0.662424, 0.037319, 1)
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-1, -21)
+rotation = 1.5708
+scale = Vector2(0.382813, 0.382813)
+texture = ExtResource("2_bh24m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -22)
+shape = SubResource("CircleShape2D_q6r6c")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="HPBAR" type="ProgressBar" parent="."]
+offset_left = -31.0
+offset_top = -57.0
+offset_right = 29.0
+offset_bottom = -49.0
+theme_override_styles/background = SubResource("StyleBoxFlat_bh24m")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xcheo")
+show_percentage = false
+
+[node name="DamageLabel" type="Label" parent="."]
+offset_left = -23.0
+offset_top = -68.0
+offset_right = 17.0
+offset_bottom = -45.0
+vertical_alignment = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
