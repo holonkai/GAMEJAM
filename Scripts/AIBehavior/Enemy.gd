@@ -11,14 +11,18 @@ func _ready() -> void:
 	$HPBAR.max_value=Health
 	$HPBAR.value=Health
 	$HPBAR.visible=false
+
 func move(_path:PackedVector2Array):
 	#handling movement
 	path=_path
+	#print(path)
 	set_process(true)
 
 func _process(delta: float) -> void:
+	
 	if(path.size()<1):
 		return
+	
 	#finding the distance between target and global position and moving towards target
 	var targetPos=path[0]
 	var diff= targetPos-global_position
@@ -26,6 +30,7 @@ func _process(delta: float) -> void:
 		var dir=diff.normalized()
 		global_position+=dir*delta*moveSpeed
 	else:
+		
 		path.remove_at(0)
 		#print(global_position)
 		if(path.is_empty()):

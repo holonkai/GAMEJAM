@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ctfvjwh8awc86"]
+[gd_scene load_steps=9 format=3 uid="uid://ctfvjwh8awc86"]
 
 [ext_resource type="Script" uid="uid://wg54vx6ta7rc" path="res://Scripts/AIBehavior/RangeMinion.gd" id="1_xnklo"]
 [ext_resource type="Texture2D" uid="uid://ccbkgeuj0a76y" path="res://Sprites/Friendlies/newfriendrangeminion.png" id="2_3yehr"]
@@ -13,8 +13,11 @@ bg_color = Color(0.364706, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fxm56"]
 bg_color = Color(0.245977, 0.539651, 0.058528, 1)
 
-[sub_resource type="Gradient" id="Gradient_8ddwt"]
-colors = PackedColorArray(0.685733, 3.10443e-06, 5.77569e-07, 1, 0.669757, 0.417762, 5.77569e-07, 1)
+[sub_resource type="Gradient" id="Gradient_3yehr"]
+offsets = PackedFloat32Array(0, 0.941176)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8ddwt"]
+gradient = SubResource("Gradient_3yehr")
 
 [node name="RangeMinion" type="CharacterBody2D" groups=["selectableUnits"]]
 script = ExtResource("1_xnklo")
@@ -66,8 +69,26 @@ script = ExtResource("3_3yehr")
 [node name="Line2D" type="Line2D" parent="LaserRay"]
 visible = false
 points = PackedVector2Array(0, 0, 1400, 0)
-gradient = SubResource("Gradient_8ddwt")
+width = 5.0
+default_color = Color(1, 0.533612, 0.468613, 1)
 begin_cap_mode = 2
 end_cap_mode = 2
+
+[node name="PointLight2D" type="PointLight2D" parent="LaserRay/Line2D"]
+light_mask = 3
+visibility_layer = 3
+z_index = 1
+position = Vector2(-3, -2.38419e-07)
+rotation = 3.14159
+scale = Vector2(5.905, 11.5)
+color = Color(1, 0, 0, 1)
+energy = 10.0
+shadow_enabled = true
+shadow_item_cull_mask = 3
+texture = SubResource("GradientTexture1D_8ddwt")
+offset = Vector2(-128.44, 0)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="LaserRay"]
+visible = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

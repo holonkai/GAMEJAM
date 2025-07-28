@@ -326,225 +326,105 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-15, 647, -13, -16, 1205, -12, 1191, 712, -12, 698)])
 
 [node name="Node2D" type="Node2D"]
-position = Vector2(560, 301)
 script = ExtResource("1_ko66c")
 
 [node name="mainUI" parent="." instance=ExtResource("1_8qa7p")]
 unique_name_in_owner = true
+offset_left = 859.0
+offset_top = 469.0
+offset_right = 899.0
+offset_bottom = 509.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(5.99988, 14.5)
+position = Vector2(574, 318.5)
 scale = Vector2(5.76, 3.265)
 texture = ExtResource("2_roogt")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-position = Vector2(-298, -148.12)
+position = Vector2(270, 155.88)
 scale = Vector2(1.1475, 1.12105)
 tile_map_data = PackedByteArray("AAAEAAcAAAAJAA0AAAAFAAYAAAAJAA0AAAAFAAcAAAAFAAkAAAAGAAYAAAAJAA0AAAAGAAcAAAAJAA0AAAAHAAYAAAAJAA0AAAAHAAUAAAAFAAoAAAAcAA4AAAAJAA0AAAAcAA8AAAAJAA0AAAAaAA8AAAAJAA0AAAAbAA8AAAAJAA0AAAAaAA4AAAAJAA0AAAAZAA8AAAAJAA0AAAAZAA4AAAAJAA0AAAAdAA4AAAAJAA0AAAAZABAAAAAJAA0AAAANAAoAAAAJAA0AAAANAAsAAAAJAA0AAAAOAAsAAAAJAA0AAAAQAAsAAAAJAA0AAAAPAAwAAAAJAA0AAAAOAAwAAAAJAA0AAAAQAAIAAAAJAA0AAAARAAIAAAAJAA0AAAASAAIAAAAJAA0AAAATAAIAAAAJAA0AAAATAAMAAAAJAA0AAAAUAAMAAAAJAA0AAAATAAQAAAAJAA0AAAATAAUAAAAJAA0AAAAVAAUAAAAJAA0AAAAVAAQAAAAJAA0AAAAUAAQAAAAJAA0AAAARAAMAAAAJAA0AAAARAAQAAAAJAA0AAAASAAQAAAAJAA0AAAAKAAUAAAAJAA0AAAALAAUAAAAJAA0AAAAMAAUAAAAJAA0AAAALAAQAAAAJAA0AAAAIAA4AAAAJAA0AAAAHAA4AAAAJAA0AAAASAAMAAAAJAA0AAAAIAA0AAAAJAA0AAAAGAA0AAAAJAA0AAAAHAA0AAAAJAA0AAAAJAA4AAAAJAA0AAAA=")
 tile_set = SubResource("TileSet_kdubu")
 
 [node name="Control" parent="." instance=ExtResource("5_fdy5w")]
-offset_left = -570.0
-offset_top = -306.0
-offset_right = -530.0
-offset_bottom = -266.0
+offset_left = 9.0
+offset_top = 5.0
+offset_right = 49.0
+offset_bottom = 45.0
 metadata/_edit_use_anchors_ = true
 
 [node name="WaveTimer" type="Timer" parent="."]
-wait_time = 20.0
+wait_time = 10.0
 autostart = true
 
 [node name="EnemyControl" parent="." instance=ExtResource("6_tdxe6")]
-offset_left = -279.0
-offset_top = 13.0
-offset_right = -239.0
-offset_bottom = 53.0
+offset_left = 300.0
+offset_top = 324.0
+offset_right = 340.0
+offset_bottom = 364.0
 metadata/_edit_use_anchors_ = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-position = Vector2(-608, -312)
+position = Vector2(-29, -2)
 navigation_polygon = SubResource("NavigationPolygon_ko66c")
 
 [node name="RangeMinion" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
+position = Vector2(219, 450)
 
 [node name="RangeMinion2" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
+position = Vector2(219, 450)
 
 [node name="RangeMinion3" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
+position = Vector2(219, 450)
 
 [node name="RangeMinion4" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
+position = Vector2(219, 450)
 
 [node name="RangeMinion5" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
+position = Vector2(219, 450)
 
 [node name="RangeMinion6" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
+position = Vector2(219, 450)
 
 [node name="RangeMinion7" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
+position = Vector2(219, 450)
 
 [node name="RangeMinion8" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
+position = Vector2(219, 450)
 
 [node name="RangeMinion9" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
+position = Vector2(219, 450)
 
 [node name="RangeMinion10" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
+position = Vector2(219, 450)
 
 [node name="RangeMinion11" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
+position = Vector2(219, 450)
 
 [node name="RangeMinion12" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
+position = Vector2(219, 450)
 
 [node name="RangeMinion13" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
+position = Vector2(219, 450)
 
 [node name="RangeMinion14" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
+position = Vector2(219, 450)
 
 [node name="RangeMinion15" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
+position = Vector2(219, 450)
 
 [node name="RangeMinion16" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
+position = Vector2(219, 450)
 
 [node name="RangeMinion17" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
+position = Vector2(219, 450)
 
 [node name="RangeMinion18" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
+position = Vector2(219, 450)
 
 [node name="RangeMinion19" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion20" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion21" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion22" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion23" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion24" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion25" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion26" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion27" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion28" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion29" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion30" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion31" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion32" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion33" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion34" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion35" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion36" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion37" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion38" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion39" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion40" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion41" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion42" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion43" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion44" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion45" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion46" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion47" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion48" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion49" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion50" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion51" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion52" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion53" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion54" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion55" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion56" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion57" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion58" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion59" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
-
-[node name="RangeMinion60" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(-470, 267)
+position = Vector2(219, 450)
 
 [connection signal="timeout" from="WaveTimer" to="." method="_on_wave_timer_timeout"]
