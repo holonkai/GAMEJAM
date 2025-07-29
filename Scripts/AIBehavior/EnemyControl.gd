@@ -16,10 +16,10 @@ func targetSelection(pos :Vector2):
 func move_enemies():
 	#telling the enemies where to move
 	var units=get_tree().get_nodes_in_group("Enemies")
-	if(units.size()>1):
+	if(units.size()>=1):
 		for i in units.size():
 			var position=targetSelection(units[i].global_position)
-			print(units.size())
+			#print(units.size())
 			var path=NavigationServer2D.map_get_path(map, snap_to_map(units[i].global_position), snap_to_map(position),true)
 			#print(path)
 			units[i].move(path)
@@ -29,4 +29,5 @@ func snap_to_map(pos: Vector2):
 	return NavigationServer2D.map_get_closest_point(map,pos)
 
 func _on_timer_timeout() -> void:
+	#print("huh?")
 	move_enemies()

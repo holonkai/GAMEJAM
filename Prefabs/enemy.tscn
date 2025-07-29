@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxyx5cgf2lc4x"]
+[gd_scene load_steps=7 format=3 uid="uid://dxyx5cgf2lc4x"]
 
 [ext_resource type="Script" uid="uid://rihwh8ovhuwr" path="res://Scripts/AIBehavior/Enemy.gd" id="1_lgw76"]
 [ext_resource type="Texture2D" uid="uid://4u8lbih57n0m" path="res://Sprites/Enemies/onfieldmeleeminion.png" id="2_lgw76"]
@@ -11,6 +11,9 @@ bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t4g6b"]
 bg_color = Color(0.42404, 0.120291, 0.0953147, 1)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_lgw76"]
+polygon = PackedVector2Array(-39.5, -45.7, -39.5, -42.2, -44.5, -34.1, -44.5, -26.2, -52.6, -13.5, -54.1, -13.5, -55.5, -6.7, -55.5, -2.1, -52.5, 4.8, -57.2, 3.5, -62.9, 3.5, -65.9, 11.5, -67.5, 11.5, -67.5, 17.7, -60.5, 21.6, -60.5, 23.6, -44.4, 22.5, -43.6, 22.5, -41.3, 26.4, -41.7, 27.5, -44.2, 27.5, -41.5, 36.5, -41.5, 39.3, -3.5, 42.3, -3.5, 43.8, 17.6, 40.4, 18.7, 41.5, 33, 41.5, 40, 37.5, 43.3, 37.5, 39.5, 26.4, 43.5, 23.5, 43.5, 22.6, 53.4, 23.5, 58.2, 23.5, 64.2, 18.5, 67.2, 18.5, 64.5, 9.5, 64.5, 5.5, 51.4, 5.5, 54.5, -3.1, 54.5, -6.9, 51.5, -15, 51.5, -17.3, 43.5, -26.4, 43.5, -34.1, 38.5, -42.2, 38.5, -43.8, 36.2, -44.9, 28.3, -38.2, 21.5, -40.9, 21.5, -42.3, 10.5, -43.4, 10.5, -44.6, -9.6, -43.5, -15.9, -43.5, -29.5, -37.7, -29.5, -40.7)
 
 [node name="Enemy" type="CharacterBody2D" groups=["Enemies"]]
 collision_layer = 2
@@ -44,5 +47,11 @@ vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(-2.00002, 15)
+rotation = -1.5708
+scale = Vector2(0.38, 0.38)
+occluder = SubResource("OccluderPolygon2D_lgw76")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

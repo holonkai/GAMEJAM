@@ -25,6 +25,8 @@ func _physics_process(delta: float) -> void:
 		laserEndPosition=to_local(get_collision_point())
 	line2d.points[1]=laserEndPosition
 
+	
+
 
 
 func appear():
