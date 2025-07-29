@@ -1,13 +1,22 @@
+<<<<<<< HEAD
 [gd_scene load_steps=10 format=4 uid="uid://b2qt0biuylxaf"]
+=======
+[gd_scene load_steps=11 format=4 uid="uid://b2qt0biuylxaf"]
+>>>>>>> 680da76bd042fca6c5296dd87e830063f36d68a4
 
 [ext_resource type="PackedScene" uid="uid://buu3s7p880em8" path="res://Prefabs/main_ui.tscn" id="1_8qa7p"]
+[ext_resource type="Script" uid="uid://6wir3kyrrvid" path="res://Scripts/WaveControl.gd" id="1_ko66c"]
 [ext_resource type="Texture2D" uid="uid://cgtgts1ssqnq4" path="res://Sprites/Ui and backgrounds/Space Background.png" id="2_roogt"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://dxyx5cgf2lc4x" path="res://Prefabs/enemy.tscn" id="4_82kbh"]
 [ext_resource type="PackedScene" uid="uid://b7cvmm237m0dq" path="res://Prefabs/enemy_control.tscn" id="5_3lhwo"]
 [ext_resource type="PackedScene" uid="uid://wsbyuab5gqmv" path="res://Prefabs/Meleeminion.tscn" id="6_ko66c"]
+=======
+[ext_resource type="PackedScene" uid="uid://rx6crdc14vrq" path="res://Prefabs/MinionControl.tscn" id="5_fdy5w"]
+[ext_resource type="PackedScene" uid="uid://b7cvmm237m0dq" path="res://Prefabs/enemy_control.tscn" id="6_tdxe6"]
+[ext_resource type="PackedScene" uid="uid://ctfvjwh8awc86" path="res://Prefabs/RangeMinion.tscn" id="7_fdy5w"]
+>>>>>>> 680da76bd042fca6c5296dd87e830063f36d68a4
 [ext_resource type="Texture2D" uid="uid://d02xfdehptq5l" path="res://Sprites/Ui and backgrounds/mars-dunes-8col-16bit565-2.png" id="10_opuq0"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ko66c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q6r6c"]
 texture = ExtResource("10_opuq0")
@@ -319,27 +328,37 @@ texture = ExtResource("10_opuq0")
 16:17/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_kdubu"]
-physics_layer_0/collision_layer = 1
-physics_layer_0/physics_material = SubResource("PhysicsMaterial_ko66c")
 sources/0 = SubResource("TileSetAtlasSource_q6r6c")
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ko66c"]
+vertices = PackedVector2Array(1194.8, -2.03125, 1181.19, 701.883, -2.5625, 688.102, -4.99219, 646.758, -3.03125, -5.96094)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-15, 647, -13, -16, 1205, -12, 1191, 712, -12, 698)])
+
 [node name="Node2D" type="Node2D"]
-position = Vector2(4, 18)
+script = ExtResource("1_ko66c")
 
 [node name="mainUI" parent="." instance=ExtResource("1_8qa7p")]
+unique_name_in_owner = true
+offset_left = 859.0
+offset_top = 469.0
+offset_right = 899.0
+offset_bottom = 509.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(576, 320.5)
+position = Vector2(574, 318.5)
 scale = Vector2(5.76, 3.265)
 texture = ExtResource("2_roogt")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-position = Vector2(272, 157.88)
+position = Vector2(270, 155.88)
 scale = Vector2(1.1475, 1.12105)
-tile_map_data = PackedByteArray("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AAAmAAMAAAALAAQAAAAmAAIAAAALAAQAAAAlAAIAAAALAAQAAAAlAAEAAAALAAQAAAAmAAEAAAALAAQAAAAjAAMAAAALAAQAAAAlAAAAAAALAAQAAAAjAP//AAALAAQAAAAkAAAAAAALAAQAAAAkAP//AAALAAQAAAD///v/AAALAAQAAAAQAAwAAAALAAQAAAArABEAAAALAAQAAAAqABEAAAANAAsAAAApABEAAAANAAsAAAArABIAAAANAAsAAAArABMAAAALAAQAAAAqABIAAAANAAsAAAApABIAAAANAAsAAAAqABMAAAALAAQAAAApABMAAAANAAsAAAAqABQAAAALAAQAAAAoABEAAAALAAQAAAAoABAAAAANAAsAAAApABAAAAAIAAUAAAApABQAAAANAAsAAAApABUAAAANAAsAAAAnABQAAAANAAsAAAAoABQAAAANAAsAAAArABAAAAANAAsAAAD6/xQAAAANAAsAAAD8/xQAAAANAAsAAAD6/xUAAAANAAsAAAD7/xQAAAANAAsAAAD7/xMAAAANAAsAAAD6/xMAAAANAAsAAAD8/xIAAAANAAsAAAD8/xEAAAANAAsAAAD7/xEAAAANAAsAAAD7/xIAAAANAAsAAAD2/wEAAAANAAsAAAD2/wIAAAANAAsAAAD1/wIAAAANAAsAAAAYAPv/AAANAAsAAAAZAPv/AAANAAsAAAAaAPv/AAANAAsAAAAaAPr/AAANAAsAAAAZAPr/AAANAAsAAAAZAPn/AAANAAsAAAAVAAsAAAAOAAMAAAAUAAoAAAAOAAMAAAAWAAsAAAAOAAMAAAAVAAwAAAAOAAMAAAAUAAwAAAAOAAMAAAA=")
+tile_map_data = PackedByteArray("AAAEAAcAAAAJAA0AAAAFAAYAAAAJAA0AAAAFAAcAAAAFAAkAAAAGAAYAAAAJAA0AAAAGAAcAAAAJAA0AAAAHAAYAAAAJAA0AAAAHAAUAAAAFAAoAAAAcAA4AAAAJAA0AAAAcAA8AAAAJAA0AAAAaAA8AAAAJAA0AAAAbAA8AAAAJAA0AAAAaAA4AAAAJAA0AAAAZAA8AAAAJAA0AAAAZAA4AAAAJAA0AAAAdAA4AAAAJAA0AAAAZABAAAAAJAA0AAAANAAoAAAAJAA0AAAANAAsAAAAJAA0AAAAOAAsAAAAJAA0AAAAQAAsAAAAJAA0AAAAPAAwAAAAJAA0AAAAOAAwAAAAJAA0AAAAQAAIAAAAJAA0AAAARAAIAAAAJAA0AAAASAAIAAAAJAA0AAAATAAIAAAAJAA0AAAATAAMAAAAJAA0AAAAUAAMAAAAJAA0AAAATAAQAAAAJAA0AAAATAAUAAAAJAA0AAAAVAAUAAAAJAA0AAAAVAAQAAAAJAA0AAAAUAAQAAAAJAA0AAAARAAMAAAAJAA0AAAARAAQAAAAJAA0AAAASAAQAAAAJAA0AAAAKAAUAAAAJAA0AAAALAAUAAAAJAA0AAAAMAAUAAAAJAA0AAAALAAQAAAAJAA0AAAAIAA4AAAAJAA0AAAAHAA4AAAAJAA0AAAASAAMAAAAJAA0AAAAIAA0AAAAJAA0AAAAGAA0AAAAJAA0AAAAHAA0AAAAJAA0AAAAJAA4AAAAJAA0AAAA=")
 tile_set = SubResource("TileSet_kdubu")
 
+<<<<<<< HEAD
 [node name="Enemy" parent="." instance=ExtResource("4_82kbh")]
 position = Vector2(1021, 269)
 rotation = 3.14159
@@ -352,3 +371,85 @@ offset_bottom = 665.0
 
 [node name="Minion" parent="." instance=ExtResource("6_ko66c")]
 position = Vector2(244, 345)
+=======
+[node name="Control" parent="." instance=ExtResource("5_fdy5w")]
+offset_left = 9.0
+offset_top = 5.0
+offset_right = 49.0
+offset_bottom = 45.0
+metadata/_edit_use_anchors_ = true
+
+[node name="WaveTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="EnemyControl" parent="." instance=ExtResource("6_tdxe6")]
+offset_left = 300.0
+offset_top = 324.0
+offset_right = 340.0
+offset_bottom = 364.0
+metadata/_edit_use_anchors_ = true
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(-29, -2)
+navigation_polygon = SubResource("NavigationPolygon_ko66c")
+
+[node name="RangeMinion" parent="." instance=ExtResource("7_fdy5w")]
+position = Vector2(219, 450)
+
+[node name="RangeMinion2" parent="." instance=ExtResource("7_fdy5w")]
+position = Vector2(219, 450)
+
+[node name="RangeMinion3" parent="." instance=ExtResource("7_fdy5w")]
+position = Vector2(219, 450)
+
+[node name="RangeMinion4" parent="." instance=ExtResource("7_fdy5w")]
+position = Vector2(219, 450)
+
+[node name="RangeMinion5" parent="." instance=ExtResource("7_fdy5w")]
+position = Vector2(219, 450)
+
+[node name="RangeMinion6" parent="." instance=ExtResource("7_fdy5w")]
+position = Vector2(219, 450)
+
+[node name="RangeMinion7" parent="." instance=ExtResource("7_fdy5w")]
+position = Vector2(219, 450)
+
+[node name="RangeMinion8" parent="." instance=ExtResource("7_fdy5w")]
+position = Vector2(219, 450)
+
+[node name="RangeMinion9" parent="." instance=ExtResource("7_fdy5w")]
+position = Vector2(219, 450)
+
+[node name="RangeMinion10" parent="." instance=ExtResource("7_fdy5w")]
+position = Vector2(219, 450)
+
+[node name="RangeMinion11" parent="." instance=ExtResource("7_fdy5w")]
+position = Vector2(219, 450)
+
+[node name="RangeMinion12" parent="." instance=ExtResource("7_fdy5w")]
+position = Vector2(219, 450)
+
+[node name="RangeMinion13" parent="." instance=ExtResource("7_fdy5w")]
+position = Vector2(219, 450)
+
+[node name="RangeMinion14" parent="." instance=ExtResource("7_fdy5w")]
+position = Vector2(219, 450)
+
+[node name="RangeMinion15" parent="." instance=ExtResource("7_fdy5w")]
+position = Vector2(219, 450)
+
+[node name="RangeMinion16" parent="." instance=ExtResource("7_fdy5w")]
+position = Vector2(219, 450)
+
+[node name="RangeMinion17" parent="." instance=ExtResource("7_fdy5w")]
+position = Vector2(219, 450)
+
+[node name="RangeMinion18" parent="." instance=ExtResource("7_fdy5w")]
+position = Vector2(219, 450)
+
+[node name="RangeMinion19" parent="." instance=ExtResource("7_fdy5w")]
+position = Vector2(219, 450)
+
+[connection signal="timeout" from="WaveTimer" to="." method="_on_wave_timer_timeout"]
+>>>>>>> 680da76bd042fca6c5296dd87e830063f36d68a4

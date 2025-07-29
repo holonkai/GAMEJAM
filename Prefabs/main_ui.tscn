@@ -80,8 +80,7 @@ border_blend = true
 [node name="mainUI" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 2.0
-offset_right = 42.0
+offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_vvnq0")
 metadata/_edit_horizontal_guides_ = [-25.0]
@@ -93,10 +92,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 269.0
-offset_top = 139.0
-offset_right = 840.0
-offset_bottom = 443.0
+offset_left = -301.0
+offset_top = -169.0
+offset_right = 270.0
+offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 1.05263)
@@ -247,10 +246,17 @@ texture = ExtResource("6_3hs73")
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
+<<<<<<< HEAD
 offset_left = -133.0
 offset_top = 10.0
 offset_right = -34.0
 offset_bottom = 146.0
+=======
+offset_left = -106.0
+offset_top = 23.0
+offset_right = -26.0
+offset_bottom = 103.0
+>>>>>>> 680da76bd042fca6c5296dd87e830063f36d68a4
 grow_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_v54gd")
 script = ExtResource("6_36xyc")
@@ -657,7 +663,7 @@ text = "$16
 "
 
 [node name="Camera2D" type="Camera2D" parent="background"]
-position = Vector2(284.5, 151.05)
+position = Vector2(0, -0.950001)
 
 [connection signal="button_down" from="background/CanvasLayer/LittleGuyEconomy/shopbox/range minion" to="." method="_on_range_minion_button_down"]
 [connection signal="button_down" from="background/CanvasLayer/LittleGuyEconomy/shopbox2/melee minion" to="." method="_on_melee_minion_button_down"]
