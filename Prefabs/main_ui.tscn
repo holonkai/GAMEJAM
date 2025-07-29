@@ -1,25 +1,45 @@
-[gd_scene load_steps=15 format=3 uid="uid://buu3s7p880em8"]
+[gd_scene load_steps=22 format=3 uid="uid://buu3s7p880em8"]
 
 [ext_resource type="Script" uid="uid://vewhlig5jmkf" path="res://Scripts/main_ui.gd" id="1_vvnq0"]
-[ext_resource type="Script" uid="uid://cg7wbwhet72g0" path="res://Levels/background.gd" id="2_g5gk6"]
+[ext_resource type="Script" uid="uid://dekbn1rv70t2d" path="res://Prefabs/background.gd" id="2_2tul4"]
 [ext_resource type="Texture2D" uid="uid://ccbkgeuj0a76y" path="res://Sprites/Friendlies/newfriendrangeminion.png" id="3_g5gk6"]
 [ext_resource type="Texture2D" uid="uid://dl7bjjn15numn" path="res://Sprites/Friendlies/onfieldmeleeminionfriend.png" id="4_s8vc5"]
 [ext_resource type="Texture2D" uid="uid://dedlfaugd2u5j" path="res://Sprites/Enemies/bigguyonfieldrangeminion.png" id="5_36xyc"]
 [ext_resource type="Script" uid="uid://jshr27v37ve0" path="res://Levels/littleguy.gd" id="5_s8vc5"]
 [ext_resource type="Texture2D" uid="uid://4u8lbih57n0m" path="res://Sprites/Enemies/onfieldmeleeminion.png" id="6_2tul4"]
+[ext_resource type="Texture2D" uid="uid://lld6j2n7nmy5" path="res://Prefabs/officalmainlittleguy.png" id="6_3hs73"]
 [ext_resource type="Script" uid="uid://cw6srh5hurfp8" path="res://Levels/bigguy.gd" id="6_36xyc"]
 [ext_resource type="Texture2D" uid="uid://br7jc0yt7pps0" path="res://Sprites/Ui and backgrounds/vile.png" id="7_3hs73"]
 [ext_resource type="Texture2D" uid="uid://dueb0emu6agy2" path="res://Sprites/Ui and backgrounds/Untitled_2.png" id="8_v54gd"]
 [ext_resource type="Texture2D" uid="uid://001mhdv7my7w" path="res://Sprites/Ui and backgrounds/gun3.png" id="9_6ev4f"]
+[ext_resource type="Texture2D" uid="uid://de7ugn04uvnp" path="res://GAMEJAM-main/main-ui/icon.svg" id="11_36xyc"]
+[ext_resource type="Texture2D" uid="uid://cbldfhx6iiq5c" path="res://Sprites/icon.svg" id="12_s8vc5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6r6c"]
-bg_color = Color(0.615686, 0.615686, 0.615686, 0.403922)
+bg_color = Color(0.6, 0.6, 0.6, 0.25098)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3hs73"]
+bg_color = Color(0.6, 0.6, 0.6, 0.690196)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v54gd"]
+bg_color = Color(0.6, 0.6, 0.6, 0.517647)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kdubu"]
 bg_color = Color(0.615686, 0.615686, 0.615686, 0.266667)
@@ -39,6 +59,24 @@ border_width_bottom = 2
 border_color = Color(1, 1, 1, 1)
 border_blend = true
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36xyc"]
+bg_color = Color(0.6, 0.6, 0.6, 0.25098)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2tul4"]
+bg_color = Color(0.6, 0.6, 0.6, 0.25098)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
 [node name="mainUI" type="Control"]
 layout_mode = 3
 anchors_preset = 0
@@ -46,6 +84,7 @@ offset_left = 2.0
 offset_right = 42.0
 offset_bottom = 40.0
 script = ExtResource("1_vvnq0")
+metadata/_edit_horizontal_guides_ = [-25.0]
 
 [node name="background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -61,22 +100,23 @@ offset_bottom = 443.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 1.05263)
-script = ExtResource("2_g5gk6")
+script = ExtResource("2_2tul4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="background"]
 
 [node name="LittleGuyEconomy" type="Panel" parent="background/CanvasLayer"]
 offset_left = 6.0
 offset_top = 21.0
-offset_right = 95.0
-offset_bottom = 55.0
+offset_right = 79.0
+offset_bottom = 95.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_q6r6c")
 
 [node name="shopbox" type="VBoxContainer" parent="background/CanvasLayer/LittleGuyEconomy"]
 layout_mode = 0
 offset_left = 4.0
+offset_top = 4.0
 offset_right = 43.0
-offset_bottom = 33.0
+offset_bottom = 36.0
 
 [node name="range minion" type="Button" parent="background/CanvasLayer/LittleGuyEconomy/shopbox"]
 layout_mode = 2
@@ -87,25 +127,26 @@ text = "R"
 
 [node name="RangePopup" type="Label" parent="background/CanvasLayer/LittleGuyEconomy/shopbox/range minion"]
 layout_mode = 0
-offset_left = 102.0
-offset_right = 222.0
-offset_bottom = 23.0
+offset_left = 190.0
+offset_top = -12.0
+offset_right = 376.0
+offset_bottom = 40.0
 
 [node name="TextureRect" type="TextureRect" parent="background/CanvasLayer/LittleGuyEconomy/shopbox/range minion"]
 layout_mode = 0
-offset_left = -2.0
-offset_top = -2.37497
-offset_right = 144.0
-offset_bottom = 129.625
+offset_left = -3.0
+offset_top = -7.0
+offset_right = 143.0
+offset_bottom = 136.0
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_g5gk6")
 
 [node name="shopbox2" type="VBoxContainer" parent="background/CanvasLayer/LittleGuyEconomy"]
 layout_mode = 0
-offset_left = 47.0
-offset_top = 1.0
-offset_right = 86.0
-offset_bottom = 34.0
+offset_left = 3.0
+offset_top = 38.0
+offset_right = 43.0
+offset_bottom = 70.0
 
 [node name="melee minion" type="Button" parent="background/CanvasLayer/LittleGuyEconomy/shopbox2"]
 layout_mode = 2
@@ -115,13 +156,18 @@ text = "M"
 
 [node name="MeleePopup" type="Label" parent="background/CanvasLayer/LittleGuyEconomy/shopbox2/melee minion"]
 layout_mode = 0
-offset_left = 44.0
-offset_top = -11.875
-offset_right = 163.0
-offset_bottom = 11.125
+offset_left = 216.0
+offset_top = -47.0
+offset_right = 335.0
+offset_bottom = -24.0
 
 [node name="TextureRect" type="TextureRect" parent="background/CanvasLayer/LittleGuyEconomy/shopbox2/melee minion"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0125
+anchor_top = -0.0507822
+anchor_right = 0.0125
+anchor_bottom = -0.0507822
 offset_left = -1.5
 offset_top = -3.37497
 offset_right = 132.5
@@ -130,32 +176,57 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_s8vc5")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="background/CanvasLayer/LittleGuyEconomy"]
+[node name="shoplabel" type="Label" parent="background/CanvasLayer/LittleGuyEconomy"]
 layout_mode = 0
 offset_left = 1.0
-offset_top = -25.0
+offset_top = -23.0
 offset_right = 57.0
-offset_bottom = 1.0
+offset_bottom = 3.0
 theme_override_colors/font_color = Color(0.984314, 0, 0, 1)
 text = "shop"
+
+[node name="rangeminionpricetag" type="Label" parent="background/CanvasLayer/LittleGuyEconomy"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 9.0
+offset_right = 71.0
+offset_bottom = 32.0
+text = "$10"
+
+[node name="meleeminionpricetag" type="Label" parent="background/CanvasLayer/LittleGuyEconomy"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 42.0
+offset_right = 64.0
+offset_bottom = 67.0
+text = "$8"
+
+[node name="buyminionslabel" type="Label" parent="background/CanvasLayer/LittleGuyEconomy"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 73.0
+offset_right = 143.0
+offset_bottom = 96.0
+text = "^buy minions"
 
 [node name="littleguy" type="Panel" parent="background/CanvasLayer"]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 19.0
-offset_top = -92.9998
-offset_right = 101.0
-offset_bottom = -10.9998
+offset_left = 16.0
+offset_top = -115.0
+offset_right = 124.0
+offset_bottom = -9.0
 grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3hs73")
 script = ExtResource("5_s8vc5")
 
 [node name="littleguydialog" type="Label" parent="background/CanvasLayer/littleguy"]
 layout_mode = 0
-offset_left = 8.0
-offset_top = -26.0
-offset_right = 146.0
-offset_bottom = 23.0
+offset_left = 2.0
+offset_top = -32.0
+offset_right = 140.0
+offset_bottom = 17.0
 text = "placeholder
 "
 
@@ -163,23 +234,33 @@ text = "placeholder
 wait_time = 12.0
 autostart = true
 
+[node name="TextureRect" type="TextureRect" parent="background/CanvasLayer/littleguy"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 209.0
+offset_bottom = 230.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_3hs73")
+
 [node name="bigguy" type="Panel" parent="background/CanvasLayer"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -104.0
-offset_top = 25.0
-offset_right = -24.0
-offset_bottom = 105.0
+offset_left = -133.0
+offset_top = 10.0
+offset_right = -34.0
+offset_bottom = 146.0
 grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_v54gd")
 script = ExtResource("6_36xyc")
 
 [node name="BigGuyDialog" type="Label" parent="background/CanvasLayer/bigguy"]
 layout_mode = 0
-offset_left = -93.0
-offset_top = 78.0
-offset_right = 41.0
-offset_bottom = 101.0
+offset_left = -50.0
+offset_top = 156.0
+offset_right = 84.0
+offset_bottom = 179.0
 text = "placeholder"
 
 [node name="BigGuyTimer" type="Timer" parent="background/CanvasLayer/bigguy/BigGuyDialog"]
@@ -188,57 +269,62 @@ autostart = true
 
 [node name="evilrangeminion" type="Panel" parent="background/CanvasLayer/bigguy"]
 layout_mode = 0
-offset_left = -40.5
-offset_top = 4.27501
-offset_right = -4.5
-offset_bottom = 37.275
+offset_left = 12.0
+offset_top = 4.0
+offset_right = 83.0
+offset_bottom = 65.0
 
 [node name="evil range minion" type="Button" parent="background/CanvasLayer/bigguy/evilrangeminion"]
 layout_mode = 0
-offset_right = 37.0
-offset_bottom = 32.0
+offset_top = -1.0
+offset_right = 73.0
+offset_bottom = 61.0
 
 [node name="EvilRangePopup" type="Label" parent="background/CanvasLayer/bigguy/evilrangeminion/evil range minion"]
 layout_mode = 0
-offset_left = -161.0
-offset_top = -1.425
-offset_right = -117.0
-offset_bottom = 21.575
+offset_left = -194.0
+offset_top = -6.0
+offset_right = -150.0
+offset_bottom = 17.0
 
 [node name="TextureRect" type="TextureRect" parent="background/CanvasLayer/bigguy/evilrangeminion/evil range minion"]
-layout_mode = 0
-offset_left = -2.0
-offset_top = -3.80001
-offset_right = 164.0
-offset_bottom = 151.2
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.507
+offset_left = -7.0
+offset_top = -4.0
+offset_right = 306.241
+offset_bottom = 280.0
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("5_36xyc")
 
 [node name="evilmeleeminion" type="Panel" parent="background/CanvasLayer/bigguy"]
 layout_mode = 0
-offset_left = -40.0
-offset_top = 39.9001
-offset_right = -4.0
-offset_bottom = 73.9001
+offset_left = 16.0
+offset_top = 73.0
+offset_right = 85.0
+offset_bottom = 132.0
 
 [node name="evil melee minion" type="Button" parent="background/CanvasLayer/bigguy/evilmeleeminion"]
 layout_mode = 0
-offset_right = 37.0
-offset_bottom = 34.0
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 70.0
+offset_bottom = 59.0
 
 [node name="EvilMeleePopup" type="Label" parent="background/CanvasLayer/bigguy/evilmeleeminion/evil melee minion"]
 layout_mode = 0
-offset_left = -158.0
-offset_top = -36.1001
-offset_right = -118.0
-offset_bottom = -13.1001
+offset_left = -182.0
+offset_top = -52.0
+offset_right = -142.0
+offset_bottom = -29.0
 
 [node name="TextureRect" type="TextureRect" parent="background/CanvasLayer/bigguy/evilmeleeminion/evil melee minion"]
 layout_mode = 0
-offset_left = -0.5
-offset_top = 0.475002
-offset_right = 148.5
-offset_bottom = 131.475
+offset_left = -2.0
+offset_top = -6.0
+offset_right = 306.0
+offset_bottom = 277.0
 scale = Vector2(0.25, 0.24)
 texture = ExtResource("6_2tul4")
 
@@ -248,9 +334,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -102.0
-offset_top = -67.0
-offset_right = 44.0
+offset_left = -161.0
+offset_top = -76.0
+offset_right = 43.0
 offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -258,38 +344,43 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_kdubu")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="background/CanvasLayer/skills"]
 layout_mode = 0
-offset_left = 99.0
-offset_top = 2.0
-offset_right = 142.0
-offset_bottom = 40.0
+offset_left = 137.0
+offset_top = 7.0
+offset_right = 177.0
+offset_bottom = 46.0
 
-[node name="vile" type="Button" parent="background/CanvasLayer/skills/VBoxContainer"]
+[node name="buttonvile" type="Button" parent="background/CanvasLayer/skills/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 20.0
 
-[node name="TextureRect" type="TextureRect" parent="background/CanvasLayer/skills/VBoxContainer/vile"]
+[node name="TextureRect" type="TextureRect" parent="background/CanvasLayer/skills/VBoxContainer/buttonvile"]
 layout_mode = 0
-offset_left = -0.5
-offset_top = -6.3496
-offset_right = 150.5
-offset_bottom = 160.65
+offset_left = -2.0
+offset_top = -4.99999
+offset_right = 149.0
+offset_bottom = 162.0
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("7_3hs73")
 
-[node name="VilePopup" type="Label" parent="background/CanvasLayer/skills/VBoxContainer/vile"]
+[node name="VilePopup" type="Label" parent="background/CanvasLayer/skills/VBoxContainer/buttonvile"]
 layout_mode = 0
-offset_left = 51.0
-offset_top = -0.174588
-offset_right = 91.0
-offset_bottom = 22.8254
+offset_left = 79.0
+offset_top = 7.99997
+offset_right = 119.0
+offset_bottom = 31.0
+
+[node name="VileArt" type="Sprite2D" parent="background/CanvasLayer/skills/VBoxContainer"]
+visible = false
+position = Vector2(241, -252)
+texture = ExtResource("11_36xyc")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="background/CanvasLayer/skills"]
 layout_mode = 0
-offset_left = 51.0
-offset_top = 2.0
-offset_right = 95.0
-offset_bottom = 40.0
+offset_left = 65.0
+offset_top = 7.0
+offset_right = 104.0
+offset_bottom = 47.0
 
 [node name="buttonult" type="Button" parent="background/CanvasLayer/skills/VBoxContainer2"]
 layout_mode = 2
@@ -298,26 +389,31 @@ size_flags_stretch_ratio = 20.0
 
 [node name="ult" type="TextureRect" parent="background/CanvasLayer/skills/VBoxContainer2/buttonult"]
 layout_mode = 0
-offset_left = -0.5
-offset_top = -0.649585
-offset_right = 119.5
-offset_bottom = 108.35
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 113.0
+offset_bottom = 108.0
 scale = Vector2(0.38, 0.38)
 texture = ExtResource("8_v54gd")
 
 [node name="UltPopup" type="Label" parent="background/CanvasLayer/skills/VBoxContainer2/buttonult"]
 layout_mode = 0
-offset_left = 99.0
-offset_top = -2.07459
-offset_right = 177.0
-offset_bottom = 37.9254
+offset_left = 144.0
+offset_top = -1.00001
+offset_right = 222.0
+offset_bottom = 39.0
+
+[node name="UltArt" type="Sprite2D" parent="background/CanvasLayer/skills/VBoxContainer2"]
+visible = false
+position = Vector2(66, -260)
+texture = ExtResource("12_s8vc5")
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="background/CanvasLayer/skills"]
 layout_mode = 0
-offset_left = 4.0
-offset_top = 2.0
+offset_left = 7.0
+offset_top = 7.0
 offset_right = 47.0
-offset_bottom = 40.0
+offset_bottom = 46.0
 
 [node name="Buttonskill" type="Button" parent="background/CanvasLayer/skills/VBoxContainer3"]
 layout_mode = 2
@@ -326,39 +422,239 @@ size_flags_stretch_ratio = 20.0
 
 [node name="skill" type="TextureRect" parent="background/CanvasLayer/skills/VBoxContainer3/Buttonskill"]
 layout_mode = 0
-offset_left = 0.5
-offset_top = 0.875416
-offset_right = 465.5
-offset_bottom = 409.875
+offset_left = -1.0
+offset_top = 0.999989
+offset_right = 464.0
+offset_bottom = 410.0
 scale = Vector2(0.09, 0.09)
 texture = ExtResource("9_6ev4f")
 
 [node name="SkillPopup" type="Label" parent="background/CanvasLayer/skills/VBoxContainer3/Buttonskill"]
 layout_mode = 0
-offset_left = 145.0
-offset_top = -3.97459
-offset_right = 227.0
-offset_bottom = 38.0254
+offset_left = 196.0
+offset_top = -1.99998
+offset_right = 278.0
+offset_bottom = 40.0
 
-[node name="skillart" type="Sprite2D" parent="background/CanvasLayer/skills/VBoxContainer3"]
+[node name="SkillArt" type="Sprite2D" parent="background/CanvasLayer/skills/VBoxContainer3"]
+visible = false
+position = Vector2(-27, -257)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_6ev4f")
+
+[node name="vilepricetag" type="Label" parent="background/CanvasLayer/skills"]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 13.0
+offset_right = 201.0
+offset_bottom = 49.0
+text = "$6"
+
+[node name="ultpricetag" type="Label" parent="background/CanvasLayer/skills"]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 15.0
+offset_right = 134.0
+offset_bottom = 50.0
+text = "$12"
 
 [node name="goldscountpanel" type="Panel" parent="background/CanvasLayer"]
-offset_left = 18.0
-offset_top = 495.0
-offset_right = 134.0
-offset_bottom = 523.0
+offset_left = 132.0
+offset_top = 602.0
+offset_right = 248.0
+offset_bottom = 630.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_d21ai")
 
 [node name="GoldLabel" type="Label" parent="background/CanvasLayer/goldscountpanel"]
 layout_mode = 0
-offset_left = 6.0
-offset_top = 2.375
-offset_right = 111.0
-offset_bottom = 51.375
+offset_left = 7.0
+offset_top = 2.0
+offset_right = 112.0
+offset_bottom = 51.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "gold count
 "
 uppercase = true
+
+[node name="minion upgrade" type="Panel" parent="background/CanvasLayer"]
+offset_left = 7.0
+offset_top = 121.0
+offset_right = 82.0
+offset_bottom = 197.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_36xyc")
+
+[node name="rangeminionupgrade" type="VBoxContainer" parent="background/CanvasLayer/minion upgrade"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 44.0
+offset_bottom = 37.0
+
+[node name="rangeupgradebutton" type="Button" parent="background/CanvasLayer/minion upgrade/rangeminionupgrade"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+
+[node name="TextureRect" type="TextureRect" parent="background/CanvasLayer/minion upgrade/rangeminionupgrade/rangeupgradebutton"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -4.0
+offset_right = 143.0
+offset_bottom = 128.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_g5gk6")
+
+[node name="range upgrade text" type="Label" parent="background/CanvasLayer/minion upgrade/rangeminionupgrade/rangeupgradebutton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+offset_left = 139.0
+offset_top = -95.0
+offset_right = 208.0
+offset_bottom = -62.0
+
+[node name="meleeminionupgrade" type="VBoxContainer" parent="background/CanvasLayer/minion upgrade"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 40.0
+offset_right = 43.0
+offset_bottom = 73.0
+
+[node name="meleeupgrademinion" type="Button" parent="background/CanvasLayer/minion upgrade/meleeminionupgrade"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+
+[node name="TextureRect" type="TextureRect" parent="background/CanvasLayer/minion upgrade/meleeminionupgrade/meleeupgrademinion"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 133.0
+offset_bottom = 102.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_s8vc5")
+
+[node name="melee upgrade text" type="Label" parent="background/CanvasLayer/minion upgrade/meleeminionupgrade/meleeupgrademinion"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = -138.0
+offset_right = 303.0
+offset_bottom = -98.0
+
+[node name="rangeminionpricetag" type="Label" parent="background/CanvasLayer/minion upgrade"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 8.0
+offset_right = 72.0
+offset_bottom = 57.0
+text = "$12
+"
+
+[node name="meleeminionpricetag" type="Label" parent="background/CanvasLayer/minion upgrade"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 47.0
+offset_right = 72.0
+offset_bottom = 77.0
+text = "$10"
+
+[node name="Label" type="Label" parent="background/CanvasLayer/minion upgrade"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 77.0
+offset_right = 145.0
+offset_bottom = 100.0
+text = "^upgrade minions"
+
+[node name="upgrade skills" type="Panel" parent="background/CanvasLayer"]
+offset_left = 9.0
+offset_top = 225.0
+offset_right = 83.0
+offset_bottom = 352.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2tul4")
+
+[node name="skillupgrade" type="VBoxContainer" parent="background/CanvasLayer/upgrade skills"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 44.0
+offset_bottom = 42.0
+
+[node name="skillupgradebutton" type="Button" parent="background/CanvasLayer/upgrade skills/skillupgrade"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="background/CanvasLayer/upgrade skills/skillupgrade/skillupgradebutton"]
+layout_mode = 0
+offset_left = -2.0
+offset_right = 156.0
+offset_bottom = 147.0
+scale = Vector2(0.27, 0.27)
+texture = ExtResource("9_6ev4f")
+
+[node name="skill upgrade text" type="Label" parent="background/CanvasLayer/upgrade skills/skillupgrade/skillupgradebutton"]
+layout_mode = 0
+offset_left = 127.0
+offset_top = -207.0
+offset_right = 423.0
+offset_bottom = -148.0
+
+[node name="ultupgrade" type="VBoxContainer" parent="background/CanvasLayer/upgrade skills"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 46.0
+offset_right = 44.0
+offset_bottom = 86.0
+
+[node name="Button" type="Button" parent="background/CanvasLayer/upgrade skills/ultupgrade"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="background/CanvasLayer/upgrade skills/ultupgrade/Button"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 114.0
+offset_bottom = 113.0
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("8_v54gd")
+
+[node name="healupgrade" type="VBoxContainer" parent="background/CanvasLayer/upgrade skills"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 88.0
+offset_right = 45.0
+offset_bottom = 124.0
+
+[node name="upgradehealbutton" type="Button" parent="background/CanvasLayer/upgrade skills/healupgrade"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="background/CanvasLayer/upgrade skills/healupgrade/upgradehealbutton"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -6.0
+offset_right = 152.0
+offset_bottom = 165.0
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("7_3hs73")
+
+[node name="skillpricetag" type="Label" parent="background/CanvasLayer/upgrade skills"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 11.0
+offset_right = 71.0
+offset_bottom = 37.0
+text = "$14
+"
+
+[node name="ultpricetag" type="Label" parent="background/CanvasLayer/upgrade skills"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 55.0
+offset_right = 74.0
+offset_bottom = 91.0
+text = "$16
+"
 
 [node name="Camera2D" type="Camera2D" parent="background"]
 position = Vector2(284.5, 151.05)
@@ -367,7 +663,12 @@ position = Vector2(284.5, 151.05)
 [connection signal="button_down" from="background/CanvasLayer/LittleGuyEconomy/shopbox2/melee minion" to="." method="_on_melee_minion_button_down"]
 [connection signal="button_down" from="background/CanvasLayer/bigguy/evilrangeminion/evil range minion" to="." method="_on_evil_range_minion_button_down"]
 [connection signal="button_down" from="background/CanvasLayer/bigguy/evilmeleeminion/evil melee minion" to="." method="_on_evil_melee_minion_button_down"]
-[connection signal="button_down" from="background/CanvasLayer/skills/VBoxContainer/vile" to="." method="_on_vile_button_down"]
+[connection signal="button_down" from="background/CanvasLayer/skills/VBoxContainer/buttonvile" to="." method="_on_vile_button_down"]
+[connection signal="pressed" from="background/CanvasLayer/skills/VBoxContainer/buttonvile" to="." method="_on_vile_pressed"]
 [connection signal="button_down" from="background/CanvasLayer/skills/VBoxContainer2/buttonult" to="." method="_on_buttonult_button_down"]
+[connection signal="pressed" from="background/CanvasLayer/skills/VBoxContainer2/buttonult" to="." method="_on_buttonult_pressed"]
 [connection signal="button_down" from="background/CanvasLayer/skills/VBoxContainer3/Buttonskill" to="." method="_on_buttonskill_button_down"]
 [connection signal="pressed" from="background/CanvasLayer/skills/VBoxContainer3/Buttonskill" to="." method="_on_buttonskill_pressed"]
+[connection signal="button_down" from="background/CanvasLayer/minion upgrade/rangeminionupgrade/rangeupgradebutton" to="." method="_on_rangeupgradebutton_button_down"]
+[connection signal="button_down" from="background/CanvasLayer/minion upgrade/meleeminionupgrade/meleeupgrademinion" to="." method="_on_meleeupgrademinion_button_down"]
+[connection signal="button_down" from="background/CanvasLayer/upgrade skills/skillupgrade/skillupgradebutton" to="." method="_on_skillupgradebutton_button_down"]

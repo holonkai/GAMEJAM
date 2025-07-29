@@ -1,16 +1,11 @@
 extends Control
 
-var gold: int=50
 
+var gold: int=600
 
 @onready var gold_label = $background/CanvasLayer/goldscountpanel/GoldLabel
-# @onready var range_minion_button = $background/LittleGuyEconomy/shopbox/range_minion
-# @onready var melee_minion_button = $background/LittleGuyEconomy/shopbox2/melee_minion
-
 func _ready():
 	update_gold_display()
-	# range_minion_button.pressed.connect(_on_range_minion_pressed)
-	# melee_minion_button.pressed.connect(_on_melee_minion_pressed)
 	
 func update_gold_display():
 	gold_label.text = "Gold: %d" %gold
@@ -19,14 +14,16 @@ func add_gold(amount: int):
 	gold += amount 
 	update_gold_display()
 
+#+1 range minion pop up text and effect on gold count
 @onready var range_pop_up = $"background/CanvasLayer/LittleGuyEconomy/shopbox/range minion/RangePopup"
 func _on_range_minion_button_down() -> void:
-	var cost = 8
+	var cost = 10
+	
 	if gold >= cost:
 		gold -= cost 
 		update_gold_display()
 		
-		range_pop_up.text = "RANGE MINION x1"
+		range_pop_up.text = "RANGE MINION +1"
 		range_pop_up.visible = true
 		
 		await get_tree().create_timer(0.5).timeout
@@ -38,21 +35,16 @@ func _on_range_minion_button_down() -> void:
 		await get_tree().create_timer(0.5).timeout
 		range_pop_up.visible = false
 		
-	
-		
-	#	print("RANGE MINION x1")
-	#else:
-		#print("UR POOR")
-
+#+1 melee minion pop up text and effect on gold count
 @onready var melee_pop_up = $"background/CanvasLayer/LittleGuyEconomy/shopbox2/melee minion/MeleePopup"
 func _on_melee_minion_button_down() -> void:
-	var cost = 10
+	var cost = 8
 	if gold >= cost:
 		gold -= cost 
 		update_gold_display()
 		
 		
-		melee_pop_up.text = "MELEE MINION x1"
+		melee_pop_up.text = "MELEE MINION +1"
 		melee_pop_up.visible = true
 		
 		await get_tree().create_timer(0.5).timeout
@@ -64,9 +56,8 @@ func _on_melee_minion_button_down() -> void:
 		await get_tree().create_timer(0.5).timeout
 		melee_pop_up.visible = false
 		
-
+#skill button pop up text and effect on gold count
 @onready var skill_pop_up = $background/CanvasLayer/skills/VBoxContainer3/Buttonskill/SkillPopup
-
 func _on_buttonskill_button_down() -> void:
 	var cost = 6
 	if gold >= cost:
@@ -85,8 +76,8 @@ func _on_buttonskill_button_down() -> void:
 		await get_tree().create_timer(0.5).timeout
 		skill_pop_up.visible = false
 	
+#ult button pop up text and effect on gold count
 @onready var ult_pop_up = $"background/CanvasLayer/skills/VBoxContainer2/buttonult/UltPopup"
-
 func _on_buttonult_button_down() -> void:
 	var cost = 12
 	if gold >= cost:
@@ -106,10 +97,7 @@ func _on_buttonult_button_down() -> void:
 		ult_pop_up.visible = false
 
 	
-
-
-	
-
+#evil range minin pop up text and effect on gold count
 @onready var evil_range_minion_pop_up = $"background/CanvasLayer/bigguy/evilrangeminion/evil range minion/EvilRangePopup"
 func _on_evil_range_minion_button_down() -> void:
 	evil_range_minion_pop_up.text = "BAD RANGE MINION"
@@ -120,7 +108,7 @@ func _on_evil_range_minion_button_down() -> void:
 	evil_range_minion_pop_up.visible = false
 	
 	
-
+#evil melee minion pop up text and effect on gold count
 @onready var evil_melee_minion_pop_up = $"background/CanvasLayer/bigguy/evilmeleeminion/evil melee minion/EvilMeleePopup"
 func _on_evil_melee_minion_button_down() -> void:
 	evil_melee_minion_pop_up.text = "BAD MELEE MINION"
@@ -130,10 +118,10 @@ func _on_evil_melee_minion_button_down() -> void:
 		
 	evil_melee_minion_pop_up.visible = false
 	
-
+#vile pop up text and effect on gold count
 @onready var vile_pop_up = $background/CanvasLayer/skills/VBoxContainer/vile/VilePopup
 func _on_vile_button_down() -> void:
-	var cost = 4
+	var cost = 8
 	if gold >= cost:
 		gold -= cost
 		update_gold_display()
@@ -150,27 +138,95 @@ func _on_vile_button_down() -> void:
 		await get_tree().create_timer(0.5).timeout
 		vile_pop_up.visible = false
 
+#skill pop up drag
+@onready var button = $background/CanvasLayer/skills/VBoxContainer3/Buttonskill
+@onready var skill_art = $background/CanvasLayer/skills/VBoxContainer3/SkillArt
 
-@onready var button_skill = $background/CanvasLayer/skills/VBoxContainer3/Buttonskill
-@onready var skill_art = $background/CanvasLayer/skills/VBoxContainer3/skillart
+var dragging: bool = false
 
-var skill_art_active := false
-
-#func _ready(): 
-	#art.visible = false 
-	
-#work on sprite2d and effecton enemy minions / work on (ult/health)
-func _on_button_skill_pressed() -> void:
+func _on_buttonskill_pressed() -> void:
 	skill_art.visible = true
-	#skill_art.active = true
-	
-func _unhandle_input(event: InputEvent) -> void:
-	if skill_art_active and event is InputEventMouseButton and event.pressed:
-		var offset = skill_art.texture.get_size() * skill_art.scale * 0.5
-		skill_art.global_position = event.position - offset
-	
-	#_on_buttonskill_button_down.call()
-	
+	skill_art.global_position = get_global_mouse_position()
+	dragging = true
 
-   
-  
+func _process(delta: float) -> void:
+	if dragging:
+		skill_art.global_position = get_global_mouse_position()
+
+func _input(event):
+	if dragging and event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
+			dragging = false
+			skill_art.visible = false
+
+	
+#ult pop up drag
+
+
+	
+#vile pop up drag
+
+
+
+#range upgrade pop up text and effect on gold count
+@onready var range_upgrade_text = $"background/CanvasLayer/minion upgrade/rangeminionupgrade/rangeupgradebutton/range upgrade text"
+func _on_rangeupgradebutton_button_down() -> void:
+	var cost = 12
+	if gold >= cost:
+		gold -= cost 
+		update_gold_display()
+		
+		
+		range_upgrade_text.text = "RANGE MINION UPGRADE"
+		range_upgrade_text.visible = true
+		
+		await get_tree().create_timer(0.5).timeout
+		range_upgrade_text.visible = false
+	else:
+		range_upgrade_text.text = "UR POOR"
+		range_upgrade_text.visible = true
+		
+		await get_tree().create_timer(0.5).timeout
+		range_upgrade_text.visible = false
+		
+#melee upgrade pop up text and effect on gold count
+@onready var melee_upgrade_text = $"background/CanvasLayer/minion upgrade/meleeminionupgrade/meleeupgrademinion/melee upgrade text"
+func _on_meleeupgrademinion_button_down() -> void:
+	var cost = 10
+	if gold >= cost:
+		gold -= cost 
+		update_gold_display()
+		
+		
+		melee_upgrade_text.text = "MELEE MINION UPGRADE"
+		melee_upgrade_text.visible = true
+		
+		await get_tree().create_timer(0.5).timeout
+		melee_upgrade_text.visible = false
+	else:
+		melee_upgrade_text.text = "UR POOR"
+		melee_upgrade_text.visible = true
+		
+		await get_tree().create_timer(0.5).timeout
+		melee_upgrade_text.visible = false
+
+#skill upgrade pop up text and effect on gold count
+@onready var skill_upgrade_text = $"background/CanvasLayer/upgrade skills/skillupgrade/skillupgradebutton/skill upgrade text"
+func _on_skillupgradebutton_button_down() -> void:
+	var cost = 14
+	if gold >= cost:
+		gold -= cost 
+		update_gold_display()
+		
+		
+		skill_upgrade_text.text = "SKILL UPGRADE"
+		skill_upgrade_text.visible = true
+		
+		await get_tree().create_timer(0.5).timeout
+		skill_upgrade_text.visible = false
+	else:
+		skill_upgrade_text.text = "UR POOR"
+		skill_upgrade_text.visible = true
+		
+		await get_tree().create_timer(0.5).timeout
+		skill_upgrade_text.visible = false

@@ -57,6 +57,9 @@ func TakeDamage(amount: int):
 	if(Health<=0):
 		queue_free()
 
+#take damage from skill 
+#@onready var skill_damage = 
+
 #adds gold when minion dies(?)
 @onready var main_ui = get_node("/root/Test_Level/main_ui")
 
