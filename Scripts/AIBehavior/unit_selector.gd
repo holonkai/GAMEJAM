@@ -11,18 +11,18 @@ func _input(e: InputEvent) -> void:
 	if e is InputEventMouseButton and e.button_index==MOUSE_BUTTON_LEFT:
 		if(e.pressed):
 			selecting=true 
-			dragStart=e.position
+			dragStart=e.global_position
 			
 		else:
 			selecting=false
-			if dragStart.is_equal_approx(e.position):
-				selectBox=Rect2(e.position,Vector2.ZERO)
+			if dragStart.is_equal_approx(e.global_position):
+				selectBox=Rect2(e.global_position,Vector2.ZERO)
 			update_selected_units()
 			queue_redraw()
 	elif selecting and e is InputEventMouseMotion:
-		var x_min=min(dragStart.x,e.position.x)
-		var y_min=min(dragStart.y,e.position.y)
-		selectBox=Rect2(x_min,y_min,max(dragStart.x,e.position.x)-x_min,max(dragStart.y,e.position.y)-y_min)
+		var x_min=min(dragStart.x,e.global_position.x)
+		var y_min=min(dragStart.y,e.global_position.y)
+		selectBox=Rect2(x_min,y_min,max(dragStart.x,e.global_position.x)-x_min,max(dragStart.y,e.global_position.y)-y_min)
 		update_selected_units()
 		queue_redraw()
 	### moving units
@@ -35,8 +35,9 @@ func move_selected_units(pos: Vector2):
 	pos=snap_to_map(pos)
 	var positions=UnitFormation.line(pos,units.size())
 	for i in units.size():
+		print(NavigationServer2D.map_get_path(map, snap_to_map(units[i].global_position), snap_to_map(positions[i]),true))
+		print(snap_to_map(units[i].global_position),snap_to_map(positions[i]))
 		var path=NavigationServer2D.map_get_path(map, snap_to_map(units[i].global_position), snap_to_map(positions[i]),true)
-		#print(path)
 		units[i].move(path)
 		
 func snap_to_map(pos: Vector2):

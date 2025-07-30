@@ -1,24 +1,14 @@
-<<<<<<< HEAD
-[gd_scene load_steps=10 format=4 uid="uid://b2qt0biuylxaf"]
-=======
-[gd_scene load_steps=11 format=4 uid="uid://b2qt0biuylxaf"]
->>>>>>> 680da76bd042fca6c5296dd87e830063f36d68a4
+[gd_scene load_steps=11 format=4 uid="uid://gxysniwtokq"]
 
 [ext_resource type="PackedScene" uid="uid://buu3s7p880em8" path="res://Prefabs/main_ui.tscn" id="1_8qa7p"]
 [ext_resource type="Script" uid="uid://6wir3kyrrvid" path="res://Scripts/WaveControl.gd" id="1_ko66c"]
 [ext_resource type="Texture2D" uid="uid://cgtgts1ssqnq4" path="res://Sprites/Ui and backgrounds/Space Background.png" id="2_roogt"]
-<<<<<<< HEAD
-[ext_resource type="PackedScene" uid="uid://dxyx5cgf2lc4x" path="res://Prefabs/enemy.tscn" id="4_82kbh"]
-[ext_resource type="PackedScene" uid="uid://b7cvmm237m0dq" path="res://Prefabs/enemy_control.tscn" id="5_3lhwo"]
-[ext_resource type="PackedScene" uid="uid://wsbyuab5gqmv" path="res://Prefabs/Meleeminion.tscn" id="6_ko66c"]
-=======
 [ext_resource type="PackedScene" uid="uid://rx6crdc14vrq" path="res://Prefabs/MinionControl.tscn" id="5_fdy5w"]
 [ext_resource type="PackedScene" uid="uid://b7cvmm237m0dq" path="res://Prefabs/enemy_control.tscn" id="6_tdxe6"]
 [ext_resource type="PackedScene" uid="uid://ctfvjwh8awc86" path="res://Prefabs/RangeMinion.tscn" id="7_fdy5w"]
->>>>>>> 680da76bd042fca6c5296dd87e830063f36d68a4
 [ext_resource type="Texture2D" uid="uid://d02xfdehptq5l" path="res://Sprites/Ui and backgrounds/mars-dunes-8col-16bit565-2.png" id="10_opuq0"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q6r6c"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fdy5w"]
 texture = ExtResource("10_opuq0")
 0:0/0 = 0
 1:0/0 = 0
@@ -328,7 +318,7 @@ texture = ExtResource("10_opuq0")
 16:17/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_kdubu"]
-sources/0 = SubResource("TileSetAtlasSource_q6r6c")
+sources/0 = SubResource("TileSetAtlasSource_fdy5w")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ko66c"]
 vertices = PackedVector2Array(1194.8, -2.03125, 1181.19, 701.883, -2.5625, 688.102, -4.99219, 646.758, -3.03125, -5.96094)
@@ -340,10 +330,10 @@ script = ExtResource("1_ko66c")
 
 [node name="mainUI" parent="." instance=ExtResource("1_8qa7p")]
 unique_name_in_owner = true
-offset_left = 859.0
-offset_top = 469.0
-offset_right = 899.0
-offset_bottom = 509.0
+offset_left = 854.0
+offset_top = 467.0
+offset_right = 894.0
+offset_bottom = 507.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -358,20 +348,6 @@ scale = Vector2(1.1475, 1.12105)
 tile_map_data = PackedByteArray("AAAEAAcAAAAJAA0AAAAFAAYAAAAJAA0AAAAFAAcAAAAFAAkAAAAGAAYAAAAJAA0AAAAGAAcAAAAJAA0AAAAHAAYAAAAJAA0AAAAHAAUAAAAFAAoAAAAcAA4AAAAJAA0AAAAcAA8AAAAJAA0AAAAaAA8AAAAJAA0AAAAbAA8AAAAJAA0AAAAaAA4AAAAJAA0AAAAZAA8AAAAJAA0AAAAZAA4AAAAJAA0AAAAdAA4AAAAJAA0AAAAZABAAAAAJAA0AAAANAAoAAAAJAA0AAAANAAsAAAAJAA0AAAAOAAsAAAAJAA0AAAAQAAsAAAAJAA0AAAAPAAwAAAAJAA0AAAAOAAwAAAAJAA0AAAAQAAIAAAAJAA0AAAARAAIAAAAJAA0AAAASAAIAAAAJAA0AAAATAAIAAAAJAA0AAAATAAMAAAAJAA0AAAAUAAMAAAAJAA0AAAATAAQAAAAJAA0AAAATAAUAAAAJAA0AAAAVAAUAAAAJAA0AAAAVAAQAAAAJAA0AAAAUAAQAAAAJAA0AAAARAAMAAAAJAA0AAAARAAQAAAAJAA0AAAASAAQAAAAJAA0AAAAKAAUAAAAJAA0AAAALAAUAAAAJAA0AAAAMAAUAAAAJAA0AAAALAAQAAAAJAA0AAAAIAA4AAAAJAA0AAAAHAA4AAAAJAA0AAAASAAMAAAAJAA0AAAAIAA0AAAAJAA0AAAAGAA0AAAAJAA0AAAAHAA0AAAAJAA0AAAAJAA4AAAAJAA0AAAA=")
 tile_set = SubResource("TileSet_kdubu")
 
-<<<<<<< HEAD
-[node name="Enemy" parent="." instance=ExtResource("4_82kbh")]
-position = Vector2(1021, 269)
-rotation = 3.14159
-
-[node name="EnemyControl" parent="." instance=ExtResource("5_3lhwo")]
-offset_left = 1087.0
-offset_top = 625.0
-offset_right = 1127.0
-offset_bottom = 665.0
-
-[node name="Minion" parent="." instance=ExtResource("6_ko66c")]
-position = Vector2(244, 345)
-=======
 [node name="Control" parent="." instance=ExtResource("5_fdy5w")]
 offset_left = 9.0
 offset_top = 5.0
@@ -391,6 +367,7 @@ offset_bottom = 364.0
 metadata/_edit_use_anchors_ = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
 position = Vector2(-29, -2)
 navigation_polygon = SubResource("NavigationPolygon_ko66c")
 
@@ -452,4 +429,3 @@ position = Vector2(219, 450)
 position = Vector2(219, 450)
 
 [connection signal="timeout" from="WaveTimer" to="." method="_on_wave_timer_timeout"]
->>>>>>> 680da76bd042fca6c5296dd87e830063f36d68a4

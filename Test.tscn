@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://cwwpi27a652u3"]
+
+[ext_resource type="PackedScene" uid="uid://buu3s7p880em8" path="res://Prefabs/main_ui.tscn" id="1_ivycn"]
+[ext_resource type="PackedScene" uid="uid://dxyx5cgf2lc4x" path="res://Prefabs/enemy.tscn" id="2_q1uvj"]
+[ext_resource type="PackedScene" uid="uid://wsbyuab5gqmv" path="res://Prefabs/Meleeminion.tscn" id="3_qs82m"]
+[ext_resource type="PackedScene" uid="uid://ctfvjwh8awc86" path="res://Prefabs/RangeMinion.tscn" id="4_c4vo5"]
+[ext_resource type="PackedScene" uid="uid://rx6crdc14vrq" path="res://Prefabs/MinionControl.tscn" id="5_vwb7u"]
+[ext_resource type="PackedScene" uid="uid://b7cvmm237m0dq" path="res://Prefabs/enemy_control.tscn" id="6_cqdos"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ivycn"]
+vertices = PackedVector2Array(375.508, 218.156, -932.391, 243.781, -888.563, -514.047, 500.156, -522.922)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-898, -524, 512, -533, 384, 228, -943, 254)])
+
+[node name="Node2D" type="Node2D"]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
+position = Vector2(858, 472)
+navigation_polygon = SubResource("NavigationPolygon_ivycn")
+
+[node name="mainUI" parent="." instance=ExtResource("1_ivycn")]
+unique_name_in_owner = true
+offset_left = 858.0
+offset_top = 472.0
+offset_right = 898.0
+offset_bottom = 512.0
+
+[node name="Enemy" parent="." instance=ExtResource("2_q1uvj")]
+position = Vector2(813, 324)
+
+[node name="Minion" parent="." instance=ExtResource("3_qs82m")]
+position = Vector2(257, 391)
+
+[node name="RangeMinion" parent="." instance=ExtResource("4_c4vo5")]
+position = Vector2(324, 476)
+
+[node name="Control" parent="." instance=ExtResource("5_vwb7u")]
+
+[node name="EnemyControl" parent="." instance=ExtResource("6_cqdos")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 40.0
+offset_bottom = 40.0

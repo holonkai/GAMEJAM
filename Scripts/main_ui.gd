@@ -216,8 +216,8 @@ func _on_skillupgradebutton_button_down() -> void:
 		
 #skills drag on screen 
 @onready var buttonskill = $background/CanvasLayer/skills/VBoxContainer3/Buttonskill
-@onready var button_vile = $background/CanvasLayer/skills/VBoxContainer3/Buttvile
-@onready var button_ult = $background/CanvasLayer/skills/VBoxContainer3/Buttonult
+@onready var button_vile = $background/CanvasLayer/skills/VBoxContainer/buttonvile
+@onready var button_ult = $background/CanvasLayer/skills/VBoxContainer2/buttonult
 
 @onready var skill_art = $background/CanvasLayer/skills/VBoxContainer3/SkillArt
 @onready var vile_art = $background/CanvasLayer/skills/VBoxContainer/VileArt

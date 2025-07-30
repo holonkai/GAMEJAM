@@ -34,6 +34,8 @@ func move(_path:PackedVector2Array):
 
 func _process(delta: float) -> void:
 	#finding the distance between target and global position and moving towards target
+	if(path.size()<1):
+		return
 	var targetPos=path[0]
 	var diff= targetPos-global_position
 	if (diff.length()>1):

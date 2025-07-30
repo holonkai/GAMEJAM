@@ -1,7 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://buu3s7p880em8"]
+[gd_scene load_steps=20 format=3 uid="uid://buu3s7p880em8"]
 
 [ext_resource type="Script" uid="uid://vewhlig5jmkf" path="res://Scripts/main_ui.gd" id="1_vvnq0"]
-[ext_resource type="Script" uid="uid://dekbn1rv70t2d" path="res://Prefabs/background.gd" id="2_2tul4"]
+[ext_resource type="Script" path="res://Prefabs/background.gd" id="2_2tul4"]
 [ext_resource type="Texture2D" uid="uid://ccbkgeuj0a76y" path="res://Sprites/Friendlies/newfriendrangeminion.png" id="3_g5gk6"]
 [ext_resource type="Texture2D" uid="uid://dl7bjjn15numn" path="res://Sprites/Friendlies/onfieldmeleeminionfriend.png" id="4_s8vc5"]
 [ext_resource type="Texture2D" uid="uid://dedlfaugd2u5j" path="res://Sprites/Enemies/bigguyonfieldrangeminion.png" id="5_36xyc"]
@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://br7jc0yt7pps0" path="res://Sprites/Ui and backgrounds/vile.png" id="7_3hs73"]
 [ext_resource type="Texture2D" uid="uid://dueb0emu6agy2" path="res://Sprites/Ui and backgrounds/Untitled_2.png" id="8_v54gd"]
 [ext_resource type="Texture2D" uid="uid://001mhdv7my7w" path="res://Sprites/Ui and backgrounds/gun3.png" id="9_6ev4f"]
-[ext_resource type="PackedScene" uid="uid://dpf7eno71dwho" path="res://Prefabs/minion.tscn" id="15_3hs73"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6r6c"]
 bg_color = Color(0.6, 0.6, 0.6, 0.25098)
@@ -442,10 +441,6 @@ position = Vector2(-27, -257)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("9_6ev4f")
 
-[node name="Minion" parent="background/CanvasLayer/skills/VBoxContainer3" instance=ExtResource("15_3hs73")]
-position = Vector2(-95, -213)
-rotation = 3.14159
-
 [node name="vilepricetag" type="Label" parent="background/CanvasLayer/skills"]
 layout_mode = 0
 offset_left = 179.0
@@ -661,7 +656,6 @@ text = "$16
 "
 
 [node name="Camera2D" type="Camera2D" parent="background"]
-position = Vector2(0, -0.950001)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 
