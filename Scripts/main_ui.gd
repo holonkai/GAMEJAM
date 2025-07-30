@@ -265,7 +265,7 @@ func _on_ult_buttonupgrade_pressed() -> void:
 		await get_tree().create_timer(0.5).timeout
 		ult_upgrade_text.visible = false
 
-@onready var upgrade_heal_text = $"background/CanvasLayer/upgrade skills/healupgrade/upgradehealbutton/upgrade heal text"
+@onready var upgrade_heal_text = $"background/CanvasLayer/upgrade skills/healupgrade/upgradehealbutton/heal upgrade text"
 func _on_upgradehealbutton_button_down() -> void:
 	var cost = 18
 	if gold >= cost:
