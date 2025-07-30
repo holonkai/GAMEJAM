@@ -1,5 +1,7 @@
 extends Node
 
+@onready var wave_label = $wavelabel
+
 var MeleeEnemy=preload("res://Prefabs/enemy.tscn")
 
 var spawnDelay: float=0.0
@@ -42,5 +44,8 @@ func _process(delta: float) -> void:
 
 func _on_wave_timer_timeout() -> void:
 	waveCount+=1
+	if wave_label:
+		wave_label.text = "Wave: %d" % waveCount
 	print(waveCount)
 	set_process(true)
+	

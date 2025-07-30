@@ -15,8 +15,8 @@
 unique_name_in_owner = true
 offset_left = 858.0
 offset_top = 472.0
-offset_right = 898.0
-offset_bottom = 512.0
+offset_right = 924.0
+offset_bottom = 495.0
 
 [node name="Enemy" parent="." instance=ExtResource("2_q1uvj")]
 position = Vector2(813, 324)
@@ -37,5 +37,12 @@ offset_bottom = 40.0
 
 [node name="WaveControl" parent="." instance=ExtResource("7_q1uvj")]
 
+[node name="wavelabel" type="Label" parent="WaveControl"]
+z_index = 2
+offset_left = 455.0
+offset_top = 16.0
+offset_right = 575.0
+offset_bottom = 68.0
+
 [node name="Node2D" parent="." instance=ExtResource("8_qs82m")]
-position = Vector2(-23, -2)
+position = Vector2(-2, -9)

@@ -629,9 +629,9 @@ texture = ExtResource("8_v54gd")
 
 [node name="ultupgradetext" type="Label" parent="background/CanvasLayer/upgrade skills/ultupgrade/ultbuttonupgrade"]
 layout_mode = 2
-offset_left = 165.0
+offset_left = 136.0
 offset_top = -262.0
-offset_right = 573.0
+offset_right = 508.0
 offset_bottom = -202.0
 
 [node name="healupgrade" type="VBoxContainer" parent="background/CanvasLayer/upgrade skills"]
@@ -656,10 +656,10 @@ texture = ExtResource("7_3hs73")
 
 [node name="healupgradetext" type="Label" parent="background/CanvasLayer/upgrade skills/healupgrade/upgradehealbutton"]
 layout_mode = 0
-offset_left = 146.0
-offset_top = -312.0
-offset_right = 495.0
-offset_bottom = -239.0
+offset_left = 89.0
+offset_top = -299.0
+offset_right = 438.0
+offset_bottom = -226.0
 
 [node name="skillpricetag" type="Label" parent="background/CanvasLayer/upgrade skills"]
 layout_mode = 0
