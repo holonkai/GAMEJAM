@@ -119,7 +119,7 @@ func _on_evil_melee_minion_button_down() -> void:
 	evil_melee_minion_pop_up.visible = false
 	
 #vile pop up text and effect on gold count
-@onready var vile_pop_up = $background/CanvasLayer/skills/VBoxContainer/vile/VilePopup
+@onready var vile_pop_up = $background/CanvasLayer/skills/VBoxContainer/buttonvile/VilePopup
 func _on_vile_button_down() -> void:
 	var cost = 8
 	if gold >= cost:
@@ -139,32 +139,15 @@ func _on_vile_button_down() -> void:
 		vile_pop_up.visible = false
 
 #skill pop up drag
-@onready var button = $background/CanvasLayer/skills/VBoxContainer3/Buttonskill
-@onready var skill_art = $background/CanvasLayer/skills/VBoxContainer3/SkillArt
 
-var dragging: bool = false
 
-func _on_buttonskill_pressed() -> void:
-	skill_art.visible = true
-	skill_art.global_position = get_global_mouse_position()
-	dragging = true
 
-func _process(delta: float) -> void:
-	if dragging:
-		skill_art.global_position = get_global_mouse_position()
 
-func _input(event):
-	if dragging and event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
-			dragging = false
-			skill_art.visible = false
 
-	
-#ult pop up drag
+
 
 
 	
-#vile pop up drag
 
 
 
@@ -230,3 +213,63 @@ func _on_skillupgradebutton_button_down() -> void:
 		
 		await get_tree().create_timer(0.5).timeout
 		skill_upgrade_text.visible = false
+		
+#skills drag on screen 
+@onready var buttonskill = $background/CanvasLayer/skills/VBoxContainer3/Buttonskill
+@onready var button_vile = $background/CanvasLayer/skills/VBoxContainer3/Buttvile
+@onready var button_ult = $background/CanvasLayer/skills/VBoxContainer3/Buttonult
+
+@onready var skill_art = $background/CanvasLayer/skills/VBoxContainer3/SkillArt
+@onready var vile_art = $background/CanvasLayer/skills/VBoxContainer/VileArt
+@onready var ult_art = $background/CanvasLayer/skills/VBoxContainer2/UltArt
+
+var dragging: bool = false
+var dragged_art: Node2D = null
+var drag_offset: Vector2 = Vector2.ZERO
+
+#func _ready():
+	#buttonskill.pressed.connect(_on_buttonskill_pressed)
+	#button_vile.pressed.connect(_on_buttonvile_pressed)
+	#button_ult.pressed.connect(_on_buttonult_pressed)
+
+func _start_drag(art_node: Node2D) -> void:
+	dragged_art = art_node
+	dragged_art.visible = true
+	drag_offset = dragged_art.global_position - get_global_mouse_position()
+	dragging = true
+
+
+func _on_buttonskill_pressed() -> void:
+	_start_drag(skill_art)
+
+
+func _on_buttonvile_pressed() -> void:
+	_start_drag(vile_art)
+
+
+func _on_buttonult_pressed() -> void:
+		_start_drag(ult_art)
+
+func _process(delta: float) -> void:
+	if dragging and dragged_art:
+		dragged_art.global_position = get_global_mouse_position() + drag_offset
+
+func _input(event):
+	if dragging and event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
+			# Optional: Handle dropping on valid targets here
+			dragging = false
+			if dragged_art:
+				dragged_art.visible = false
+				dragged_art = null
+
+func _get_enemy_under_mouse() -> Node:
+	var space_state = get_world_2d().direct_space_state
+	var mouse_pos = get_global_mouse_position()
+	
+	var result = space_state.intersect_point(mouse_pos)
+	
+	for r in result:
+		if r.collider.has_method("TakeDamage"):
+			return r.collider
+	return null
