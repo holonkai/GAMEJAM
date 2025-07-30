@@ -1,8 +1,9 @@
 extends Control
-
+var MeleeMinion=preload("res://Prefabs/Meleeminion.tscn")
+var RangeMinion=preload("res://Prefabs/RangeMinion.tscn")
 
 var gold: int=600
-
+var rng= RandomNumberGenerator.new()
 @onready var gold_label = $background/CanvasLayer/goldscountpanel/GoldLabel
 func _ready():
 	update_gold_display()
@@ -25,7 +26,9 @@ func _on_range_minion_button_down() -> void:
 		
 		range_pop_up.text = "RANGE MINION +1"
 		range_pop_up.visible = true
-		
+		var newGuy=RangeMinion.instantiate()
+		newGuy.position=Vector2(rng.randi_range(0,100),rng.randi_range(400,500))
+		add_sibling(newGuy)
 		await get_tree().create_timer(0.5).timeout
 		range_pop_up.visible = false
 	else:
@@ -43,7 +46,9 @@ func _on_melee_minion_button_down() -> void:
 		gold -= cost 
 		update_gold_display()
 		
-		
+		var newGuy=MeleeMinion.instantiate()
+		newGuy.position=Vector2(rng.randi_range(0,100),rng.randi_range(400,500))
+		add_sibling(newGuy)
 		melee_pop_up.text = "MELEE MINION +1"
 		melee_pop_up.visible = true
 		
