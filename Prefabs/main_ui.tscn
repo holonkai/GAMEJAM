@@ -574,10 +574,10 @@ offset_bottom = 100.0
 text = "^upgrade minions"
 
 [node name="upgrade skills" type="Panel" parent="background/CanvasLayer"]
-offset_left = 9.0
-offset_top = 225.0
-offset_right = 83.0
-offset_bottom = 352.0
+offset_left = 11.0
+offset_top = 227.0
+offset_right = 85.0
+offset_bottom = 354.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_2tul4")
 
 [node name="skillupgrade" type="VBoxContainer" parent="background/CanvasLayer/upgrade skills"]
@@ -610,20 +610,29 @@ offset_bottom = -148.0
 layout_mode = 0
 offset_left = 4.0
 offset_top = 46.0
-offset_right = 44.0
-offset_bottom = 86.0
+offset_right = 43.0
+offset_bottom = 84.0
 
-[node name="Button" type="Button" parent="background/CanvasLayer/upgrade skills/ultupgrade"]
+[node name="ultbuttonupgrade" type="Button" parent="background/CanvasLayer/upgrade skills/ultupgrade"]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 3.38
 
-[node name="TextureRect" type="TextureRect" parent="background/CanvasLayer/upgrade skills/ultupgrade/Button"]
+[node name="TextureRect" type="TextureRect" parent="background/CanvasLayer/upgrade skills/ultupgrade/ultbuttonupgrade"]
 layout_mode = 0
-offset_top = 1.0
-offset_right = 114.0
-offset_bottom = 113.0
+offset_left = -0.999985
+offset_top = -0.999999
+offset_right = 113.0
+offset_bottom = 108.0
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("8_v54gd")
+
+[node name="ultupgradetext" type="Label" parent="background/CanvasLayer/upgrade skills/ultupgrade/ultbuttonupgrade"]
+layout_mode = 2
+offset_left = 165.0
+offset_top = -262.0
+offset_right = 573.0
+offset_bottom = -202.0
 
 [node name="healupgrade" type="VBoxContainer" parent="background/CanvasLayer/upgrade skills"]
 layout_mode = 0
@@ -645,10 +654,12 @@ offset_bottom = 165.0
 scale = Vector2(0.28, 0.28)
 texture = ExtResource("7_3hs73")
 
-[node name="heal upgrade text" type="Label" parent="background/CanvasLayer/upgrade skills/healupgrade/upgradehealbutton"]
+[node name="healupgradetext" type="Label" parent="background/CanvasLayer/upgrade skills/healupgrade/upgradehealbutton"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 146.0
+offset_top = -312.0
+offset_right = 495.0
+offset_bottom = -239.0
 
 [node name="skillpricetag" type="Label" parent="background/CanvasLayer/upgrade skills"]
 layout_mode = 0
@@ -692,3 +703,5 @@ text = "$10
 [connection signal="button_down" from="background/CanvasLayer/minion upgrade/rangeminionupgrade/rangeupgradebutton" to="." method="_on_rangeupgradebutton_button_down"]
 [connection signal="button_down" from="background/CanvasLayer/minion upgrade/meleeminionupgrade/meleeupgrademinion" to="." method="_on_meleeupgrademinion_button_down"]
 [connection signal="button_down" from="background/CanvasLayer/upgrade skills/skillupgrade/skillupgradebutton" to="." method="_on_skillupgradebutton_button_down"]
+[connection signal="button_down" from="background/CanvasLayer/upgrade skills/ultupgrade/ultbuttonupgrade" to="." method="_on_ult_buttonupgrade_button_down"]
+[connection signal="button_down" from="background/CanvasLayer/upgrade skills/healupgrade/upgradehealbutton" to="." method="_on_upgradehealbutton_button_down"]

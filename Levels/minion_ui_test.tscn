@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b7cvmm237m0dq" path="res://Prefabs/enemy_control.tscn" id="5_4ing3"]
 [ext_resource type="PackedScene" uid="uid://wsbyuab5gqmv" path="res://Prefabs/Meleeminion.tscn" id="5_iubti"]
 [ext_resource type="PackedScene" uid="uid://ctfvjwh8awc86" path="res://Prefabs/RangeMinion.tscn" id="6_ml5i0"]
-[ext_resource type="PackedScene" path="res://Prefabs/wave_control.tscn" id="7_v4xwl"]
+[ext_resource type="PackedScene" uid="uid://c74kkta7xxhsj" path="res://Prefabs/wave_control.tscn" id="7_v4xwl"]
 
 [node name="MinionUiTest" type="Node2D"]
 

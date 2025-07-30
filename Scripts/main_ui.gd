@@ -217,12 +217,12 @@ func _on_skillupgradebutton_button_down() -> void:
 
 var dragging: bool = false
 var dragged_art: Node2D = null
-var drag_offset: Vector2 = Vector2.ZERO
+#var drag_offset: Vector2 = Vector2.ZERO
 
 func _start_drag(art_node: Node2D) -> void:
 	dragged_art = art_node
 	dragged_art.visible = true
-	drag_offset = dragged_art.global_position - get_global_mouse_position()
+	#drag_offset = dragged_art.global_position - get_global_mouse_position()
 	dragging = true
 
 
@@ -239,7 +239,7 @@ func _on_buttonult_pressed() -> void:
 
 func _process(delta: float) -> void:
 	if dragging and dragged_art:
-		dragged_art.global_position = get_global_mouse_position() + drag_offset
+		dragged_art.global_position = get_global_mouse_position() #+ drag_offset
 
 func _input(event):
 	if dragging and event is InputEventMouseButton:
@@ -250,9 +250,11 @@ func _input(event):
 				dragged_art.visible = false
 				dragged_art = null
 
-@onready var ult_upgrade_text = $"background/CanvasLayer/upgrade skills/ultupgrade/ultButtonupgrade/ult upgrade text"
-func _on_ult_buttonupgrade_pressed() -> void:
-	var cost = 14
+
+
+@onready var ult_upgrade_text = $"background/CanvasLayer/upgrade skills/ultupgrade/ultbuttonupgrade/ultupgradetext"
+func _on_ult_buttonupgrade_button_down() -> void:
+	var cost = 18
 	if gold >= cost:
 		gold -= cost 
 		update_gold_display()
@@ -269,8 +271,9 @@ func _on_ult_buttonupgrade_pressed() -> void:
 		
 		await get_tree().create_timer(0.5).timeout
 		ult_upgrade_text.visible = false
+	
 
-@onready var upgrade_heal_text = $"background/CanvasLayer/upgrade skills/healupgrade/upgradehealbutton/heal upgrade text"
+@onready var heal_update_text = $"background/CanvasLayer/upgrade skills/healupgrade/upgradehealbutton/healupgradetext"
 func _on_upgradehealbutton_button_down() -> void:
 	var cost = 18
 	if gold >= cost:
@@ -278,14 +281,16 @@ func _on_upgradehealbutton_button_down() -> void:
 		update_gold_display()
 		
 		
-		upgrade_heal_text.text = "HEAL UPGRADE"
-		upgrade_heal_text.visible = true
+		heal_update_text.text = "HEAL UPGRADE"
+		heal_update_text.visible = true
 		
 		await get_tree().create_timer(0.5).timeout
-		upgrade_heal_text.visible = false
+		heal_update_text.visible = false
 	else:
-		upgrade_heal_text.text = "UR POOR"
-		ult_upgrade_text.visible = true
+		heal_update_text.text = "UR POOR"
+		heal_update_text.visible = true
 		
 		await get_tree().create_timer(0.5).timeout
-		upgrade_heal_text.visible = false
+		heal_update_text.visible = false
+	
+	
