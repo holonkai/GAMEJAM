@@ -15,19 +15,15 @@ offset_right = 910.0
 offset_bottom = 510.0
 
 [node name="Control" parent="." instance=ExtResource("3_ml5i0")]
-offset_left = 395.0
-offset_top = 281.0
-offset_right = 435.0
-offset_bottom = 321.0
 
 [node name="Enemy" parent="." instance=ExtResource("4_v4xwl")]
 position = Vector2(853, 266)
 
 [node name="EnemyControl" parent="." instance=ExtResource("5_4ing3")]
-offset_left = 828.0
-offset_top = 252.0
-offset_right = 868.0
-offset_bottom = 292.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="Minion" parent="." instance=ExtResource("5_iubti")]
 position = Vector2(348, 316)

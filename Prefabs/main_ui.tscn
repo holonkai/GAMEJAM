@@ -702,8 +702,6 @@ text = "^upgrade abilities "
 
 [node name="Camera2D" type="Camera2D" parent="background"]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-
 [connection signal="button_down" from="background/CanvasLayer/LittleGuyEconomy/shopbox/range minion" to="." method="_on_range_minion_button_down"]
 [connection signal="button_down" from="background/CanvasLayer/LittleGuyEconomy/shopbox2/melee minion" to="." method="_on_melee_minion_button_down"]
 [connection signal="button_down" from="background/CanvasLayer/bigguy/evilrangeminion/evil range minion" to="." method="_on_evil_range_minion_button_down"]
