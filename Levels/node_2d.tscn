@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=4 uid="uid://gxysniwtokq"]
 
 [ext_resource type="PackedScene" uid="uid://buu3s7p880em8" path="res://Prefabs/main_ui.tscn" id="1_8qa7p"]
-[ext_resource type="Script" uid="uid://6wir3kyrrvid" path="res://Scripts/WaveControl.gd" id="1_ko66c"]
 [ext_resource type="Texture2D" uid="uid://cgtgts1ssqnq4" path="res://Sprites/Ui and backgrounds/Space Background.png" id="2_roogt"]
 [ext_resource type="PackedScene" uid="uid://rx6crdc14vrq" path="res://Prefabs/MinionControl.tscn" id="5_fdy5w"]
 [ext_resource type="PackedScene" uid="uid://b7cvmm237m0dq" path="res://Prefabs/enemy_control.tscn" id="6_tdxe6"]
 [ext_resource type="PackedScene" uid="uid://ctfvjwh8awc86" path="res://Prefabs/RangeMinion.tscn" id="7_fdy5w"]
+[ext_resource type="PackedScene" uid="uid://c74kkta7xxhsj" path="res://Prefabs/wave_control.tscn" id="7_tdxe6"]
 [ext_resource type="Texture2D" uid="uid://d02xfdehptq5l" path="res://Sprites/Ui and backgrounds/mars-dunes-8col-16bit565-2.png" id="10_opuq0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fdy5w"]
@@ -326,7 +326,6 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-15, 647, -13, -16, 1205, -12, 1191, 712, -12, 698)])
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_ko66c")
 
 [node name="mainUI" parent="." instance=ExtResource("1_8qa7p")]
 unique_name_in_owner = true
@@ -354,10 +353,6 @@ offset_top = 5.0
 offset_right = 49.0
 offset_bottom = 45.0
 metadata/_edit_use_anchors_ = true
-
-[node name="WaveTimer" type="Timer" parent="."]
-wait_time = 10.0
-autostart = true
 
 [node name="EnemyControl" parent="." instance=ExtResource("6_tdxe6")]
 offset_left = 300.0
@@ -428,4 +423,4 @@ position = Vector2(219, 450)
 [node name="RangeMinion19" parent="." instance=ExtResource("7_fdy5w")]
 position = Vector2(219, 450)
 
-[connection signal="timeout" from="WaveTimer" to="." method="_on_wave_timer_timeout"]
+[node name="WaveControl" parent="." instance=ExtResource("7_tdxe6")]
