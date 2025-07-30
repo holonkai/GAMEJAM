@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dx8sapiyil65f"]
+
+[ext_resource type="PackedScene" uid="uid://buu3s7p880em8" path="res://Prefabs/main_ui.tscn" id="1_iubti"]
+[ext_resource type="PackedScene" uid="uid://rx6crdc14vrq" path="res://Prefabs/MinionControl.tscn" id="3_ml5i0"]
+[ext_resource type="PackedScene" uid="uid://dxyx5cgf2lc4x" path="res://Prefabs/enemy.tscn" id="4_v4xwl"]
+[ext_resource type="PackedScene" uid="uid://b7cvmm237m0dq" path="res://Prefabs/enemy_control.tscn" id="5_4ing3"]
+[ext_resource type="PackedScene" uid="uid://wsbyuab5gqmv" path="res://Prefabs/Meleeminion.tscn" id="5_iubti"]
+
+[node name="MinionUiTest" type="Node2D"]
+
+[node name="mainUI" parent="." instance=ExtResource("1_iubti")]
+offset_left = 870.0
+offset_top = 470.0
+offset_right = 910.0
+offset_bottom = 510.0
+
+[node name="Control" parent="." instance=ExtResource("3_ml5i0")]
+offset_left = 395.0
+offset_top = 281.0
+offset_right = 435.0
+offset_bottom = 321.0
+
+[node name="Enemy" parent="." instance=ExtResource("4_v4xwl")]
+position = Vector2(853, 266)
+
+[node name="EnemyControl" parent="." instance=ExtResource("5_4ing3")]
+offset_left = 828.0
+offset_top = 252.0
+offset_right = 868.0
+offset_bottom = 292.0
+
+[node name="Minion" parent="." instance=ExtResource("5_iubti")]
+position = Vector2(348, 316)

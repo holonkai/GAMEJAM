@@ -138,19 +138,6 @@ func _on_vile_button_down() -> void:
 		await get_tree().create_timer(0.5).timeout
 		vile_pop_up.visible = false
 
-#skill pop up drag
-
-
-
-
-
-
-
-
-	
-
-
-
 #range upgrade pop up text and effect on gold count
 @onready var range_upgrade_text = $"background/CanvasLayer/minion upgrade/rangeminionupgrade/rangeupgradebutton/range upgrade text"
 func _on_rangeupgradebutton_button_down() -> void:
@@ -227,11 +214,6 @@ var dragging: bool = false
 var dragged_art: Node2D = null
 var drag_offset: Vector2 = Vector2.ZERO
 
-#func _ready():
-	#buttonskill.pressed.connect(_on_buttonskill_pressed)
-	#button_vile.pressed.connect(_on_buttonvile_pressed)
-	#button_ult.pressed.connect(_on_buttonult_pressed)
-
 func _start_drag(art_node: Node2D) -> void:
 	dragged_art = art_node
 	dragged_art.visible = true
@@ -263,13 +245,42 @@ func _input(event):
 				dragged_art.visible = false
 				dragged_art = null
 
-func _get_enemy_under_mouse() -> Node:
-	var space_state = get_world_2d().direct_space_state
-	var mouse_pos = get_global_mouse_position()
-	
-	var result = space_state.intersect_point(mouse_pos)
-	
-	for r in result:
-		if r.collider.has_method("TakeDamage"):
-			return r.collider
-	return null
+@onready var ult_upgrade_text = $"background/CanvasLayer/upgrade skills/ultupgrade/ultButtonupgrade/ult upgrade text"
+func _on_ult_buttonupgrade_pressed() -> void:
+	var cost = 14
+	if gold >= cost:
+		gold -= cost 
+		update_gold_display()
+		
+		
+		ult_upgrade_text.text = "ULT UPGRADE"
+		ult_upgrade_text.visible = true
+		
+		await get_tree().create_timer(0.5).timeout
+		ult_upgrade_text.visible = false
+	else:
+		ult_upgrade_text.text = "UR POOR"
+		ult_upgrade_text.visible = true
+		
+		await get_tree().create_timer(0.5).timeout
+		ult_upgrade_text.visible = false
+
+@onready var upgrade_heal_text = $"background/CanvasLayer/upgrade skills/healupgrade/upgradehealbutton/upgrade heal text"
+func _on_upgradehealbutton_button_down() -> void:
+	var cost = 18
+	if gold >= cost:
+		gold -= cost 
+		update_gold_display()
+		
+		
+		upgrade_heal_text.text = "HEAL UPGRADE"
+		upgrade_heal_text.visible = true
+		
+		await get_tree().create_timer(0.5).timeout
+		upgrade_heal_text.visible = false
+	else:
+		upgrade_heal_text.text = "UR POOR"
+		ult_upgrade_text.visible = true
+		
+		await get_tree().create_timer(0.5).timeout
+		upgrade_heal_text.visible = false
