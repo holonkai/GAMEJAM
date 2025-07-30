@@ -2,14 +2,12 @@ extends Node
 
 var MeleeEnemy=preload("res://Prefabs/enemy.tscn")
 
-var EnemiesLeft: int=0
 var spawnDelay: float=0.0
 var waves=[[1,1,1,1],[1,1,1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]]
 var TestScaling: int = waves.back().size()
+var waveCount=0
 var rng= RandomNumberGenerator.new()
-func _on_wave_timer_timeout() -> void:
-	EnemiesLeft=TestScaling
-	set_process(true)
+
 	
 func _process(delta: float) -> void:
 	spawnDelay+=delta
@@ -19,12 +17,11 @@ func _process(delta: float) -> void:
 	#print(spawnDelay)
 	if(waves[0].size()>=1):
 		#print(spawnDelay)
-		if(spawnDelay>=0.2):
+		if(spawnDelay>=0.05):
 			var newGuy=MeleeEnemy.instantiate()
 			newGuy.position=Vector2(rng.randi_range(900,1100),rng.randi_range(0,100))
 			add_sibling(newGuy)
 			#print(newGuy.global_position)
-			EnemiesLeft-=1
 			spawnDelay=0
 			waves[0].pop_front()
 			#print(waves[0])
@@ -41,3 +38,9 @@ func _process(delta: float) -> void:
 		
 		set_process(false)
 	
+
+
+func _on_wave_timer_timeout() -> void:
+	waveCount+=1
+	print(waveCount)
+	set_process(true)

@@ -8,3 +8,5 @@ script = ExtResource("1_h7thp")
 [node name="WaveTimer" type="Timer" parent="."]
 wait_time = 10.0
 autostart = true
+
+[connection signal="timeout" from="WaveTimer" to="." method="_on_wave_timer_timeout"]
