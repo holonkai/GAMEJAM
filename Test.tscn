@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwwpi27a652u3"]
+[gd_scene load_steps=9 format=3 uid="uid://cwwpi27a652u3"]
 
 [ext_resource type="PackedScene" uid="uid://buu3s7p880em8" path="res://Prefabs/main_ui.tscn" id="1_ivycn"]
 [ext_resource type="PackedScene" uid="uid://dxyx5cgf2lc4x" path="res://Prefabs/enemy.tscn" id="2_q1uvj"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ctfvjwh8awc86" path="res://Prefabs/RangeMinion.tscn" id="4_c4vo5"]
 [ext_resource type="PackedScene" uid="uid://rx6crdc14vrq" path="res://Prefabs/MinionControl.tscn" id="5_vwb7u"]
 [ext_resource type="PackedScene" uid="uid://b7cvmm237m0dq" path="res://Prefabs/enemy_control.tscn" id="6_cqdos"]
+[ext_resource type="PackedScene" uid="uid://c74kkta7xxhsj" path="res://Prefabs/wave_control.tscn" id="7_q1uvj"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ivycn"]
 vertices = PackedVector2Array(375.508, 218.156, -932.391, 243.781, -888.563, -514.047, 500.156, -522.922)
@@ -42,3 +43,5 @@ offset_left = 0.0
 offset_top = 0.0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="WaveControl" parent="." instance=ExtResource("7_q1uvj")]

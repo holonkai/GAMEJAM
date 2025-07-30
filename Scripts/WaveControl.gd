@@ -6,6 +6,7 @@ var EnemiesLeft: int=0
 var spawnDelay: float=0.0
 var waves=[[1,1,1,1],[1,1,1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]]
 var TestScaling: int = waves.back().size()
+var rng= RandomNumberGenerator.new()
 func _on_wave_timer_timeout() -> void:
 	EnemiesLeft=TestScaling
 	set_process(true)
@@ -20,8 +21,8 @@ func _process(delta: float) -> void:
 		#print(spawnDelay)
 		if(spawnDelay>=0.2):
 			var newGuy=MeleeEnemy.instantiate()
-			newGuy.position=Vector2(500,100)
-			add_child(newGuy)
+			newGuy.position=Vector2(rng.randi_range(900,1100),rng.randi_range(0,100))
+			add_sibling(newGuy)
 			#print(newGuy.global_position)
 			EnemiesLeft-=1
 			spawnDelay=0

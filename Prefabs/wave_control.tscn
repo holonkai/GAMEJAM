@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c74kkta7xxhsj"]
+
+[ext_resource type="Script" uid="uid://6wir3kyrrvid" path="res://Scripts/WaveControl.gd" id="1_h7thp"]
+
+[node name="WaveControl" type="Node2D"]
+script = ExtResource("1_h7thp")
+
+[node name="WaveTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true

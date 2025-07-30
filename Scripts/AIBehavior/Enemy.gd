@@ -62,13 +62,13 @@ func TakeDamage(amount: int):
 	$HPBAR.value=Health
 	$HPBAR.visible=true
 	if(Health<=0):
-		queue_free()
+		die()
 
 #adds gold when minion dies(?)
 
-
+@onready var mainUI: Control= get_tree().current_scene.get_node("%mainUI")
 func die():
-	%mainUI.add_gold(2)
+	mainUI.add_gold(2)
 	queue_free()
 
 func _on_timer_timeout() -> void:
