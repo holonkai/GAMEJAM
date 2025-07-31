@@ -89,6 +89,12 @@ func TakeDamage(amount: int):
 	$HPBAR.visible=true
 	if(Health<=0):
 		queue_free()
+		
+func Heal(amount: int):
+	Health = $HPBAR.max_value
+	$HPBAR.value = Health
+	$HPBAR.visible = true
+
 
 func _on_timer_timeout() -> void:
 	#print(position)

@@ -1,12 +1,8 @@
 [gd_scene load_steps=21 format=3 uid="uid://buu3s7p880em8"]
 
 [ext_resource type="Script" uid="uid://vewhlig5jmkf" path="res://Scripts/main_ui.gd" id="1_vvnq0"]
-<<<<<<< HEAD
 [ext_resource type="Script" uid="uid://dekbn1rv70t2d" path="res://Prefabs/background.gd" id="2_2tul4"]
 [ext_resource type="FontFile" uid="uid://bl8nme8bqxw6w" path="res://Super Vanilla.ttf" id="3_36xyc"]
-=======
-[ext_resource type="Script" path="res://Prefabs/background.gd" id="2_2tul4"]
->>>>>>> f0cef3d18fb2b0ce3e9710ad6eb7ca5df69f083a
 [ext_resource type="Texture2D" uid="uid://ccbkgeuj0a76y" path="res://Sprites/Friendlies/newfriendrangeminion.png" id="3_g5gk6"]
 [ext_resource type="Texture2D" uid="uid://dl7bjjn15numn" path="res://Sprites/Friendlies/onfieldmeleeminionfriend.png" id="4_s8vc5"]
 [ext_resource type="Texture2D" uid="uid://dedlfaugd2u5j" path="res://Sprites/Enemies/bigguyonfieldrangeminion.png" id="5_36xyc"]
@@ -53,6 +49,9 @@ border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 border_blend = true
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_36xyc"]
+size = Vector2(42.6918, 60.6799)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d21ai"]
 bg_color = Color(0.6, 0.6, 0.6, 0.517647)
 border_width_left = 2
@@ -63,15 +62,6 @@ border_color = Color(1, 1, 1, 1)
 border_blend = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36xyc"]
-bg_color = Color(0.6, 0.6, 0.6, 0.25098)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-border_blend = true
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2tul4"]
 bg_color = Color(0.6, 0.6, 0.6, 0.25098)
 border_width_left = 2
 border_width_top = 2
@@ -256,9 +246,9 @@ texture = ExtResource("6_3hs73")
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -107.0
+offset_left = -110.0
 offset_top = 23.0
-offset_right = -10.0
+offset_right = -27.0
 offset_bottom = 158.0
 grow_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_v54gd")
@@ -279,9 +269,9 @@ autostart = true
 
 [node name="evilrangeminion" type="Panel" parent="background/CanvasLayer/bigguy"]
 layout_mode = 0
-offset_left = 12.0
+offset_left = 5.0
 offset_top = 4.0
-offset_right = 83.0
+offset_right = 78.0
 offset_bottom = 65.0
 
 [node name="evil range minion" type="Button" parent="background/CanvasLayer/bigguy/evilrangeminion"]
@@ -311,9 +301,9 @@ texture = ExtResource("5_36xyc")
 
 [node name="evilmeleeminion" type="Panel" parent="background/CanvasLayer/bigguy"]
 layout_mode = 0
-offset_left = 16.0
+offset_left = 7.0
 offset_top = 73.0
-offset_right = 85.0
+offset_right = 78.0
 offset_bottom = 132.0
 
 [node name="evil melee minion" type="Button" parent="background/CanvasLayer/bigguy/evilmeleeminion"]
@@ -456,8 +446,16 @@ theme_override_fonts/font = ExtResource("3_36xyc")
 [node name="SkillArt" type="Sprite2D" parent="background/CanvasLayer/skills/VBoxContainer3"]
 visible = false
 position = Vector2(-27, -257)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.37074, 0.396096)
 texture = ExtResource("9_6ev4f")
+
+[node name="Area2D" type="Area2D" parent="background/CanvasLayer/skills/VBoxContainer3/SkillArt"]
+scale = Vector2(1.78149, -1.20448)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/CanvasLayer/skills/VBoxContainer3/SkillArt/Area2D"]
+position = Vector2(-0.70166, -2.07568)
+scale = Vector2(2.07086, 1.43663)
+shape = SubResource("RectangleShape2D_36xyc")
 
 [node name="vilepricetag" type="Label" parent="background/CanvasLayer/skills"]
 layout_mode = 0
@@ -600,127 +598,6 @@ offset_bottom = 100.0
 theme_override_fonts/font = ExtResource("3_36xyc")
 text = "^upgrade minions"
 
-[node name="upgrade skills" type="Panel" parent="background/CanvasLayer"]
-offset_left = 11.0
-offset_top = 227.0
-offset_right = 85.0
-offset_bottom = 354.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_2tul4")
-
-[node name="skillupgrade" type="VBoxContainer" parent="background/CanvasLayer/upgrade skills"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 44.0
-offset_bottom = 42.0
-
-[node name="skillupgradebutton" type="Button" parent="background/CanvasLayer/upgrade skills/skillupgrade"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="TextureRect" type="TextureRect" parent="background/CanvasLayer/upgrade skills/skillupgrade/skillupgradebutton"]
-layout_mode = 0
-offset_left = -2.0
-offset_right = 156.0
-offset_bottom = 147.0
-scale = Vector2(0.27, 0.27)
-texture = ExtResource("9_6ev4f")
-
-[node name="skill upgrade text" type="Label" parent="background/CanvasLayer/upgrade skills/skillupgrade/skillupgradebutton"]
-layout_mode = 0
-offset_left = 127.0
-offset_top = -207.0
-offset_right = 423.0
-offset_bottom = -148.0
-theme_override_fonts/font = ExtResource("3_36xyc")
-
-[node name="ultupgrade" type="VBoxContainer" parent="background/CanvasLayer/upgrade skills"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 46.0
-offset_right = 43.0
-offset_bottom = 84.0
-
-[node name="ultbuttonupgrade" type="Button" parent="background/CanvasLayer/upgrade skills/ultupgrade"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 3.38
-
-[node name="TextureRect" type="TextureRect" parent="background/CanvasLayer/upgrade skills/ultupgrade/ultbuttonupgrade"]
-layout_mode = 0
-offset_left = -0.999985
-offset_top = -0.999999
-offset_right = 113.0
-offset_bottom = 108.0
-scale = Vector2(0.35, 0.35)
-texture = ExtResource("8_v54gd")
-
-[node name="ultupgradetext" type="Label" parent="background/CanvasLayer/upgrade skills/ultupgrade/ultbuttonupgrade"]
-layout_mode = 2
-offset_left = 136.0
-offset_top = -262.0
-offset_right = 508.0
-offset_bottom = -202.0
-theme_override_fonts/font = ExtResource("3_36xyc")
-
-[node name="healupgrade" type="VBoxContainer" parent="background/CanvasLayer/upgrade skills"]
-layout_mode = 0
-offset_left = 5.0
-offset_top = 88.0
-offset_right = 45.0
-offset_bottom = 124.0
-
-[node name="upgradehealbutton" type="Button" parent="background/CanvasLayer/upgrade skills/healupgrade"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="TextureRect" type="TextureRect" parent="background/CanvasLayer/upgrade skills/healupgrade/upgradehealbutton"]
-layout_mode = 0
-offset_left = 1.0
-offset_top = -6.0
-offset_right = 152.0
-offset_bottom = 165.0
-scale = Vector2(0.28, 0.28)
-texture = ExtResource("7_3hs73")
-
-[node name="healupgradetext" type="Label" parent="background/CanvasLayer/upgrade skills/healupgrade/upgradehealbutton"]
-layout_mode = 0
-offset_left = 89.0
-offset_top = -299.0
-offset_right = 438.0
-offset_bottom = -226.0
-theme_override_fonts/font = ExtResource("3_36xyc")
-
-[node name="skillpricetag" type="Label" parent="background/CanvasLayer/upgrade skills"]
-layout_mode = 0
-offset_left = 45.0
-offset_top = 13.0
-offset_right = 73.0
-offset_bottom = 62.0
-theme_override_fonts/font = ExtResource("3_36xyc")
-text = "$14
-"
-
-[node name="ultpricetag" type="Label" parent="background/CanvasLayer/upgrade skills"]
-layout_mode = 0
-offset_left = 44.0
-offset_top = 55.0
-offset_right = 74.0
-offset_bottom = 91.0
-theme_override_fonts/font = ExtResource("3_36xyc")
-text = "$16
-"
-
-[node name="healpricetag" type="Label" parent="background/CanvasLayer/upgrade skills"]
-layout_mode = 0
-offset_left = 44.0
-offset_top = 96.0
-offset_right = 72.0
-offset_bottom = 145.0
-theme_override_fonts/font = ExtResource("3_36xyc")
-text = "$10
-"
-
 [node name="Camera2D" type="Camera2D" parent="background"]
 
 [connection signal="button_down" from="background/CanvasLayer/LittleGuyEconomy/shopbox/range minion" to="." method="_on_range_minion_button_down"]
@@ -735,6 +612,3 @@ text = "$10
 [connection signal="pressed" from="background/CanvasLayer/skills/VBoxContainer3/Buttonskill" to="." method="_on_buttonskill_pressed"]
 [connection signal="button_down" from="background/CanvasLayer/minion upgrade/rangeminionupgrade/rangeupgradebutton" to="." method="_on_rangeupgradebutton_button_down"]
 [connection signal="button_down" from="background/CanvasLayer/minion upgrade/meleeminionupgrade/meleeupgrademinion" to="." method="_on_meleeupgrademinion_button_down"]
-[connection signal="button_down" from="background/CanvasLayer/upgrade skills/skillupgrade/skillupgradebutton" to="." method="_on_skillupgradebutton_button_down"]
-[connection signal="button_down" from="background/CanvasLayer/upgrade skills/ultupgrade/ultbuttonupgrade" to="." method="_on_ult_buttonupgrade_button_down"]
-[connection signal="button_down" from="background/CanvasLayer/upgrade skills/healupgrade/upgradehealbutton" to="." method="_on_upgradehealbutton_button_down"]
