@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cluck7af0q37c"]
+[gd_scene load_steps=11 format=3 uid="uid://cluck7af0q37c"]
 
 [ext_resource type="PackedScene" uid="uid://buu3s7p880em8" path="res://Prefabs/main_ui.tscn" id="1_ivycn"]
 [ext_resource type="PackedScene" uid="uid://wsbyuab5gqmv" path="res://Prefabs/Meleeminion.tscn" id="3_qs82m"]
@@ -6,10 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://rx6crdc14vrq" path="res://Prefabs/MinionControl.tscn" id="5_vwb7u"]
 [ext_resource type="PackedScene" uid="uid://b7cvmm237m0dq" path="res://Prefabs/enemy_control.tscn" id="6_cqdos"]
 [ext_resource type="PackedScene" uid="uid://c74kkta7xxhsj" path="res://Prefabs/wave_control.tscn" id="7_q1uvj"]
+[ext_resource type="FontFile" uid="uid://bl8nme8bqxw6w" path="res://Super Vanilla.ttf" id="8_c4vo5"]
 [ext_resource type="PackedScene" uid="uid://b4uh6p5qwnf4n" path="res://node_2d_tilemap.tscn" id="8_qs82m"]
 [ext_resource type="PackedScene" uid="uid://cw8r4m1xxr3wm" path="res://Prefabs/ranged_enemy.tscn" id="9_c4vo5"]
 
+[sub_resource type="GDScript" id="GDScript_qs82m"]
+
 [node name="Node2D" type="Node2D"]
+script = SubResource("GDScript_qs82m")
 
 [node name="mainUI" parent="." instance=ExtResource("1_ivycn")]
 unique_name_in_owner = true
@@ -40,6 +44,8 @@ offset_left = 455.0
 offset_top = 16.0
 offset_right = 575.0
 offset_bottom = 68.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_c4vo5")
 
 [node name="Node2D" parent="." instance=ExtResource("8_qs82m")]
 position = Vector2(-2, -9)
