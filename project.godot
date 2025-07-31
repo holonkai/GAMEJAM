@@ -19,3 +19,5 @@ config/icon="res://Sprites/icon.svg"
 
 Enemies=""
 selectableUnits=""
+Ranged=""
+Melee=""

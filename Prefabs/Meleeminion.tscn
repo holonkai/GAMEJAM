@@ -12,7 +12,7 @@ bg_color = Color(0.364706, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xcheo"]
 bg_color = Color(0.245977, 0.539651, 0.058528, 1)
 
-[node name="Minion" type="CharacterBody2D" groups=["selectableUnits"]]
+[node name="Minion" type="CharacterBody2D" groups=["Melee", "selectableUnits"]]
 script = ExtResource("1_20mgi")
 
 [node name="Selector" type="ColorRect" parent="."]

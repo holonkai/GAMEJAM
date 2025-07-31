@@ -4,7 +4,7 @@ var moveSpeed=50
 var clicked: bool=false
 var path: PackedVector2Array
 var Health: int=40
-var damage: int=2
+var damage: float=2.0
 var dmg_tw: Tween = null
 @onready var cam: Camera2D=get_viewport().get_camera_2d()
 

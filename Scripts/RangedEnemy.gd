@@ -55,7 +55,7 @@ func TakeDamage(amount: int):
 	$HPBAR.value=Health
 	$HPBAR.visible=true
 	if(Health<=0):
-		queue_free()
+		die()
 
 #take damage from skill 
 #@onready var skill_damage = 

@@ -19,7 +19,7 @@ offsets = PackedFloat32Array(0, 0.941176)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_8ddwt"]
 gradient = SubResource("Gradient_3yehr")
 
-[node name="RangeMinion" type="CharacterBody2D" groups=["selectableUnits"]]
+[node name="RangeMinion" type="CharacterBody2D" groups=["Ranged", "selectableUnits"]]
 script = ExtResource("1_xnklo")
 
 [node name="Selector" type="ColorRect" parent="."]

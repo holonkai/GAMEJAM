@@ -87,6 +87,7 @@ func _on_buttonult_button_down() -> void:
 	var cost = 12
 	if gold >= cost:
 		gold -= cost
+		#_start_drag(ult_art)
 		update_gold_display()
 	
 		ult_pop_up.text = "ULT"
@@ -153,6 +154,10 @@ func _on_rangeupgradebutton_button_down() -> void:
 		
 		
 		range_upgrade_text.text = "RANGE MINION UPGRADE"
+		var Minions=get_tree().get_nodes_in_group("Ranged")
+		for minion in Minions:
+			minion.Health+=2
+			minion.damage+=.25
 		range_upgrade_text.visible = true
 		
 		await get_tree().create_timer(0.5).timeout
@@ -175,7 +180,10 @@ func _on_meleeupgrademinion_button_down() -> void:
 		
 		melee_upgrade_text.text = "MELEE MINION UPGRADE"
 		melee_upgrade_text.visible = true
-		
+		var Minions=get_tree().get_nodes_in_group("Melee")
+		for minion in Minions:
+			minion.Health+=5
+			minion.damage+=.5
 		await get_tree().create_timer(0.5).timeout
 		melee_upgrade_text.visible = false
 	else:
@@ -235,7 +243,8 @@ func _on_buttonvile_pressed() -> void:
 
 
 func _on_buttonult_pressed() -> void:
-		_start_drag(ult_art)
+	#_start_drag(ult_art)
+	pass
 
 func _process(delta: float) -> void:
 	if dragging and dragged_art:
@@ -258,8 +267,6 @@ func _on_ult_buttonupgrade_button_down() -> void:
 	if gold >= cost:
 		gold -= cost 
 		update_gold_display()
-		
-		
 		ult_upgrade_text.text = "ULT UPGRADE"
 		ult_upgrade_text.visible = true
 		
