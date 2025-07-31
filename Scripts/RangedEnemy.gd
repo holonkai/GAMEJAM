@@ -5,6 +5,8 @@ var path: PackedVector2Array
 var Health: int=10
 var damage=1
 var dmg_tw: Tween = null
+var rng= RandomNumberGenerator.new()
+
 func _ready() -> void:
 	#instantiating object
 	set_process(false)
@@ -55,7 +57,7 @@ func TakeDamage(amount: int):
 	$HPBAR.value=Health
 	$HPBAR.visible=true
 	if(Health<=0):
-		queue_free()
+		die()
 
 #take damage from skill 
 #@onready var skill_damage = 
@@ -65,6 +67,9 @@ func TakeDamage(amount: int):
 
 func die():
 	mainUI.add_gold(4)
+	$Death.pitch_scale=rng.randf_range(.8,1.2)
+	$Death.play()
+	await get_tree().create_timer(.2).timeout
 	queue_free()
 
 func _on_timer_timeout() -> void:
@@ -73,7 +78,6 @@ func _on_timer_timeout() -> void:
 	if(Enemies.size()<1):
 		return
 	var closest=Enemies[0]
-	var rng= RandomNumberGenerator.new()
 	$Timer.wait_time=rng.randf_range(3,4)
 	for Enemy in Enemies:
 		if((global_position-Enemy.global_position).length()<(global_position-closest.global_position).length()):
@@ -85,6 +89,8 @@ func _on_timer_timeout() -> void:
 		$Sprite2D/LaserRay.look_at(closest.global_position)
 		$Sprite2D/LaserRay.isCasting=true
 		$Sprite2D/LaserRay.rotation_degrees+=5
+		$LaserShootBang.pitch_scale=rng.randf_range(.8,1.2)
+		$LaserShootBang.play()
 		moveSpeed=0
 		await get_tree().create_timer(.1).timeout
 		$Sprite2D/LaserRay.isCasting=false

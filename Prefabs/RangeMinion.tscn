@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://ctfvjwh8awc86"]
+[gd_scene load_steps=11 format=3 uid="uid://ctfvjwh8awc86"]
 
 [ext_resource type="Script" uid="uid://wg54vx6ta7rc" path="res://Scripts/AIBehavior/RangeMinion.gd" id="1_xnklo"]
 [ext_resource type="Texture2D" uid="uid://ccbkgeuj0a76y" path="res://Sprites/Friendlies/newfriendrangeminion.png" id="2_3yehr"]
 [ext_resource type="Script" uid="uid://diq1hhemblpte" path="res://Scripts/LaserRay.gd" id="3_3yehr"]
+[ext_resource type="AudioStream" uid="uid://ine2meqk8dt8" path="res://Sounds/laserShoot.wav" id="4_8ddwt"]
+[ext_resource type="AudioStream" uid="uid://dn4ihdvnad5t3" path="res://Sounds/death.wav" id="5_g0627"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8ddwt"]
 radius = 27.074
@@ -19,7 +21,7 @@ offsets = PackedFloat32Array(0, 0.941176)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_8ddwt"]
 gradient = SubResource("Gradient_3yehr")
 
-[node name="RangeMinion" type="CharacterBody2D" groups=["selectableUnits"]]
+[node name="RangeMinion" type="CharacterBody2D" groups=["Ranged", "selectableUnits"]]
 script = ExtResource("1_xnklo")
 
 [node name="Selector" type="ColorRect" parent="."]
@@ -87,5 +89,12 @@ shadow_enabled = true
 shadow_item_cull_mask = 3
 texture = SubResource("GradientTexture1D_8ddwt")
 offset = Vector2(-128.44, 0)
+
+[node name="LaserShootBang" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_8ddwt")
+
+[node name="Death" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_g0627")
+volume_db = -30.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

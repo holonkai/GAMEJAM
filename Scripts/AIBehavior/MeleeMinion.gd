@@ -4,9 +4,10 @@ var moveSpeed=50
 var clicked: bool=false
 var path: PackedVector2Array
 var Health: int=40
-var damage: int=2
+var damage: float=2.0
 var dmg_tw: Tween = null
 @onready var cam: Camera2D=get_viewport().get_camera_2d()
+var rng= RandomNumberGenerator.new()
 
 func _ready() -> void:
 	#insantiating object
@@ -87,6 +88,9 @@ func TakeDamage(amount: int):
 	$HPBAR.value=Health
 	$HPBAR.visible=true
 	if(Health<=0):
+		$Death.pitch_scale=rng.randf_range(.8,1.2)
+		$Death.play()
+		await get_tree().create_timer(.2).timeout
 		queue_free()
 		
 

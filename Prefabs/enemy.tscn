@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dxyx5cgf2lc4x"]
+[gd_scene load_steps=8 format=3 uid="uid://dxyx5cgf2lc4x"]
 
 [ext_resource type="Script" uid="uid://rihwh8ovhuwr" path="res://Scripts/AIBehavior/Enemy.gd" id="1_lgw76"]
 [ext_resource type="Texture2D" uid="uid://4u8lbih57n0m" path="res://Sprites/Enemies/onfieldmeleeminion.png" id="2_lgw76"]
+[ext_resource type="AudioStream" uid="uid://dn4ihdvnad5t3" path="res://Sounds/death.wav" id="3_t4g6b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hqns4"]
 radius = 16.0312
@@ -55,5 +56,9 @@ position = Vector2(-2.00002, 15)
 rotation = -1.5708
 scale = Vector2(0.38, 0.38)
 occluder = SubResource("OccluderPolygon2D_lgw76")
+
+[node name="Death" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_t4g6b")
+volume_db = -30.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

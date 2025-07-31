@@ -5,6 +5,8 @@ var path: PackedVector2Array
 var Health: int=20
 var damage=1
 var dmg_tw: Tween = null
+var rng= RandomNumberGenerator.new()
+
 func _ready() -> void:
 	#instantiating object
 	set_process(false)
@@ -68,6 +70,9 @@ func TakeDamage(amount: int):
 
 @onready var mainUI: Control= get_tree().current_scene.get_node("%mainUI")
 func die():
+	$Death.pitch_scale=rng.randf_range(.8,1.2)
+	$Death.play()
+	await get_tree().create_timer(.2).timeout
 	mainUI.add_gold(2)
 	queue_free()
 
@@ -77,7 +82,6 @@ func _on_timer_timeout() -> void:
 	if(Enemies.size()<1):
 		return
 	var closest=Enemies[0]
-	var rng= RandomNumberGenerator.new()
 	$Timer.wait_time=rng.randf_range(1,1.5)
 	for Enemy in Enemies:
 		if((global_position-Enemy.global_position).length()<(global_position-closest.global_position).length()):
