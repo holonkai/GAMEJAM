@@ -421,6 +421,6 @@ position = Vector2(219, 450)
 position = Vector2(219, 450)
 
 [node name="RangeMinion19" parent="." instance=ExtResource("7_fdy5w")]
-position = Vector2(219, 450)
+position = Vector2(221, 447)
 
 [node name="WaveControl" parent="." instance=ExtResource("7_tdxe6")]

@@ -88,7 +88,4 @@ shadow_item_cull_mask = 3
 texture = SubResource("GradientTexture1D_8ddwt")
 offset = Vector2(-128.44, 0)
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="LaserRay"]
-visible = false
-
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
