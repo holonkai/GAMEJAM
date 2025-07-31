@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c74kkta7xxhsj"]
+[gd_scene load_steps=3 format=3 uid="uid://c74kkta7xxhsj"]
 
 [ext_resource type="Script" uid="uid://6wir3kyrrvid" path="res://Scripts/WaveControl.gd" id="1_h7thp"]
+[ext_resource type="FontFile" uid="uid://bl8nme8bqxw6w" path="res://Super Vanilla.ttf" id="2_7pqbl"]
 
 [node name="WaveControl" type="Node2D"]
 script = ExtResource("1_h7thp")
@@ -8,5 +9,14 @@ script = ExtResource("1_h7thp")
 [node name="WaveTimer" type="Timer" parent="."]
 wait_time = 25.0
 autostart = true
+
+[node name="wavelabel" type="Label" parent="."]
+z_index = 2
+offset_left = 455.0
+offset_top = 16.0
+offset_right = 575.0
+offset_bottom = 68.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_7pqbl")
 
 [connection signal="timeout" from="WaveTimer" to="." method="_on_wave_timer_timeout"]

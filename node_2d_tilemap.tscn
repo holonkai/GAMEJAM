@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=4 uid="uid://b4uh6p5qwnf4n"]
 
-[ext_resource type="Script" uid="uid://djbmhwn05yr75" path="res://Scripts/node_2d_tilemap.gd" id="1_kknxl"]
+[ext_resource type="Script" uid="uid://djbmhwn05yr75" path="res://node_2d_tilemap.gd" id="1_kknxl"]
 [ext_resource type="Texture2D" uid="uid://b2hucmk6pjo6j" path="res://Prefabs/tiles-rock-colour1-alpha.png" id="1_oilca"]
 [ext_resource type="Texture2D" uid="uid://cwcxb7dc6escd" path="res://Prefabs/tiles-tech-steel-orange-alpha.png" id="2_1rnm0"]
 [ext_resource type="Texture2D" uid="uid://cneiob64jwd2p" path="res://Prefabs/tileset_sf.png" id="3_kknxl"]

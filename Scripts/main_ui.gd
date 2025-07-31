@@ -3,6 +3,7 @@ var MeleeMinion=preload("res://Prefabs/Meleeminion.tscn")
 var RangeMinion=preload("res://Prefabs/RangeMinion.tscn")
 
 var gold: int=300
+var rad:int=50
 var rng= RandomNumberGenerator.new()
 @onready var gold_label = $background/CanvasLayer/goldscountpanel/GoldLabel
 func _ready():
@@ -66,9 +67,7 @@ func _on_melee_minion_button_down() -> void:
 	
 #ult button pop up text and effect on gold count
 @onready var ult_pop_up = $"background/CanvasLayer/skills/VBoxContainer2/buttonult/UltPopup"
-<<<<<<< HEAD
 
-=======
 func _on_buttonult_button_down() -> void:
 	var cost = 12
 	if gold >= cost:
@@ -87,7 +86,7 @@ func _on_buttonult_button_down() -> void:
 		
 		await get_tree().create_timer(0.5).timeout
 		ult_pop_up.visible = false
->>>>>>> a33847412e642c16ac297babd3e04354b4e530e3
+
 
 	
 #evil range minin pop up text and effect on gold count
@@ -204,6 +203,7 @@ func _start_drag(art_node: Node2D) -> void:
 	dragged_art.visible = true
 	#drag_offset = dragged_art.global_position - get_global_mouse_position()
 	dragging = true
+	queue_redraw()
 
 
 func _on_buttonskill_pressed() -> void:
@@ -211,7 +211,7 @@ func _on_buttonskill_pressed() -> void:
 	if gold >= cost:
 		gold -= cost
 		update_gold_display()
-		
+		rad=50
 		_start_drag(skill_art)
 		
 		skill_pop_up.text = "SKILL"
@@ -232,7 +232,7 @@ func _on_buttonvile_pressed() -> void:
 	if gold >= cost:
 		gold -= cost
 		update_gold_display()
-		
+		rad=50
 		_start_drag(vile_art)
 		
 		vile_pop_up.text = "HEAL"
@@ -250,12 +250,11 @@ func _on_buttonvile_pressed() -> void:
 
 
 func _on_buttonult_pressed() -> void:
-<<<<<<< HEAD
 	var cost = 12
 	if gold >= cost:
 		gold -= cost
 		update_gold_display()
-		
+		rad=100
 		_start_drag(ult_art)
 	
 		ult_pop_up.text = "ULT"
@@ -269,14 +268,15 @@ func _on_buttonult_pressed() -> void:
 		
 		await get_tree().create_timer(0.5).timeout
 		ult_pop_up.visible = false
-=======
 	#_start_drag(ult_art)
 	pass
->>>>>>> a33847412e642c16ac297babd3e04354b4e530e3
+
 
 func _process(delta: float) -> void:
 	if dragging and dragged_art:
 		dragged_art.global_position = get_global_mouse_position() #+ drag_offset
+		#print("wow")
+		queue_redraw()
 
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -295,7 +295,7 @@ func _input(event):
 			
 			for enemy in enemies:
 				if (mouse_pos - enemy.global_position).length() <100:
-					enemy.TakeDamage(10)
+					enemy.TakeDamage(20)
 					
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed and vile_art.visible:
@@ -309,14 +309,12 @@ func _input(event):
 	if dragging and event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
 			dragging = false
+			queue_redraw()
 			if dragged_art:
 				dragged_art.visible = false
 				dragged_art = null
 
 
-<<<<<<< HEAD
-
-=======
 @onready var ult_upgrade_text = $"background/CanvasLayer/upgrade skills/ultupgrade/ultbuttonupgrade/ultupgradetext"
 func _on_ult_buttonupgrade_button_down() -> void:
 	var cost = 18
@@ -334,9 +332,8 @@ func _on_ult_buttonupgrade_button_down() -> void:
 		
 		await get_tree().create_timer(0.5).timeout
 		ult_upgrade_text.visible = false
->>>>>>> a33847412e642c16ac297babd3e04354b4e530e3
-	
-
-
-	
-	
+		
+func _draw():
+	if(!dragging):
+		return
+	draw_circle(get_local_mouse_position(),rad,Color.PURPLE,false,5.0)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://buu3s7p880em8"]
 
 [ext_resource type="Script" uid="uid://vewhlig5jmkf" path="res://Scripts/main_ui.gd" id="1_vvnq0"]
-[ext_resource type="Script" uid="uid://dekbn1rv70t2d" path="res://Prefabs/background.gd" id="2_2tul4"]
+[ext_resource type="Script" path="res://Prefabs/background.gd" id="2_2tul4"]
 [ext_resource type="FontFile" uid="uid://bl8nme8bqxw6w" path="res://Super Vanilla.ttf" id="3_36xyc"]
 [ext_resource type="Texture2D" uid="uid://ccbkgeuj0a76y" path="res://Sprites/Friendlies/newfriendrangeminion.png" id="3_g5gk6"]
 [ext_resource type="Texture2D" uid="uid://dl7bjjn15numn" path="res://Sprites/Friendlies/onfieldmeleeminionfriend.png" id="4_s8vc5"]
@@ -71,6 +71,7 @@ border_color = Color(0, 0, 0, 1)
 border_blend = true
 
 [node name="mainUI" type="Control"]
+z_index = 1
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0

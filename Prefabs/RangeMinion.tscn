@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://ctfvjwh8awc86"]
+[gd_scene load_steps=12 format=3 uid="uid://ctfvjwh8awc86"]
 
 [ext_resource type="Script" uid="uid://wg54vx6ta7rc" path="res://Scripts/AIBehavior/RangeMinion.gd" id="1_xnklo"]
 [ext_resource type="Texture2D" uid="uid://ccbkgeuj0a76y" path="res://Sprites/Friendlies/newfriendrangeminion.png" id="2_3yehr"]
+[ext_resource type="Texture2D" uid="uid://c4kl6truwnv6c" path="res://Sprites/Selector.png" id="2_fxm56"]
 [ext_resource type="Script" uid="uid://diq1hhemblpte" path="res://Scripts/LaserRay.gd" id="3_3yehr"]
 [ext_resource type="AudioStream" uid="uid://ine2meqk8dt8" path="res://Sounds/laserShoot.wav" id="4_8ddwt"]
 [ext_resource type="AudioStream" uid="uid://dn4ihdvnad5t3" path="res://Sounds/death.wav" id="5_g0627"]
@@ -24,13 +25,10 @@ gradient = SubResource("Gradient_3yehr")
 [node name="RangeMinion" type="CharacterBody2D" groups=["Ranged", "selectableUnits"]]
 script = ExtResource("1_xnklo")
 
-[node name="Selector" type="ColorRect" parent="."]
-offset_left = -27.0
-offset_top = -48.0
-offset_right = 25.0
-offset_bottom = 6.0
-color = Color(9.09671e-06, 0.662424, 0.037319, 1)
-metadata/_edit_use_anchors_ = true
+[node name="Selector" type="Sprite2D" parent="."]
+position = Vector2(67, 18)
+scale = Vector2(0.57, 0.57)
+texture = ExtResource("2_fxm56")
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(-1, -21)
