@@ -1,17 +1,11 @@
-[gd_scene load_steps=13 format=4 uid="uid://dg3x7mpdefapg"]
+[gd_scene load_steps=11 format=4 uid="uid://dg3x7mpdefapg"]
 
 [ext_resource type="Script" uid="uid://3c65oux4o45g" path="res://Scripts/character_body_2d.gd" id="1_lujw4"]
 [ext_resource type="Texture2D" uid="uid://cbldfhx6iiq5c" path="res://Sprites/icon.svg" id="2_b2taf"]
 [ext_resource type="Texture2D" uid="uid://ituvwh1w0aos" path="res://mars-dunes-8col-16bit565-2.png" id="3_vctyh"]
-[ext_resource type="PackedScene" uid="uid://dxyx5cgf2lc4x" path="res://Prefabs/enemy.tscn" id="4_06isw"]
 [ext_resource type="PackedScene" uid="uid://wsbyuab5gqmv" path="res://Prefabs/Meleeminion.tscn" id="5_sderq"]
 [ext_resource type="PackedScene" uid="uid://rx6crdc14vrq" path="res://Prefabs/MinionControl.tscn" id="6_3k0j6"]
 [ext_resource type="PackedScene" uid="uid://b7cvmm237m0dq" path="res://Prefabs/enemy_control.tscn" id="7_tmva4"]
-<<<<<<< HEAD
-[ext_resource type="Texture2D" uid="uid://ccbkgeuj0a76y" path="res://Sprites/Friendlies/newfriendrangeminion.png" id="8_b2taf"]
-=======
-[ext_resource type="PackedScene" uid="uid://ctfvjwh8awc86" path="res://Prefabs/RangeMinion.tscn" id="8_b2taf"]
->>>>>>> 2c09d48f88bf0b0b4fa9f64fc30da22f5c27e0de
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0hol4"]
 radius = 51.1693
@@ -448,12 +442,6 @@ navigation_polygon = SubResource("NavigationPolygon_q6r6c")
 tile_map_data = PackedByteArray("AAANAPf/AQAKAAEAAAANAPj/AQAKAAEAAAANAPn/AQAKAAEAAAANAPr/AQAKAAEAAAANAPv/AQAKAAEAAAANAPz/AQAKAAEAAAANAP3/AQAKAAEAAAANAP7/AQAKAAEAAAANAP//AQAKAAEAAAANAAAAAQAKAAEAAAANAAEAAQAKAAEAAAAOAAEAAQAKAAEAAAAPAAEAAQAKAAEAAAAPAAAAAQAKAAEAAAAPAP//AQAKAAEAAAAPAP7/AQAKAAEAAAAPAP3/AQAKAAEAAAAPAPz/AQAKAAEAAAAPAPv/AQAKAAEAAAAPAPr/AQAKAAEAAAAPAPn/AQAKAAEAAAAPAPj/AQAKAAEAAAAPAPf/AQAKAAEAAAAOAPf/AQAKAAEAAAAOAPj/AQAKAAEAAAAOAPn/AQAKAAEAAAAOAPr/AQAKAAEAAAAOAPv/AQAKAAEAAAAOAPz/AQAKAAEAAAAOAP3/AQAKAAEAAAAOAP7/AQAKAAEAAAAOAP//AQAKAAEAAAAOAAAAAQAKAAEAAAD3/xMAAQAKAAEAAAD3/xIAAQAKAAEAAAD3/xEAAQAKAAEAAAD3/xAAAQAKAAEAAAD4/xAAAQAKAAEAAAD4/w8AAQAKAAEAAAD5/w4AAQAKAAEAAAD6/w4AAQAKAAEAAAD7/w4AAQAKAAEAAAD8/w4AAQAKAAEAAAD9/w4AAQAKAAEAAAD9/w8AAQAKAAEAAAD+/w8AAQAKAAEAAAD+/xAAAQAKAAEAAAD+/xEAAQAKAAEAAAD+/xIAAQAKAAEAAAD+/xMAAQAKAAEAAAD+/xQAAQAKAAEAAAD9/xQAAQAKAAEAAAD8/xQAAQAKAAEAAAD7/xQAAQAKAAEAAAD6/xQAAQAKAAEAAAD5/xQAAQAKAAEAAAD4/xQAAQAKAAEAAAD4/xMAAQAKAAEAAAD4/xIAAQAKAAEAAAD5/w0AAQAKAAEAAAD6/w0AAQAKAAEAAAD6/w8AAQAKAAEAAAD5/w8AAQAKAAEAAAD5/xAAAQAKAAEAAAD4/xEAAQAKAAEAAAD5/xIAAQAKAAEAAAD6/xIAAQAKAAEAAAD6/xEAAQAKAAEAAAD7/xEAAQAKAAEAAAD7/xAAAQAKAAEAAAD7/w8AAQAKAAEAAAD5/xEAAQAKAAEAAAD7/xIAAQAKAAEAAAD6/xAAAQAKAAEAAAD5/xMAAQAKAAEAAAD6/xMAAQAKAAEAAAD8/xEAAQAKAAEAAAD8/xAAAQAKAAEAAAD7/xMAAQAKAAEAAAD8/xIAAQAKAAEAAAD9/xAAAQAKAAEAAAD8/xMAAQAKAAEAAAD9/xIAAQAKAAEAAAD9/xEAAQAKAAEAAAD9/xMAAQAKAAEAAAD8/w8AAQAKAAEAAAD7/w0AAQAKAAEAAAAdAAoAAQAKAAEAAAAcAAoAAQAKAAEAAAAcAAkAAQAKAAEAAAAbAAkAAQAKAAEAAAAbAAoAAQAKAAEAAAAaAAoAAQAKAAEAAAAaAAsAAQAKAAEAAAAaAAwAAQAKAAEAAAAaAA0AAQAKAAEAAAAaAA4AAQAKAAEAAAAaAA8AAQAKAAEAAAAbAA8AAQAKAAEAAAAcAA8AAQAKAAEAAAAcAA4AAQAKAAEAAAAdAA4AAQAKAAEAAAAdAA0AAQAKAAEAAAAdAAwAAQAKAAEAAAAcAAwAAQAKAAEAAAAcAAsAAQAKAAEAAAAZAAoAAQAKAAEAAAAZAAsAAQAKAAEAAAAZAAwAAQAKAAEAAAAZAA0AAQAKAAEAAAAZAA4AAQAKAAEAAAAbAA4AAQAKAAEAAAAcAA0AAQAKAAEAAAAbAAwAAQAKAAEAAAAbAA0AAQAKAAEAAAAbAAsAAQAKAAEAAAAYAAwAAQAKAAEAAAAYAA0AAQAKAAEAAAAdAAsAAQAKAAEAAADz//z/AQAKAAEAAAD0//z/AQAKAAEAAAD1//z/AQAKAAEAAAD1//3/AQAKAAEAAAD2//3/AQAKAAEAAAD3//3/AQAKAAEAAAD3//7/AQAKAAEAAAD4//7/AQAKAAEAAAD4////AQAKAAEAAAD5////AQAKAAEAAAD5/wAAAQAKAAEAAAD5/wEAAQAKAAEAAAD5/wIAAQAKAAEAAAD5/wMAAQAKAAEAAAD4/wMAAQAKAAEAAAD3/wMAAQAKAAEAAAD2/wMAAQAKAAEAAAD1/wMAAQAKAAEAAAD1/wIAAQAKAAEAAAD0/wIAAQAKAAEAAADz/wIAAQAKAAEAAADz/wEAAQAKAAEAAADz/wAAAQAKAAEAAADy/wAAAQAKAAEAAADy////AQAKAAEAAADy//7/AQAKAAEAAADz//7/AQAKAAEAAAD0//7/AQAKAAEAAAD1//7/AQAKAAEAAAD0//3/AQAKAAEAAADz//3/AQAKAAEAAADy//3/AQAKAAEAAADz////AQAKAAEAAAD0/wAAAQAKAAEAAAD1/wAAAQAKAAEAAAD1////AQAKAAEAAAD2////AQAKAAEAAAD0////AQAKAAEAAAD0/wEAAQAKAAEAAAD1/wEAAQAKAAEAAAD2/wAAAQAKAAEAAAD2/wEAAQAKAAEAAAD3/wAAAQAKAAEAAAD3////AQAKAAEAAAD2/wIAAQAKAAEAAAD3/wIAAQAKAAEAAAD3/wEAAQAKAAEAAAD4/wEAAQAKAAEAAAD4/wAAAQAKAAEAAAD4/wIAAQAKAAEAAAD2//7/AQAKAAEAAAAIAAYAAQADAAIAAAAIAAcAAQADAAIAAAAHAAcAAQADAAIAAAAHAAgAAQADAAIAAAAHAAkAAQADAAIAAAAGAAkAAQADAAIAAAAGAAoAAQADAAIAAAAGAAsAAQADAAIAAAAGAAwAAQADAAIAAAAFAAwAAQADAAIAAAAFAA0AAQADAAIAAAAFAA4AAQADAAIAAAAFAA8AAQADAAIAAAAFABAAAQADAAIAAAAFABEAAQADAAIAAAAGABEAAQADAAIAAAAGABIAAQADAAIAAAAHABIAAQADAAIAAAAIABIAAQADAAIAAAAJABIAAQADAAIAAAAKABIAAQADAAIAAAALABIAAQADAAIAAAALABMAAQADAAIAAAAMABMAAQADAAIAAAANABMAAQADAAIAAAAOABMAAQADAAIAAAAOABIAAQADAAIAAAAPABIAAQADAAIAAAAQABIAAQADAAIAAAAQABEAAQADAAIAAAARABEAAQADAAIAAAARABAAAQADAAIAAAASABAAAQADAAIAAAASAA8AAQADAAIAAAASAA4AAQADAAIAAAATAA4AAQADAAIAAAATAA0AAQADAAIAAAATAAwAAQADAAIAAAASAAwAAQADAAIAAAASAAsAAQADAAIAAAASAAoAAQADAAIAAAASAAkAAQADAAIAAAASAAgAAQADAAIAAAARAAgAAQADAAIAAAARAAcAAQADAAIAAAAQAAcAAQADAAIAAAAQAAYAAQADAAIAAAAPAAYAAQADAAIAAAA=")
 tile_set = SubResource("TileSet_d21ai")
 
-[node name="Enemy" parent="." instance=ExtResource("4_06isw")]
-position = Vector2(851, 512)
-
-[node name="Minion" parent="." instance=ExtResource("5_sderq")]
-position = Vector2(971, 204)
-
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false
 position = Vector2(580, 321)
@@ -462,44 +450,53 @@ position = Vector2(580, 321)
 
 [node name="EnemyControl" parent="." instance=ExtResource("7_tmva4")]
 
+[node name="Minion" parent="." instance=ExtResource("5_sderq")]
+position = Vector2(1072, 294)
+
 [node name="Minion2" parent="." instance=ExtResource("5_sderq")]
-position = Vector2(942, 426)
+position = Vector2(1072, 294)
 
 [node name="Minion3" parent="." instance=ExtResource("5_sderq")]
-position = Vector2(953, 325)
-
-[node name="Enemy2" parent="." instance=ExtResource("4_06isw")]
-position = Vector2(77, 222)
-
-[node name="Enemy3" parent="." instance=ExtResource("4_06isw")]
-position = Vector2(100, 485)
-
-[node name="Enemy5" parent="." instance=ExtResource("4_06isw")]
-position = Vector2(897, 61)
-
-[node name="Enemy4" parent="." instance=ExtResource("4_06isw")]
-position = Vector2(839, 240)
-
-[node name="Enemy6" parent="." instance=ExtResource("4_06isw")]
-position = Vector2(1068, 223)
-
-[node name="Enemy7" parent="." instance=ExtResource("4_06isw")]
-position = Vector2(1057, 405)
+position = Vector2(1072, 294)
 
 [node name="Minion4" parent="." instance=ExtResource("5_sderq")]
-position = Vector2(1051, 531)
+position = Vector2(1072, 294)
 
-[node name="RangeMinion" parent="." groups=["selectableUnits"] instance=ExtResource("8_b2taf")]
-position = Vector2(1049, 615)
+[node name="Minion5" parent="." instance=ExtResource("5_sderq")]
+position = Vector2(1072, 294)
 
-[node name="RangeMinion2" parent="." groups=["selectableUnits"] instance=ExtResource("8_b2taf")]
-position = Vector2(919, 552)
+[node name="Minion6" parent="." instance=ExtResource("5_sderq")]
+position = Vector2(1072, 294)
 
-[node name="Enemy8" parent="." instance=ExtResource("4_06isw")]
-position = Vector2(95, 414)
+[node name="Minion7" parent="." instance=ExtResource("5_sderq")]
+position = Vector2(1072, 294)
 
-[node name="Enemy9" parent="." instance=ExtResource("4_06isw")]
-position = Vector2(157, 331)
+[node name="Minion8" parent="." instance=ExtResource("5_sderq")]
+position = Vector2(1072, 294)
 
-[node name="Enemy10" parent="." instance=ExtResource("4_06isw")]
-position = Vector2(152, 423)
+[node name="Minion9" parent="." instance=ExtResource("5_sderq")]
+position = Vector2(1072, 294)
+
+[node name="Minion10" parent="." instance=ExtResource("5_sderq")]
+position = Vector2(1072, 294)
+
+[node name="Minion11" parent="." instance=ExtResource("5_sderq")]
+position = Vector2(1072, 294)
+
+[node name="Minion12" parent="." instance=ExtResource("5_sderq")]
+position = Vector2(1072, 294)
+
+[node name="Minion13" parent="." instance=ExtResource("5_sderq")]
+position = Vector2(1072, 294)
+
+[node name="Minion14" parent="." instance=ExtResource("5_sderq")]
+position = Vector2(1072, 294)
+
+[node name="Minion15" parent="." instance=ExtResource("5_sderq")]
+position = Vector2(1072, 294)
+
+[node name="Minion16" parent="." instance=ExtResource("5_sderq")]
+position = Vector2(1072, 294)
+
+[node name="Minion17" parent="." instance=ExtResource("5_sderq")]
+position = Vector2(1072, 294)

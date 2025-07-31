@@ -10,7 +10,9 @@ var TestScaling: int = waves.back().size()
 var waveCount=0
 var rng= RandomNumberGenerator.new()
 
-	
+func _ready() -> void:
+	set_process(false)
+
 func _process(delta: float) -> void:
 	spawnDelay+=delta
 	if(waves.size()<1):
