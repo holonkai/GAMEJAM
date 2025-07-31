@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cw8r4m1xxr3wm"]
+[gd_scene load_steps=10 format=3 uid="uid://cw8r4m1xxr3wm"]
 
 [ext_resource type="Script" uid="uid://co1ykfwb2box4" path="res://Scripts/RangedEnemy.gd" id="1_qsv0l"]
 [ext_resource type="Texture2D" uid="uid://dedlfaugd2u5j" path="res://Sprites/Enemies/bigguyonfieldrangeminion.png" id="2_gtfvv"]
 [ext_resource type="Script" uid="uid://diq1hhemblpte" path="res://Scripts/LaserRay.gd" id="3_rrnee"]
+[ext_resource type="AudioStream" uid="uid://dn4ihdvnad5t3" path="res://Sounds/death.wav" id="4_gtfvv"]
+[ext_resource type="AudioStream" uid="uid://brb57ah1ct6n8" path="res://Sounds/laserShootenemy.wav" id="5_rrnee"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_px7d7"]
 radius = 16.0312
@@ -73,5 +75,13 @@ position = Vector2(-2.00002, 15)
 rotation = -1.5708
 scale = Vector2(0.38, 0.38)
 occluder = SubResource("OccluderPolygon2D_vjhl7")
+
+[node name="Death" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_gtfvv")
+volume_db = -30.0
+
+[node name="LaserShootBang" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_rrnee")
+volume_db = -10.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

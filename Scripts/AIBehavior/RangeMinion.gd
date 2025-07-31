@@ -7,11 +7,13 @@ var Health: int=10
 var damage: float=2.0
 var dmg_tw: Tween = null
 @onready var cam: Camera2D=get_viewport().get_camera_2d()
-
+var rng= RandomNumberGenerator.new()
 func _ready() -> void:
 	#insantiating object
 	$Selector.hide()
+
 	$HPBAR.max_value=Health
+	print($HPBAR.max_value)
 	$HPBAR.value=Health
 	$HPBAR.visible=false
 
@@ -88,6 +90,9 @@ func TakeDamage(amount: int):
 	$HPBAR.value=Health
 	$HPBAR.visible=true
 	if(Health<=0):
+		$Death.pitch_scale=rng.randf_range(.8,1.2)
+		$Death.play()
+		await get_tree().create_timer(.2).timeout
 		queue_free()
 
 func _on_timer_timeout() -> void:
@@ -97,7 +102,6 @@ func _on_timer_timeout() -> void:
 	if(Enemies.size()<1):
 		return
 	var closest=Enemies[0]
-	var rng= RandomNumberGenerator.new()
 	$Timer.wait_time=rng.randf_range(2,3)
 	for Enemy in Enemies:
 		
@@ -109,7 +113,9 @@ func _on_timer_timeout() -> void:
 		$Icon.rotation_degrees-=90
 		$LaserRay.look_at(closest.global_position)
 		$LaserRay.isCasting=true
-			
+		print(rng.randf_range(.7,1.3))
+		$LaserShootBang.pitch_scale=rng.randf_range(.7,1.3)
+		$LaserShootBang.play()
 		moveSpeed=25
 		await get_tree().create_timer(.1).timeout
 		$LaserRay.isCasting=false

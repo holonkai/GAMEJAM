@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://wsbyuab5gqmv"]
+[gd_scene load_steps=7 format=3 uid="uid://wsbyuab5gqmv"]
 
 [ext_resource type="Script" uid="uid://cf2med7k4bkni" path="res://Scripts/AIBehavior/MeleeMinion.gd" id="1_20mgi"]
 [ext_resource type="Texture2D" uid="uid://dl7bjjn15numn" path="res://Sprites/Friendlies/onfieldmeleeminionfriend.png" id="2_bh24m"]
+[ext_resource type="AudioStream" uid="uid://dn4ihdvnad5t3" path="res://Sounds/death.wav" id="3_vx7cn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q6r6c"]
 radius = 27.074
@@ -53,5 +54,9 @@ offset_right = 17.0
 offset_bottom = -45.0
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="Death" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_vx7cn")
+volume_db = -30.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

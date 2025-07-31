@@ -5,10 +5,13 @@ var path: PackedVector2Array
 var Health: int=20
 var damage=1
 var dmg_tw: Tween = null
+var rng= RandomNumberGenerator.new()
+
 func _ready() -> void:
 	#instantiating object
 	set_process(false)
 	$HPBAR.max_value=Health
+	
 	$HPBAR.value=Health
 	$HPBAR.visible=false
 func move(_path:PackedVector2Array):
@@ -55,7 +58,7 @@ func TakeDamage(amount: int):
 	$HPBAR.value=Health
 	$HPBAR.visible=true
 	if(Health<=0):
-		queue_free()
+		die()
 
 #take damage from skill 
 #@onready var skill_damage = 
@@ -65,12 +68,14 @@ func TakeDamage(amount: int):
 
 func die():
 	main_ui.add_gold(2)
+	$Death.pitch_scale=rng.randf_range(.8,1.2)
+	$Death.play()
+	await get_tree().create_timer(.2).timeout
 	queue_free()
 
 func _on_timer_timeout() -> void:
 	#attacks the player minions after a random amount of time
 	var Enemies=get_tree().get_nodes_in_group("selectableUnits")
-	var rng= RandomNumberGenerator.new()
 	$Timer.wait_time=rng.randf_range(1,1.5)
 	#print("enemy attack")
 	for Enemy in Enemies:
