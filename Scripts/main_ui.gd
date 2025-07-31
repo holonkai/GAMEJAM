@@ -2,7 +2,7 @@ extends Control
 var MeleeMinion=preload("res://Prefabs/Meleeminion.tscn")
 var RangeMinion=preload("res://Prefabs/RangeMinion.tscn")
 
-var gold: int=600
+var gold: int=20
 var rng= RandomNumberGenerator.new()
 @onready var gold_label = $background/CanvasLayer/goldscountpanel/GoldLabel
 func _ready():
@@ -244,12 +244,10 @@ func _process(delta: float) -> void:
 func _input(event):
 	if dragging and event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
-			# Optional: Handle dropping on valid targets here
 			dragging = false
 			if dragged_art:
 				dragged_art.visible = false
 				dragged_art = null
-
 
 
 @onready var ult_upgrade_text = $"background/CanvasLayer/upgrade skills/ultupgrade/ultbuttonupgrade/ultupgradetext"
