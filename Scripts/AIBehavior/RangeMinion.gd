@@ -107,6 +107,7 @@ func _on_timer_timeout() -> void:
 	#hits enemies after a random amount of time
 	var Enemies=get_tree().get_nodes_in_group("Enemies")
 	if(Enemies.size()<1):
+		moveSpeed=50
 		return
 	var closest=Enemies[0]
 	$Timer.wait_time=rng.randf_range(2,3)

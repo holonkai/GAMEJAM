@@ -499,7 +499,8 @@ offset_top = 15.0
 offset_right = 201.0
 offset_bottom = 51.0
 theme_override_fonts/font = ExtResource("3_36xyc")
-text = "$8"
+text = "$15
+"
 
 [node name="ultpricetag" type="Label" parent="background/CanvasLayer/skills"]
 layout_mode = 0
@@ -508,7 +509,7 @@ offset_top = 16.0
 offset_right = 135.0
 offset_bottom = 51.0
 theme_override_fonts/font = ExtResource("3_36xyc")
-text = "$12"
+text = "$40"
 
 [node name="skillpricetag" type="Label" parent="background/CanvasLayer/skills"]
 layout_mode = 0
@@ -517,7 +518,7 @@ offset_top = 16.0
 offset_right = 65.0
 offset_bottom = 48.0
 theme_override_fonts/font = ExtResource("3_36xyc")
-text = "$6"
+text = "$10"
 
 [node name="goldscountpanel" type="Panel" parent="background/CanvasLayer"]
 offset_left = 132.0
@@ -612,7 +613,7 @@ offset_top = 8.0
 offset_right = 72.0
 offset_bottom = 57.0
 theme_override_fonts/font = ExtResource("3_36xyc")
-text = "$12
+text = "$40
 "
 
 [node name="meleeminionpricetag" type="Label" parent="background/CanvasLayer/minion upgrade"]
@@ -622,7 +623,7 @@ offset_top = 47.0
 offset_right = 72.0
 offset_bottom = 77.0
 theme_override_fonts/font = ExtResource("3_36xyc")
-text = "$10"
+text = "$30"
 
 [node name="Label" type="Label" parent="background/CanvasLayer/minion upgrade"]
 layout_mode = 0

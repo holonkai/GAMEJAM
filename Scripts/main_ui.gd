@@ -4,7 +4,7 @@ var RangeMinion=preload("res://Prefabs/RangeMinion.tscn")
 @onready var ultCooldown=$background/CanvasLayer/skills/VBoxContainer2/buttonult/ProgressBar
 @onready var vileCooldown=$background/CanvasLayer/skills/VBoxContainer/buttonvile/ProgressBar
 @onready var skillCooldown=$background/CanvasLayer/skills/VBoxContainer3/Buttonskill/ProgressBar
-var gold: int=300
+var gold: int=150
 var rad:int=50
 var rng= RandomNumberGenerator.new()
 @onready var gold_label = $background/CanvasLayer/goldscountpanel/GoldLabel
@@ -304,7 +304,7 @@ func _input(event):
 			
 			for enemy in enemies:
 				if (mouse_pos - enemy.global_position).length() <100:
-					enemy.TakeDamage(20)
+					enemy.TakeDamage(enemy.Health)
 					
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed and vile_art.visible:
