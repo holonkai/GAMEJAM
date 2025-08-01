@@ -25,3 +25,7 @@ Enemies=""
 selectableUnits=""
 Ranged=""
 Melee=""
+
+[rendering]
+
+renderer/rendering_method="mobile"
