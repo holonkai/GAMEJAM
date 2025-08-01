@@ -56,3 +56,6 @@ func _on_wave_timer_timeout() -> void:
 	print(waveCount)
 	set_process(true)
 	
+func start_waves() -> void:
+	if $WaveTimer:
+		$WaveTimer.start()
