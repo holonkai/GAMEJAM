@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwlepxwjoaxfm"]
+
+[ext_resource type="PackedScene" uid="uid://buu3s7p880em8" path="res://Prefabs/main_ui.tscn" id="1_8qlnc"]
+[ext_resource type="Script" uid="uid://co3qgvl0sgo7k" path="res://Scripts/TutorialScript.gd" id="1_tuaq2"]
+[ext_resource type="FontFile" uid="uid://bl8nme8bqxw6w" path="res://Super Vanilla.ttf" id="2_ixs1y"]
+[ext_resource type="PackedScene" uid="uid://rx6crdc14vrq" path="res://Prefabs/MinionControl.tscn" id="2_nhn8q"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_nhn8q"]
+vertices = PackedVector2Array(1201.44, 847.133, -91.7266, 723.031, 5.78906, -23.0703, 1326.46, -33.8984)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-3, -33, 1338, -44, 1210, 858, -103, 732)])
+
+[node name="Tutorial" type="Node2D"]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_nhn8q")
+
+[node name="TutorialHandler" type="Node2D" parent="."]
+position = Vector2(853, 476)
+script = ExtResource("1_tuaq2")
+
+[node name="ColorRect" type="ColorRect" parent="TutorialHandler"]
+offset_left = -551.0
+offset_top = -80.0
+offset_right = -120.0
+offset_bottom = 66.0
+
+[node name="ColorRect2" type="ColorRect" parent="TutorialHandler/ColorRect"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 12.0
+offset_right = 421.0
+offset_bottom = 139.0
+color = Color(0, 0, 0, 1)
+
+[node name="TutorialText" type="Label" parent="TutorialHandler"]
+offset_left = -529.0
+offset_top = -61.0
+offset_right = -192.0
+offset_bottom = 9.0
+theme_override_fonts/font = ExtResource("2_ixs1y")
+
+[node name="TextTimer" type="Timer" parent="TutorialHandler"]
+wait_time = 0.01
+autostart = true
+
+[node name="ArrowLeft" type="Label" parent="TutorialHandler"]
+offset_left = -535.0
+offset_top = 34.0
+offset_right = -495.0
+offset_bottom = 57.0
+theme_override_fonts/font = ExtResource("2_ixs1y")
+
+[node name="ArrowRight" type="Label" parent="TutorialHandler"]
+offset_left = -172.0
+offset_top = 36.0
+offset_right = -132.0
+offset_bottom = 59.0
+theme_override_fonts/font = ExtResource("2_ixs1y")
+text = ">"
+
+[node name="mainUI" parent="." instance=ExtResource("1_8qlnc")]
+offset_left = 853.0
+offset_top = 476.0
+offset_right = 893.0
+offset_bottom = 516.0
+
+[node name="Control" parent="." instance=ExtResource("2_nhn8q")]
+
+[connection signal="timeout" from="TutorialHandler/TextTimer" to="TutorialHandler" method="_on_text_timer_timeout"]

@@ -1,7 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://buu3s7p880em8"]
+[gd_scene load_steps=23 format=3 uid="uid://buu3s7p880em8"]
 
 [ext_resource type="Script" uid="uid://vewhlig5jmkf" path="res://Scripts/main_ui.gd" id="1_vvnq0"]
-[ext_resource type="Script" uid="uid://dekbn1rv70t2d" path="res://Prefabs/background.gd" id="2_2tul4"]
+[ext_resource type="Script" path="res://Prefabs/background.gd" id="2_2tul4"]
 [ext_resource type="FontFile" uid="uid://bl8nme8bqxw6w" path="res://Super Vanilla.ttf" id="3_36xyc"]
 [ext_resource type="Texture2D" uid="uid://ccbkgeuj0a76y" path="res://Sprites/Friendlies/newfriendrangeminion.png" id="3_g5gk6"]
 [ext_resource type="Texture2D" uid="uid://dl7bjjn15numn" path="res://Sprites/Friendlies/onfieldmeleeminionfriend.png" id="4_s8vc5"]
@@ -49,6 +49,12 @@ border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 border_blend = true
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2tul4"]
+bg_color = Color(0.223529, 0.223529, 0.223529, 0.564706)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ev4f"]
+bg_color = Color(0, 0.6, 0.6, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_36xyc"]
 size = Vector2(42.6918, 60.6799)
 
@@ -71,6 +77,7 @@ border_color = Color(0, 0, 0, 1)
 border_blend = true
 
 [node name="mainUI" type="Control"]
+z_index = 1
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -373,6 +380,14 @@ offset_right = 119.0
 offset_bottom = 31.0
 theme_override_fonts/font = ExtResource("3_36xyc")
 
+[node name="ProgressBar" type="ProgressBar" parent="background/CanvasLayer/skills/VBoxContainer/buttonvile"]
+offset_top = 35.0
+offset_right = 39.0
+offset_bottom = 42.0
+theme_override_styles/background = SubResource("StyleBoxFlat_2tul4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_6ev4f")
+show_percentage = false
+
 [node name="VileArt" type="Sprite2D" parent="background/CanvasLayer/skills/VBoxContainer"]
 visible = false
 position = Vector2(241, -252)
@@ -408,6 +423,14 @@ offset_right = 222.0
 offset_bottom = 39.0
 theme_override_fonts/font = ExtResource("3_36xyc")
 
+[node name="ProgressBar" type="ProgressBar" parent="background/CanvasLayer/skills/VBoxContainer2/buttonult"]
+offset_top = 36.0
+offset_right = 39.0
+offset_bottom = 43.0
+theme_override_styles/background = SubResource("StyleBoxFlat_2tul4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_6ev4f")
+show_percentage = false
+
 [node name="UltArt" type="Sprite2D" parent="background/CanvasLayer/skills/VBoxContainer2"]
 visible = false
 position = Vector2(66, -260)
@@ -442,6 +465,16 @@ offset_top = -1.99998
 offset_right = 278.0
 offset_bottom = 40.0
 theme_override_fonts/font = ExtResource("3_36xyc")
+
+[node name="ProgressBar" type="ProgressBar" parent="background/CanvasLayer/skills/VBoxContainer3/Buttonskill"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 36.0
+offset_right = 40.0
+offset_bottom = 43.0
+theme_override_styles/background = SubResource("StyleBoxFlat_2tul4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_6ev4f")
+show_percentage = false
 
 [node name="SkillArt" type="Sprite2D" parent="background/CanvasLayer/skills/VBoxContainer3"]
 visible = false

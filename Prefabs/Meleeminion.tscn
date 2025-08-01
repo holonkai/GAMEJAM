@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://wsbyuab5gqmv"]
+[gd_scene load_steps=8 format=3 uid="uid://wsbyuab5gqmv"]
 
 [ext_resource type="Script" uid="uid://cf2med7k4bkni" path="res://Scripts/AIBehavior/MeleeMinion.gd" id="1_20mgi"]
 [ext_resource type="Texture2D" uid="uid://dl7bjjn15numn" path="res://Sprites/Friendlies/onfieldmeleeminionfriend.png" id="2_bh24m"]
+[ext_resource type="Texture2D" uid="uid://c4kl6truwnv6c" path="res://Sprites/Selector.png" id="2_j1k7y"]
 [ext_resource type="AudioStream" uid="uid://dn4ihdvnad5t3" path="res://Sounds/death.wav" id="3_vx7cn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q6r6c"]
@@ -16,13 +17,10 @@ bg_color = Color(0.245977, 0.539651, 0.058528, 1)
 [node name="Minion" type="CharacterBody2D" groups=["Melee", "selectableUnits"]]
 script = ExtResource("1_20mgi")
 
-[node name="Selector" type="ColorRect" parent="."]
-offset_left = -27.0
-offset_top = -48.0
-offset_right = 25.0
-offset_bottom = 6.0
-color = Color(9.09671e-06, 0.662424, 0.037319, 1)
-metadata/_edit_use_anchors_ = true
+[node name="Selector" type="Sprite2D" parent="."]
+position = Vector2(67, 18)
+scale = Vector2(0.57, 0.57)
+texture = ExtResource("2_j1k7y")
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(-1, -21)
