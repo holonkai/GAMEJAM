@@ -95,7 +95,9 @@ func TakeDamage(amount: int):
 		
 
 func Heal(amount: int) -> void:
-	Health = $HPBAR.max_value
+	
+	Health = $HPBAR.max_value+amount
+	$HPBAR.max_value=Health
 	$HPBAR.value = Health
 	$HPBAR.visible = true
 
