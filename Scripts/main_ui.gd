@@ -35,7 +35,8 @@ func _on_range_minion_button_down() -> void:
 	if gold >= cost:
 		gold -= cost 
 		update_gold_display()
-		
+		$background/Purchase.pitch_scale=rng.randf_range(.9,1.1)
+		$background/Purchase.play()
 		range_pop_up.text = "RANGE MINION +1"
 		range_pop_up.visible = true
 		var newGuy=RangeMinion.instantiate()
@@ -55,6 +56,8 @@ func _on_range_minion_button_down() -> void:
 func _on_melee_minion_button_down() -> void:
 	var cost = 8
 	if gold >= cost:
+		$background/Purchase.pitch_scale=rng.randf_range(.9,1.1)
+		$background/Purchase.play()
 		gold -= cost 
 		update_gold_display()
 		
@@ -109,6 +112,8 @@ func _on_rangeupgradebutton_button_down() -> void:
 	var cost = 40
 	if gold >= cost:
 		gold -= cost 
+		$background/Purchase.pitch_scale=rng.randf_range(.9,1.1)
+		$background/Purchase.play()
 		update_gold_display()
 		
 		
@@ -134,6 +139,8 @@ func _on_meleeupgrademinion_button_down() -> void:
 	var cost = 30
 	if gold >= cost:
 		gold -= cost 
+		$background/Purchase.pitch_scale=rng.randf_range(.9,1.1)
+		$background/Purchase.play()
 		update_gold_display()
 		
 		
@@ -184,6 +191,8 @@ func _on_buttonskill_pressed() -> void:
 	if(skillCooldown.value>=skillCooldown.max_value):
 		if gold >= cost:
 			gold -= cost
+			$background/Purchase.pitch_scale=rng.randf_range(.9,1.1)
+			$background/Purchase.play()
 			update_gold_display()
 			rad=50
 			_start_drag(skill_art)
@@ -212,6 +221,8 @@ func _on_buttonvile_pressed() -> void:
 	if(vileCooldown.value>=vileCooldown.max_value):
 		if gold >= cost:
 			gold -= cost
+			$background/Purchase.pitch_scale=rng.randf_range(.9,1.1)
+			$background/Purchase.play()
 			update_gold_display()
 			rad=50
 			_start_drag(vile_art)
@@ -241,6 +252,8 @@ func _on_buttonult_pressed() -> void:
 	if(ultCooldown.value>=ultCooldown.max_value):
 		if gold >= cost:
 			gold -= cost
+			$background/Purchase.pitch_scale=rng.randf_range(.9,1.1)
+			$background/Purchase.play()
 			update_gold_display()
 			rad=100
 			_start_drag(ult_art)
@@ -291,6 +304,8 @@ func _input(event):
 			var mouse_pos = get_viewport().get_mouse_position()
 			skillCooldown.value=0
 			skillCooldown.visible=true
+			$background/LaserSkill.pitch_scale=rng.randf_range(.9,1.1)
+			$background/LaserSkill.play()
 			for enemy in enemies:
 				if (mouse_pos - enemy.global_position).length() < 50:
 					enemy.TakeDamage(5)
@@ -301,7 +316,8 @@ func _input(event):
 			ultCooldown.visible=true
 			var enemies = get_tree().get_nodes_in_group("Enemies")
 			var mouse_pos = get_viewport().get_mouse_position()
-			
+			$background/Ult.pitch_scale=rng.randf_range(.9,1.1)
+			$background/Ult.play()
 			for enemy in enemies:
 				if (mouse_pos - enemy.global_position).length() <100:
 					enemy.TakeDamage(enemy.Health)
@@ -312,7 +328,8 @@ func _input(event):
 			vileCooldown.visible=true
 			var selectableunits = get_tree().get_nodes_in_group("selectableUnits")
 			var mouse_pos = get_viewport().get_mouse_position()
-			
+			$background/Heal.pitch_scale=rng.randf_range(.9,1.1)
+			$background/Heal.play()
 			for minion in selectableunits:
 				if (mouse_pos - minion.global_position).length() <50:
 					minion.Heal(0)

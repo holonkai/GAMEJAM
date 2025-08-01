@@ -1,7 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://buu3s7p880em8"]
+[gd_scene load_steps=27 format=3 uid="uid://buu3s7p880em8"]
 
 [ext_resource type="Script" uid="uid://vewhlig5jmkf" path="res://Scripts/main_ui.gd" id="1_vvnq0"]
-[ext_resource type="Script" uid="uid://dekbn1rv70t2d" path="res://Prefabs/background.gd" id="2_2tul4"]
+[ext_resource type="Script" path="res://Prefabs/background.gd" id="2_2tul4"]
 [ext_resource type="FontFile" uid="uid://bl8nme8bqxw6w" path="res://Super Vanilla.ttf" id="3_36xyc"]
 [ext_resource type="Texture2D" uid="uid://ccbkgeuj0a76y" path="res://Sprites/Friendlies/newfriendrangeminion.png" id="3_g5gk6"]
 [ext_resource type="Texture2D" uid="uid://dl7bjjn15numn" path="res://Sprites/Friendlies/onfieldmeleeminionfriend.png" id="4_s8vc5"]
@@ -13,6 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://br7jc0yt7pps0" path="res://Sprites/Ui and backgrounds/vile.png" id="7_3hs73"]
 [ext_resource type="Texture2D" uid="uid://dueb0emu6agy2" path="res://Sprites/Ui and backgrounds/Untitled_2.png" id="8_v54gd"]
 [ext_resource type="Texture2D" uid="uid://001mhdv7my7w" path="res://Sprites/Ui and backgrounds/gun3.png" id="9_6ev4f"]
+[ext_resource type="AudioStream" uid="uid://dad04h2ia7wiq" path="res://Sounds/ult.wav" id="14_6ev4f"]
+[ext_resource type="AudioStream" uid="uid://c70nnyibjctu2" path="res://Sounds/Purchase.wav" id="15_r3qsn"]
+[ext_resource type="AudioStream" uid="uid://duy27v1gu0mwm" path="res://Sounds/LaserSkill.wav" id="16_nf6gy"]
+[ext_resource type="AudioStream" uid="uid://baxdnt6slbfmt" path="res://Sounds/Heal.wav" id="17_dim4k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6r6c"]
 bg_color = Color(0.6, 0.6, 0.6, 0.25098)
@@ -635,6 +639,22 @@ theme_override_fonts/font = ExtResource("3_36xyc")
 text = "^upgrade minions"
 
 [node name="Camera2D" type="Camera2D" parent="background"]
+
+[node name="Ult" type="AudioStreamPlayer" parent="background"]
+stream = ExtResource("14_6ev4f")
+volume_db = -10.0
+
+[node name="Purchase" type="AudioStreamPlayer" parent="background"]
+stream = ExtResource("15_r3qsn")
+volume_db = -21.0
+
+[node name="LaserSkill" type="AudioStreamPlayer" parent="background"]
+stream = ExtResource("16_nf6gy")
+volume_db = -10.0
+
+[node name="Heal" type="AudioStreamPlayer" parent="background"]
+stream = ExtResource("17_dim4k")
+volume_db = -10.0
 
 [connection signal="button_down" from="background/CanvasLayer/LittleGuyEconomy/shopbox/range minion" to="." method="_on_range_minion_button_down"]
 [connection signal="button_down" from="background/CanvasLayer/LittleGuyEconomy/shopbox2/melee minion" to="." method="_on_melee_minion_button_down"]

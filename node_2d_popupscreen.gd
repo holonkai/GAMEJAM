@@ -15,6 +15,7 @@ func _ready() -> void:
 		pop_up_wave_count.text = "Max Waves Cleared: %d" % Singleton.maxWaves
 	print("weewoo",Singleton.maxWaves)
 	set_process(true)
+	
 
 func _on_playbutton_button_down() -> void:
 	canvas_layer.hide()
@@ -24,10 +25,3 @@ func _on_playbutton_button_down() -> void:
 	
 func _on_tutorialbutton_button_down() -> void:
 	get_tree().change_scene_to_file("res://Levels/Tutorial.tscn")
-	
-
-
-	
-
-
-	
