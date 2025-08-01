@@ -1,7 +1,7 @@
 extends Node
 var characterPosition: int=0
 var location: int=0
-var tutorialList= ["Hi welcome to Little Sci-fi! :D",
+var tutorialList= ["Hi welcome to Little Sci-fi! :D\nright and left arrow key to move through \ntutorial",
 	"We have a little tutorial here to ensure you are\non the right track.\nYou can press Esc to skip the tutorial\nBut that would hurt my feelings :(",
 	"You see that number in the bottom left corner?",
 	"That's your gold. You can use it to buy\nminions\nminion upgrades\nand skills",
@@ -71,3 +71,4 @@ func _on_text_timer_timeout() -> void:
 	$TutorialText.text=currentText
 	if(characterPosition==tutorialList[location].length()):
 		$TextTimer.stop()
+		

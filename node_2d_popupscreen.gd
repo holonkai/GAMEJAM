@@ -5,7 +5,6 @@ extends Node2D
 @onready var canvas_layer = $CanvasLayer
 @onready var pop_up_wave_count = $CanvasLayer/startpanel/popupwavecount
 
-
 var started: bool = true
 var gold: int = 0
 var minions: Array = []
@@ -16,6 +15,7 @@ func _ready() -> void:
 		pop_up_wave_count.text = "Max Waves Cleared: %d" % Singleton.maxWaves
 	print("weewoo",Singleton.maxWaves)
 	set_process(true)
+	
 
 func _on_playbutton_button_down() -> void:
 	canvas_layer.hide()

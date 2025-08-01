@@ -26,7 +26,15 @@ func update_gold_display():
 func add_gold(amount: int):
 	gold += amount 
 	update_gold_display()
+	
+@onready var start_panel
 
+func check_gold_and_show_panel() -> void:
+	if gold < 6:
+		start_panel.visible = true
+	else:
+		start_panel.visible = false
+		
 #+1 range minion pop up text and effect on gold count
 @onready var range_pop_up = $"background/CanvasLayer/LittleGuyEconomy/shopbox/range minion/RangePopup"
 func _on_range_minion_button_down() -> void:
@@ -167,9 +175,9 @@ var dragging: bool = false
 var dragged_art: Node2D = null
 #var drag_offset: Vector2 = Vector2.ZERO
 
-const COST_SKILL = 6
-const COST_VILE = 8
-const COST_ULT = 12
+const COST_SKILL = 10
+const COST_VILE = 15
+const COST_ULT = 40
 
 func _start_drag(art_node: Node2D) -> void:
 	dragged_art = art_node

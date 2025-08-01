@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=3 uid="uid://buu3s7p880em8"]
 
 [ext_resource type="Script" uid="uid://vewhlig5jmkf" path="res://Scripts/main_ui.gd" id="1_vvnq0"]
-[ext_resource type="Script" path="res://Prefabs/background.gd" id="2_2tul4"]
+[ext_resource type="Script" uid="uid://dekbn1rv70t2d" path="res://Prefabs/background.gd" id="2_2tul4"]
 [ext_resource type="FontFile" uid="uid://bl8nme8bqxw6w" path="res://Super Vanilla.ttf" id="3_36xyc"]
 [ext_resource type="Texture2D" uid="uid://ccbkgeuj0a76y" path="res://Sprites/Friendlies/newfriendrangeminion.png" id="3_g5gk6"]
 [ext_resource type="Texture2D" uid="uid://dl7bjjn15numn" path="res://Sprites/Friendlies/onfieldmeleeminionfriend.png" id="4_s8vc5"]
@@ -397,9 +397,9 @@ texture = ExtResource("7_3hs73")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="background/CanvasLayer/skills"]
 layout_mode = 0
-offset_left = 67.0
+offset_left = 69.0
 offset_top = 7.0
-offset_right = 106.0
+offset_right = 108.0
 offset_bottom = 47.0
 
 [node name="buttonult" type="Button" parent="background/CanvasLayer/skills/VBoxContainer2"]
@@ -494,30 +494,30 @@ shape = SubResource("RectangleShape2D_36xyc")
 
 [node name="vilepricetag" type="Label" parent="background/CanvasLayer/skills"]
 layout_mode = 0
-offset_left = 179.0
-offset_top = 15.0
-offset_right = 201.0
-offset_bottom = 51.0
+offset_left = 176.0
+offset_top = 16.0
+offset_right = 200.0
+offset_bottom = 52.0
 theme_override_fonts/font = ExtResource("3_36xyc")
-text = "$8"
+text = "$15"
 
 [node name="ultpricetag" type="Label" parent="background/CanvasLayer/skills"]
 layout_mode = 0
-offset_left = 107.0
+offset_left = 108.0
 offset_top = 16.0
-offset_right = 135.0
+offset_right = 136.0
 offset_bottom = 51.0
 theme_override_fonts/font = ExtResource("3_36xyc")
-text = "$12"
+text = "$40"
 
 [node name="skillpricetag" type="Label" parent="background/CanvasLayer/skills"]
 layout_mode = 0
-offset_left = 46.0
+offset_left = 43.0
 offset_top = 16.0
-offset_right = 65.0
+offset_right = 68.0
 offset_bottom = 48.0
 theme_override_fonts/font = ExtResource("3_36xyc")
-text = "$6"
+text = "$10"
 
 [node name="goldscountpanel" type="Panel" parent="background/CanvasLayer"]
 offset_left = 132.0
