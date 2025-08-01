@@ -25,11 +25,15 @@ func _process(delta: float) -> void:
 			if(waves[0][0]==1):
 				var newGuy=MeleeEnemy.instantiate()
 				newGuy.position=Vector2(rng.randi_range(900,1100),rng.randi_range(100,200))
+				newGuy.damage=ceili(waveCount/3.0)
+				newGuy.Health+=max(0,(waveCount-10)*(waveCount/10.0))
 				add_sibling(newGuy)
 				#print(newGuy.global_position)
 			else:
 				var newGuy=RangeEnemy.instantiate()
 				newGuy.position=Vector2(rng.randi_range(900,1100),rng.randi_range(100,200))
+				newGuy.damage=ceili(waveCount/3.0)
+				newGuy.Health+=max(0,(waveCount-10)*(waveCount/10.0))
 				add_sibling(newGuy)
 			spawnDelay=0
 			waves[0].pop_front()
