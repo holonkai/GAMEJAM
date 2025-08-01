@@ -36,12 +36,13 @@ text = "play "
 
 [node name="popupwavecount" type="Label" parent="CanvasLayer/startpanel"]
 layout_mode = 0
-offset_left = 511.0
-offset_top = 375.0
-offset_right = 673.0
-offset_bottom = 419.0
+offset_left = 449.0
+offset_top = 325.0
+offset_right = 699.0
+offset_bottom = 369.0
 theme_override_colors/font_color = Color(0.270588, 1, 0, 1)
 theme_override_fonts/font = ExtResource("3_18gt0")
+theme_override_font_sizes/font_size = 32
 text = "waves cleared: 0"
 
 [node name="tutorialbutton" type="Button" parent="CanvasLayer/startpanel"]
@@ -54,10 +55,10 @@ theme_override_fonts/font = ExtResource("3_18gt0")
 text = "Tutorial"
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 236.0
-offset_top = 92.0
-offset_right = 931.0
-offset_bottom = 253.0
+offset_left = 233.0
+offset_top = 144.0
+offset_right = 968.0
+offset_bottom = 305.0
 theme_override_colors/font_color = Color(0.733333, 0, 0.109804, 1)
 theme_override_fonts/font = ExtResource("3_18gt0")
 theme_override_font_sizes/font_size = 129

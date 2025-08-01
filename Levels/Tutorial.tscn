@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwlepxwjoaxfm"]
+[gd_scene load_steps=7 format=3 uid="uid://bwlepxwjoaxfm"]
 
 [ext_resource type="PackedScene" uid="uid://buu3s7p880em8" path="res://Prefabs/main_ui.tscn" id="1_8qlnc"]
 [ext_resource type="Script" uid="uid://co3qgvl0sgo7k" path="res://Scripts/TutorialScript.gd" id="1_tuaq2"]
 [ext_resource type="FontFile" uid="uid://bl8nme8bqxw6w" path="res://Super Vanilla.ttf" id="2_ixs1y"]
 [ext_resource type="PackedScene" uid="uid://rx6crdc14vrq" path="res://Prefabs/MinionControl.tscn" id="2_nhn8q"]
+[ext_resource type="AudioStream" uid="uid://clvw7s7u6gnbm" path="res://Sounds/little-slimex27s-adventure-151007.mp3" id="5_ixs1y"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_nhn8q"]
 vertices = PackedVector2Array(1201.44, 847.133, -91.7266, 723.031, 5.78906, -23.0703, 1326.46, -33.8984)
@@ -66,5 +67,11 @@ offset_right = 893.0
 offset_bottom = 516.0
 
 [node name="Control" parent="." instance=ExtResource("2_nhn8q")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ixs1y")
+volume_db = -26.876
+autoplay = true
+parameters/looping = true
 
 [connection signal="timeout" from="TutorialHandler/TextTimer" to="TutorialHandler" method="_on_text_timer_timeout"]

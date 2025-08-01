@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://uycg6jmjn55w"]
+
+[ext_resource type="AudioStream" uid="uid://t4imuwws8dk6" path="res://Sounds/pixel-fantasia-355123.mp3" id="1_g84o6"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_g84o6")
+volume_db = -26.884
+autoplay = true
+parameters/looping = true

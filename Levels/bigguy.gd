@@ -5,7 +5,7 @@ extends Panel
 
 var dialog_lines = [
 	"destroy them!",
-	"kill them little guys!",
+	"kill them \nlittle guys!",
 ]
 
 var current_index = 0 
