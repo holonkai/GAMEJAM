@@ -115,8 +115,8 @@ func _on_rangeupgradebutton_button_down() -> void:
 		range_upgrade_text.text = "RANGE MINION UPGRADE"
 		var Minions=get_tree().get_nodes_in_group("Ranged")
 		for minion in Minions:
-			minion.Heal(2)
-			minion.damage+=.25
+			minion.Heal(6)
+			minion.damage+=1
 		range_upgrade_text.visible = true
 		
 		await get_tree().create_timer(0.5).timeout
@@ -141,8 +141,8 @@ func _on_meleeupgrademinion_button_down() -> void:
 		melee_upgrade_text.visible = true
 		var Minions=get_tree().get_nodes_in_group("Melee")
 		for minion in Minions:
-			minion.Heal(5)
-			minion.damage+=.5
+			minion.Heal(12)
+			minion.damage+=2
 		await get_tree().create_timer(0.5).timeout
 		melee_upgrade_text.visible = false
 	else:

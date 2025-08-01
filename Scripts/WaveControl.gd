@@ -42,7 +42,7 @@ func _process(delta: float) -> void:
 		if(waves.size()>1):
 			waves.pop_front()
 		else:
-			TestScaling=floori(TestScaling*1.25)
+			TestScaling=floori(TestScaling*1.5)
 			waves[0]=[]
 			while(waves[0].size()<TestScaling):
 				waves[0].append(rng.randi_range(0,1))
