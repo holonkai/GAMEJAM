@@ -46,7 +46,7 @@ func _process(delta: float) -> void:
 			waves[0]=[]
 			while(waves[0].size()<TestScaling):
 				waves[0].append(rng.randi_range(0,1))
-			print(waves[0].size())
+			#print(waves[0].size())
 			#print(TestScaling)
 		
 		set_process(false)
@@ -63,6 +63,7 @@ func _on_wave_timer_timeout() -> void:
 		wave_label.text = "Waves: %d" % waveCount
 	set_process(true)
 	$WaveTimer.wait_time=25
+	print($WaveTimer.time_left)
 	
 func start_waves() -> void:
 	if $WaveTimer:

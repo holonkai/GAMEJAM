@@ -97,5 +97,5 @@ func _on_timer_timeout() -> void:
 
 func lose() -> void:
 	var minions = get_tree().get_nodes_in_group("selectableUnits")
-	if minions.size() < 1 and mainUI.gold < 8:
+	if minions.size() < 1:
 		get_tree().change_scene_to_file("res://Levels/node_2d_popupscreen.tscn")

@@ -121,7 +121,7 @@ func _on_timer_timeout() -> void:
 		$Icon.rotation_degrees-=90
 		$LaserRay.look_at(closest.global_position)
 		$LaserRay.isCasting=true
-		print(rng.randf_range(.7,1.3))
+		#print(rng.randf_range(.7,1.3))
 		$LaserShootBang.pitch_scale=rng.randf_range(.7,1.3)
 		$LaserShootBang.play()
 		moveSpeed=25
