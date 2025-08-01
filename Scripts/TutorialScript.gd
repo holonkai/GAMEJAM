@@ -1,13 +1,13 @@
 extends Node
 var characterPosition: int=0
 var location: int=0
-var tutorialList= ["Hi welcome to Little Sci-fi! :D\nuse your right and left arrow to navigate \nthrough the tutorial.",
+var tutorialList= ["Hi welcome to Little Sci-fi! :D\nUse your right and left arrow to navigate \nthrough the tutorial.",
 	"We have a little tutorial here to ensure you are\non the right track.\nYou can press Esc to skip the tutorial\nBut that would hurt my feelings :(",
 	"You see that number in the bottom left corner?",
 	"That's your gold. You can use it to buy\nminions\nminion upgrades\nand skills\nDefeating enemies provides more gold.",
 	"Lets start with minions!",
 	"If you left click on the top two boxes you buy\na minion\naren't they cute? :)",
-	"You can then click and drag to select the minions.",
+	"You can then click to select one minion or click \nand drag to select multiple minions.",
 	"Finally you can right click to command them \nwhere to go.",
 	"You can now send them to war >:D",
 	"Next are the upgrade buttons.",
@@ -15,7 +15,7 @@ var tutorialList= ["Hi welcome to Little Sci-fi! :D\nuse your right and left arr
 	"However it only upgrades the minions \ncurrently on screen.\nNewly spawned minions do not recieve \nthe upgrades :(",
 	"Finally are the skills.",
 	"You click on the skills to buy them \nThen you click where you want\nthe skill to affect\nHowever they have cooldowns",
-	"The skills do as follow:\nGun - Deals five damage in a group.\nUltimate - Instakills all enemies in a group. :0\nVial - Heals all minions to full.",
+	"The skills do as follow:\nGun - Deals half damage in a group.\nUltimate - Instakills all enemies in a group. :0\nVial - Heals all minions to full.",
 	"This concludes our tutorial. Esc to leave\nThank you very much for reading all of this.\nMore thank you for playing.\nWe hope you have a great time. :D",
 	"Bye!",
 	"So Long!",
