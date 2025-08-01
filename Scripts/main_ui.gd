@@ -9,14 +9,14 @@ var rad:int=50
 var rng= RandomNumberGenerator.new()
 @onready var gold_label = $background/CanvasLayer/goldscountpanel/GoldLabel
 func _ready():
-	skillCooldown.max_value=10
-	skillCooldown.value=10
+	skillCooldown.max_value=15
+	skillCooldown.value=15
 	skillCooldown.visible=false
-	ultCooldown.max_value=30
-	ultCooldown.value=30
+	ultCooldown.max_value=60
+	ultCooldown.value=60
 	ultCooldown.visible=false
-	vileCooldown.max_value=15
-	vileCooldown.value=15
+	vileCooldown.max_value=25
+	vileCooldown.value=25
 	vileCooldown.visible=false
 	update_gold_display()
 	
@@ -39,7 +39,7 @@ func _on_range_minion_button_down() -> void:
 		range_pop_up.text = "RANGE MINION +1"
 		range_pop_up.visible = true
 		var newGuy=RangeMinion.instantiate()
-		newGuy.position=Vector2(rng.randi_range(0,100),rng.randi_range(400,500))
+		newGuy.position=Vector2(rng.randi_range(100,200),rng.randi_range(400,500))
 		add_sibling(newGuy)
 		await get_tree().create_timer(0.5).timeout
 		range_pop_up.visible = false
@@ -59,7 +59,7 @@ func _on_melee_minion_button_down() -> void:
 		update_gold_display()
 		
 		var newGuy=MeleeMinion.instantiate()
-		newGuy.position=Vector2(rng.randi_range(0,100),rng.randi_range(400,500))
+		newGuy.position=Vector2(rng.randi_range(100,200),rng.randi_range(400,500))
 		add_sibling(newGuy)
 		melee_pop_up.text = "MELEE MINION +1"
 		melee_pop_up.visible = true
@@ -115,7 +115,7 @@ func _on_rangeupgradebutton_button_down() -> void:
 		range_upgrade_text.text = "RANGE MINION UPGRADE"
 		var Minions=get_tree().get_nodes_in_group("Ranged")
 		for minion in Minions:
-			minion.Health+=2
+			minion.Heal(2)
 			minion.damage+=.25
 		range_upgrade_text.visible = true
 		
@@ -141,7 +141,7 @@ func _on_meleeupgrademinion_button_down() -> void:
 		melee_upgrade_text.visible = true
 		var Minions=get_tree().get_nodes_in_group("Melee")
 		for minion in Minions:
-			minion.Health+=5
+			minion.Heal(5)
 			minion.damage+=.5
 		await get_tree().create_timer(0.5).timeout
 		melee_upgrade_text.visible = false
@@ -315,7 +315,7 @@ func _input(event):
 			
 			for minion in selectableunits:
 				if (mouse_pos - minion.global_position).length() <50:
-					minion.Heal(10)
+					minion.Heal(0)
 					
 	if dragging and event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
