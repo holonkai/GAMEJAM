@@ -36,10 +36,10 @@ text = "play "
 
 [node name="popupwavecount" type="Label" parent="CanvasLayer/startpanel"]
 layout_mode = 0
-offset_left = 512.0
-offset_top = 369.0
-offset_right = 674.0
-offset_bottom = 413.0
+offset_left = 511.0
+offset_top = 375.0
+offset_right = 673.0
+offset_bottom = 419.0
 theme_override_colors/font_color = Color(0.270588, 1, 0, 1)
 theme_override_fonts/font = ExtResource("3_18gt0")
 text = "waves cleared: 0"

@@ -80,6 +80,7 @@ func _on_timer_timeout() -> void:
 	#attacks the player minions after a random amount of time
 	var Enemies=get_tree().get_nodes_in_group("selectableUnits")
 	if(Enemies.size()<1):
+		lose()
 		return
 	var closest=Enemies[0]
 	$Timer.wait_time=rng.randf_range(1,1.5)
@@ -93,3 +94,8 @@ func _on_timer_timeout() -> void:
 		moveSpeed=15
 	else:
 		moveSpeed=30
+
+func lose() -> void:
+	var minions = get_tree().get_nodes_in_group("selectableUnits")
+	if minions.size() < 1 and mainUI.gold < 8:
+		get_tree().change_scene_to_file("res://Levels/node_2d_popupscreen.tscn")

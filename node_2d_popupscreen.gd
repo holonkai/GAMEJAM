@@ -5,7 +5,6 @@ extends Node2D
 @onready var canvas_layer = $CanvasLayer
 @onready var pop_up_wave_count = $CanvasLayer/startpanel/popupwavecount
 
-
 var started: bool = true
 var gold: int = 0
 var minions: Array = []
@@ -25,3 +24,10 @@ func _on_playbutton_button_down() -> void:
 	
 func _on_tutorialbutton_button_down() -> void:
 	get_tree().change_scene_to_file("res://Levels/Tutorial.tscn")
+	
+
+
+	
+
+
+	

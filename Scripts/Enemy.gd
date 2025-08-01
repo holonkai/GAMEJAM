@@ -85,3 +85,5 @@ func _on_timer_timeout() -> void:
 			#print("enemy attack")
 			break
 	moveSpeed=30
+	
+	
