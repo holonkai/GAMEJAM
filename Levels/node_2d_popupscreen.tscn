@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cs8woopnryy48"]
+[gd_scene load_steps=4 format=3 uid="uid://cs8woopnryy48"]
 
 [ext_resource type="Script" uid="uid://dh6q5wujeu4pw" path="res://node_2d_popupscreen.gd" id="1_e21ln"]
 [ext_resource type="Texture2D" uid="uid://5soa0xn4qsb3" path="res://Sprites/Ui and backgrounds/desert-backgorund.png" id="2_i45a5"]
 [ext_resource type="FontFile" uid="uid://bl8nme8bqxw6w" path="res://Super Vanilla.ttf" id="3_18gt0"]
-[ext_resource type="AudioStream" uid="uid://t4imuwws8dk6" path="res://Sounds/pixel-fantasia-355123.mp3" id="4_i45a5"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_e21ln")
@@ -64,12 +63,6 @@ theme_override_colors/font_color = Color(0.733333, 0, 0.109804, 1)
 theme_override_fonts/font = ExtResource("3_18gt0")
 theme_override_font_sizes/font_size = 129
 text = "LITTLE SCI-FI"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_i45a5")
-volume_db = -21.0
-autoplay = true
-parameters/looping = true
 
 [connection signal="button_down" from="CanvasLayer/startpanel/playbutton" to="." method="_on_playbutton_button_down"]
 [connection signal="button_down" from="CanvasLayer/startpanel/tutorialbutton" to="." method="_on_tutorialbutton_button_down"]
