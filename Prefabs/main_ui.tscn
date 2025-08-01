@@ -381,6 +381,7 @@ offset_bottom = 31.0
 theme_override_fonts/font = ExtResource("3_36xyc")
 
 [node name="ProgressBar" type="ProgressBar" parent="background/CanvasLayer/skills/VBoxContainer/buttonvile"]
+layout_mode = 0
 offset_top = 35.0
 offset_right = 39.0
 offset_bottom = 42.0
@@ -424,6 +425,7 @@ offset_bottom = 39.0
 theme_override_fonts/font = ExtResource("3_36xyc")
 
 [node name="ProgressBar" type="ProgressBar" parent="background/CanvasLayer/skills/VBoxContainer2/buttonult"]
+layout_mode = 0
 offset_top = 36.0
 offset_right = 39.0
 offset_bottom = 43.0

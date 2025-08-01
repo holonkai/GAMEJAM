@@ -15,6 +15,10 @@ run/main_scene="uid://buu3s7p880em8"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://Sprites/icon.svg"
 
+[autoload]
+
+Singleton="*res://Singleton.gd"
+
 [global_group]
 
 Enemies=""

@@ -42,6 +42,9 @@ func _input(event: InputEvent) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	#print(direction)
 	if event is InputEventKey and event.pressed:
+		#print(event.keycode == KEY_ESCAPE)
+		if(event.keycode==KEY_ESCAPE):
+			get_tree().change_scene_to_file("res://Levels/node_2d_popupscreen.tscn")
 		if(direction!=0):
 			if(direction>0):
 				if(location+1<tutorialList.size()):

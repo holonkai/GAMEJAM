@@ -8,6 +8,10 @@ var selectBox: Rect2
 
 func _input(e: InputEvent) -> void:
 	### selecting units
+	if e is InputEventKey and e.pressed:
+		#print(event.keycode == KEY_ESCAPE)
+		if(e.keycode==KEY_ESCAPE):
+			get_tree().change_scene_to_file("res://Levels/node_2d_popupscreen.tscn")
 	if e is InputEventMouseButton and e.button_index==MOUSE_BUTTON_LEFT:
 		if(e.pressed):
 			selecting=true 

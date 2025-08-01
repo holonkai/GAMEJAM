@@ -51,9 +51,10 @@ func _process(delta: float) -> void:
 
 func _on_wave_timer_timeout() -> void:
 	waveCount+=1
+	if(waveCount>Singleton.maxWaves):
+		Singleton.maxWaves=waveCount
 	if wave_label:
-		wave_label.text = "Wave: %d" % waveCount
-	print(waveCount)
+		wave_label.text = "Max Waves Cleared: %d" % waveCount
 	set_process(true)
 	
 func start_waves() -> void:

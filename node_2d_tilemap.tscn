@@ -3360,8 +3360,6 @@ tile_set = SubResource("TileSet_farg6")
 
 [node name="TextureRect" type="TextureRect" parent="NavigationRegion2D"]
 z_index = -2
-offset_left = -10.0
-offset_top = -14.0
-offset_right = 1172.0
-offset_bottom = 662.0
+offset_right = 1182.0
+offset_bottom = 644.0
 texture = ExtResource("4_iro4k")

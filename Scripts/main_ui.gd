@@ -75,30 +75,8 @@ func _on_melee_minion_button_down() -> void:
 		
 #skill button pop up text and effect on gold count
 @onready var skill_pop_up = $background/CanvasLayer/skills/VBoxContainer3/Buttonskill/SkillPopup
-	
 #ult button pop up text and effect on gold count
 @onready var ult_pop_up = $"background/CanvasLayer/skills/VBoxContainer2/buttonult/UltPopup"
-<<<<<<< HEAD
-func _on_buttonult_button_down() -> void:
-	var cost = 12
-	if gold >= cost:
-		gold -= cost
-		#_start_drag(ult_art)
-		update_gold_display()
-	
-		ult_pop_up.text = "ULT"
-		ult_pop_up.visible = true
-		
-		await get_tree().create_timer(0.5).timeout
-		ult_pop_up.visible = false
-	else:
-		ult_pop_up.text = "UR POOR"
-		ult_pop_up.visible = true
-		
-		await get_tree().create_timer(0.5).timeout
-		ult_pop_up.visible = false
-=======
->>>>>>> 2350a83e55848186b5c80da754f72acb39171d4d
 
 
 	
@@ -285,11 +263,6 @@ func _on_buttonult_pressed() -> void:
 		ultCooldown.visible=true
 		await get_tree().create_timer(0.5).timeout
 		ult_pop_up.visible = false
-<<<<<<< HEAD
-
-	#_start_drag(ult_art)
-=======
->>>>>>> 2350a83e55848186b5c80da754f72acb39171d4d
 	pass
 
 
@@ -352,19 +325,7 @@ func _input(event):
 				dragged_art.visible = false
 				dragged_art = null
 
-<<<<<<< HEAD
-
-
-
-
-	
-
-
-	
-	
-=======
 func _draw():
 	if(!dragging):
 		return
 	draw_circle(get_local_mouse_position(),rad,Color.PURPLE,false,5.0)
->>>>>>> 2350a83e55848186b5c80da754f72acb39171d4d
