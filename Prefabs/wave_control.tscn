@@ -7,6 +7,7 @@
 script = ExtResource("1_h7thp")
 
 [node name="WaveTimer" type="Timer" parent="."]
+wait_time = 25.0
 autostart = true
 
 [node name="wavelabel" type="Label" parent="."]
