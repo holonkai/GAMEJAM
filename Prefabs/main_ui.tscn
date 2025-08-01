@@ -619,9 +619,9 @@ text = "$40
 [node name="meleeminionpricetag" type="Label" parent="background/CanvasLayer/minion upgrade"]
 layout_mode = 0
 offset_left = 44.0
-offset_top = 47.0
+offset_top = 48.0
 offset_right = 72.0
-offset_bottom = 77.0
+offset_bottom = 78.0
 theme_override_fonts/font = ExtResource("3_36xyc")
 text = "$30"
 
