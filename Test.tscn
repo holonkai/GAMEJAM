@@ -26,4 +26,8 @@ offset_bottom = 40.0
 [node name="WaveControl" parent="." instance=ExtResource("7_q1uvj")]
 
 [node name="Node2D" parent="." instance=ExtResource("8_qs82m")]
+<<<<<<< HEAD
 position = Vector2(-2, -9)
+=======
+position = Vector2(-10, -9)
+>>>>>>> b67eef97384e3518618d437df17ffaaec5c8c48f
