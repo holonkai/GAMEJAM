@@ -106,7 +106,7 @@ func _on_evil_melee_minion_button_down() -> void:
 #range upgrade pop up text and effect on gold count
 @onready var range_upgrade_text = $"background/CanvasLayer/minion upgrade/rangeminionupgrade/rangeupgradebutton/range upgrade text"
 func _on_rangeupgradebutton_button_down() -> void:
-	var cost = 12
+	var cost = 40
 	if gold >= cost:
 		gold -= cost 
 		update_gold_display()
@@ -131,7 +131,7 @@ func _on_rangeupgradebutton_button_down() -> void:
 #melee upgrade pop up text and effect on gold count
 @onready var melee_upgrade_text = $"background/CanvasLayer/minion upgrade/meleeminionupgrade/meleeupgrademinion/melee upgrade text"
 func _on_meleeupgrademinion_button_down() -> void:
-	var cost = 10
+	var cost = 30
 	if gold >= cost:
 		gold -= cost 
 		update_gold_display()
@@ -180,7 +180,7 @@ func _start_drag(art_node: Node2D) -> void:
 
 
 func _on_buttonskill_pressed() -> void:
-	var cost = 6
+	var cost = 10
 	if(skillCooldown.value>=skillCooldown.max_value):
 		if gold >= cost:
 			gold -= cost
@@ -208,7 +208,7 @@ func _on_buttonskill_pressed() -> void:
 
 
 func _on_buttonvile_pressed() -> void:
-	var cost = 6
+	var cost = 15
 	if(vileCooldown.value>=vileCooldown.max_value):
 		if gold >= cost:
 			gold -= cost
@@ -237,7 +237,7 @@ func _on_buttonvile_pressed() -> void:
 
 
 func _on_buttonult_pressed() -> void:
-	var cost = 12
+	var cost = 40
 	if(ultCooldown.value>=ultCooldown.max_value):
 		if gold >= cost:
 			gold -= cost
