@@ -314,25 +314,6 @@ func _input(event):
 				dragged_art.visible = false
 				dragged_art = null
 
-
-@onready var ult_upgrade_text = $"background/CanvasLayer/upgrade skills/ultupgrade/ultbuttonupgrade/ultupgradetext"
-func _on_ult_buttonupgrade_button_down() -> void:
-	var cost = 18
-	if gold >= cost:
-		gold -= cost 
-		update_gold_display()
-		ult_upgrade_text.text = "ULT UPGRADE"
-		ult_upgrade_text.visible = true
-		
-		await get_tree().create_timer(0.5).timeout
-		ult_upgrade_text.visible = false
-	else:
-		ult_upgrade_text.text = "UR POOR"
-		ult_upgrade_text.visible = true
-		
-		await get_tree().create_timer(0.5).timeout
-		ult_upgrade_text.visible = false
-		
 func _draw():
 	if(!dragging):
 		return
