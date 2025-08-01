@@ -54,7 +54,7 @@ func _on_wave_timer_timeout() -> void:
 	if(waveCount>Singleton.maxWaves):
 		Singleton.maxWaves=waveCount
 	if wave_label:
-		wave_label.text = "Max Waves Cleared: %d" % waveCount
+		wave_label.text = "Waves: %d" % waveCount
 	set_process(true)
 	
 func start_waves() -> void:
