@@ -62,6 +62,7 @@ func _on_wave_timer_timeout() -> void:
 	if wave_label:
 		wave_label.text = "Waves: %d" % waveCount
 	set_process(true)
+	$WaveTimer.wait_time=25
 	
 func start_waves() -> void:
 	if $WaveTimer:
