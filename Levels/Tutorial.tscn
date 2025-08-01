@@ -70,7 +70,7 @@ offset_bottom = 516.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_ixs1y")
-volume_db = -26.876
+volume_db = -23.37
 autoplay = true
 parameters/looping = true
 
