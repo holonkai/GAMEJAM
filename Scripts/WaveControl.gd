@@ -55,6 +55,8 @@ func _process(delta: float) -> void:
 
 func _on_wave_timer_timeout() -> void:
 	waveCount+=1
+	$OminousWaveSfx.pitch_scale=rng.randf_range(.8,1.2)
+	$OminousWaveSfx.play()
 	if(waveCount>Singleton.maxWaves):
 		Singleton.maxWaves=waveCount
 	if wave_label:
