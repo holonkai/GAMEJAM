@@ -1,11 +1,23 @@
 extends Control
 var MeleeMinion=preload("res://Prefabs/Meleeminion.tscn")
 var RangeMinion=preload("res://Prefabs/RangeMinion.tscn")
-
+@onready var ultCooldown=$background/CanvasLayer/skills/VBoxContainer2/buttonult/ProgressBar
+@onready var vileCooldown=$background/CanvasLayer/skills/VBoxContainer/buttonvile/ProgressBar
+@onready var skillCooldown=$background/CanvasLayer/skills/VBoxContainer3/Buttonskill/ProgressBar
 var gold: int=300
+var rad:int=50
 var rng= RandomNumberGenerator.new()
 @onready var gold_label = $background/CanvasLayer/goldscountpanel/GoldLabel
 func _ready():
+	skillCooldown.max_value=10
+	skillCooldown.value=10
+	skillCooldown.visible=false
+	ultCooldown.max_value=30
+	ultCooldown.value=30
+	ultCooldown.visible=false
+	vileCooldown.max_value=15
+	vileCooldown.value=15
+	vileCooldown.visible=false
 	update_gold_display()
 	
 func update_gold_display():
@@ -66,6 +78,7 @@ func _on_melee_minion_button_down() -> void:
 	
 #ult button pop up text and effect on gold count
 @onready var ult_pop_up = $"background/CanvasLayer/skills/VBoxContainer2/buttonult/UltPopup"
+<<<<<<< HEAD
 func _on_buttonult_button_down() -> void:
 	var cost = 12
 	if gold >= cost:
@@ -84,6 +97,8 @@ func _on_buttonult_button_down() -> void:
 		
 		await get_tree().create_timer(0.5).timeout
 		ult_pop_up.visible = false
+=======
+>>>>>>> 2350a83e55848186b5c80da754f72acb39171d4d
 
 
 	
@@ -110,24 +125,6 @@ func _on_evil_melee_minion_button_down() -> void:
 	
 #vile pop up text and effect on gold count
 @onready var vile_pop_up = $background/CanvasLayer/skills/VBoxContainer/buttonvile/VilePopup
-func _on_vile_button_down() -> void:
-	var cost = 8
-	if gold >= cost:
-		gold -= cost
-		update_gold_display()
-	
-		vile_pop_up.text = "HEAL"
-		vile_pop_up.visible = true
-		
-		await get_tree().create_timer(0.5).timeout
-		vile_pop_up.visible = false
-	else:
-		vile_pop_up.text = "UR POOR"
-		vile_pop_up.visible = true
-		
-		await get_tree().create_timer(0.5).timeout
-		vile_pop_up.visible = false
-
 #range upgrade pop up text and effect on gold count
 @onready var range_upgrade_text = $"background/CanvasLayer/minion upgrade/rangeminionupgrade/rangeupgradebutton/range upgrade text"
 func _on_rangeupgradebutton_button_down() -> void:
@@ -201,100 +198,145 @@ func _start_drag(art_node: Node2D) -> void:
 	dragged_art.visible = true
 	#drag_offset = dragged_art.global_position - get_global_mouse_position()
 	dragging = true
+	queue_redraw()
 
 
 func _on_buttonskill_pressed() -> void:
 	var cost = 6
-	if gold >= cost:
-		gold -= cost
-		update_gold_display()
-		
-		_start_drag(skill_art)
-		
-		skill_pop_up.text = "SKILL"
-		skill_pop_up.visible = true
-		
-		await get_tree().create_timer(0.5).timeout
-		skill_pop_up.visible = false
+	if(skillCooldown.value>=skillCooldown.max_value):
+		if gold >= cost:
+			gold -= cost
+			update_gold_display()
+			rad=50
+			_start_drag(skill_art)
+			
+			skill_pop_up.text = "SKILL"
+			skill_pop_up.visible = true
+			
+			await get_tree().create_timer(0.5).timeout
+			skill_pop_up.visible = false
+		else:
+			skill_pop_up.text = "UR POOR"
+			skill_pop_up.visible = true
+			
+			await get_tree().create_timer(0.5).timeout
+			skill_pop_up.visible = false
 	else:
-		skill_pop_up.text = "UR POOR"
+		skill_pop_up.text = "ON COOLDOWN"
 		skill_pop_up.visible = true
-		
+		skillCooldown.visible=true
 		await get_tree().create_timer(0.5).timeout
 		skill_pop_up.visible = false
 
 
 func _on_buttonvile_pressed() -> void:
 	var cost = 6
-	if gold >= cost:
-		gold -= cost
-		update_gold_display()
-		
-		_start_drag(vile_art)
-		
-		vile_pop_up.text = "HEAL"
-		vile_pop_up.visible = true
-		
-		await get_tree().create_timer(0.5).timeout
-		vile_pop_up.visible = false
+	if(vileCooldown.value>=vileCooldown.max_value):
+		if gold >= cost:
+			gold -= cost
+			update_gold_display()
+			rad=50
+			_start_drag(vile_art)
+			
+			vile_pop_up.text = "HEAL"
+			vile_pop_up.visible = true
+			
+			await get_tree().create_timer(0.5).timeout
+			vile_pop_up.visible = false
+		else:
+			vile_pop_up.text = "UR POOR"
+			vile_pop_up.visible = true
+			
+			await get_tree().create_timer(0.5).timeout
+			vile_pop_up.visible = false
 	else:
-		vile_pop_up.text = "UR POOR"
+		vile_pop_up.text = "ON COOLDOWN"
 		vile_pop_up.visible = true
-		
 		await get_tree().create_timer(0.5).timeout
+		vileCooldown.visible=true
 		vile_pop_up.visible = false
 
 
 
 func _on_buttonult_pressed() -> void:
 	var cost = 12
-	if gold >= cost:
-		gold -= cost
-		update_gold_display()
+	if(ultCooldown.value>=ultCooldown.max_value):
+		if gold >= cost:
+			gold -= cost
+			update_gold_display()
+			rad=100
+			_start_drag(ult_art)
 		
-		_start_drag(ult_art)
-	
-		ult_pop_up.text = "ULT"
-		ult_pop_up.visible = true
-		
-		await get_tree().create_timer(0.5).timeout
-		ult_pop_up.visible = false
+			ult_pop_up.text = "ULT"
+			ult_pop_up.visible = true
+			
+			await get_tree().create_timer(0.5).timeout
+			ult_pop_up.visible = false
+		else:
+			ult_pop_up.text = "UR POOR"
+			ult_pop_up.visible = true
+			
+			await get_tree().create_timer(0.5).timeout
+			ult_pop_up.visible = false
+		#_start_drag(ult_art)
 	else:
-		ult_pop_up.text = "UR POOR"
+		ult_pop_up.text = "ON COOLDOWN"
 		ult_pop_up.visible = true
-		
+		ultCooldown.visible=true
 		await get_tree().create_timer(0.5).timeout
 		ult_pop_up.visible = false
+<<<<<<< HEAD
 
 	#_start_drag(ult_art)
+=======
+>>>>>>> 2350a83e55848186b5c80da754f72acb39171d4d
 	pass
 
 
 func _process(delta: float) -> void:
+	if(ultCooldown.value<ultCooldown.max_value):
+		ultCooldown.value+=delta
+		if(ultCooldown.value>=ultCooldown.max_value):
+			ultCooldown.visible=false
+	if(vileCooldown.value<vileCooldown.max_value):
+		vileCooldown.value+=delta
+		if(vileCooldown.value>=vileCooldown.max_value):
+			vileCooldown.visible=false
+	if(skillCooldown.value<skillCooldown.max_value):
+		skillCooldown.value+=delta
+		if(skillCooldown.value>=skillCooldown.max_value):
+			skillCooldown.visible=false
 	if dragging and dragged_art:
 		dragged_art.global_position = get_global_mouse_position() #+ drag_offset
+		#print("wow")
+		queue_redraw()
 
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed and skill_art.visible:
 			var enemies = get_tree().get_nodes_in_group("Enemies")
 			var mouse_pos = get_viewport().get_mouse_position()
-			
+			skillCooldown.value=0
+			skillCooldown.visible=true
 			for enemy in enemies:
 				if (mouse_pos - enemy.global_position).length() < 50:
 					enemy.TakeDamage(5)
 	
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed and ult_art.visible:
+			ultCooldown.value=0
+			ultCooldown.visible=true
 			var enemies = get_tree().get_nodes_in_group("Enemies")
 			var mouse_pos = get_viewport().get_mouse_position()
 			
 			for enemy in enemies:
 				if (mouse_pos - enemy.global_position).length() <100:
-					enemy.TakeDamage(10)
+					enemy.TakeDamage(20)
 					
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed and vile_art.visible:
+			vileCooldown.value=0
+			vileCooldown.visible=true
 			var selectableunits = get_tree().get_nodes_in_group("selectableUnits")
 			var mouse_pos = get_viewport().get_mouse_position()
 			
@@ -305,10 +347,12 @@ func _input(event):
 	if dragging and event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
 			dragging = false
+			queue_redraw()
 			if dragged_art:
 				dragged_art.visible = false
 				dragged_art = null
 
+<<<<<<< HEAD
 
 
 
@@ -318,3 +362,9 @@ func _input(event):
 
 	
 	
+=======
+func _draw():
+	if(!dragging):
+		return
+	draw_circle(get_local_mouse_position(),rad,Color.PURPLE,false,5.0)
+>>>>>>> 2350a83e55848186b5c80da754f72acb39171d4d
