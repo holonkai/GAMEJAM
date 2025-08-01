@@ -96,8 +96,7 @@ func TakeDamage(amount: int):
 		queue_free()
 		
 func Heal(amount: int):
-	Health = $HPBAR.max_value+amount
-	$HPBAR.max_value=Health
+	Health = $HPBAR.max_value
 	$HPBAR.value = Health
 	$HPBAR.visible = true
 
