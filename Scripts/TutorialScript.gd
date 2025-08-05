@@ -16,6 +16,7 @@ var tutorialList= ["Hi welcome to Little Sci-fi! :D\nUse your right and left arr
 	"Finally are the skills.",
 	"You click on the skills to buy them \nThen you click where you want\nthe skill to affect\nHowever they have cooldowns",
 	"The skills do as follow:\nGun - Deals half damage in a group.\nUltimate - Instakills all enemies in a group. :0\nVial - Heals all minions to full.",
+	"You will lose if you have no minions\n while enemies are on screen.",
 	"This concludes our tutorial. Esc to leave\nThank you very much for reading all of this.\nMore thank you for playing.\nWe hope you have a great time. :D",
 	"Bye!",
 	"So Long!",
