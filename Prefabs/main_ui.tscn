@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://buu3s7p880em8"]
+[gd_scene load_steps=24 format=3 uid="uid://buu3s7p880em8"]
 
 [ext_resource type="Script" uid="uid://vewhlig5jmkf" path="res://Scripts/main_ui.gd" id="1_vvnq0"]
 [ext_resource type="Script" uid="uid://dekbn1rv70t2d" path="res://Prefabs/background.gd" id="2_2tul4"]
@@ -6,9 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ccbkgeuj0a76y" path="res://Sprites/Friendlies/newfriendrangeminion.png" id="3_g5gk6"]
 [ext_resource type="Texture2D" uid="uid://dl7bjjn15numn" path="res://Sprites/Friendlies/onfieldmeleeminionfriend.png" id="4_s8vc5"]
 [ext_resource type="Texture2D" uid="uid://dedlfaugd2u5j" path="res://Sprites/Enemies/bigguyonfieldrangeminion.png" id="5_36xyc"]
-[ext_resource type="Script" uid="uid://jshr27v37ve0" path="res://Levels/littleguy.gd" id="5_s8vc5"]
 [ext_resource type="Texture2D" uid="uid://4u8lbih57n0m" path="res://Sprites/Enemies/onfieldmeleeminion.png" id="6_2tul4"]
-[ext_resource type="Texture2D" uid="uid://lld6j2n7nmy5" path="res://Prefabs/officalmainlittleguy.png" id="6_3hs73"]
 [ext_resource type="Script" uid="uid://cw6srh5hurfp8" path="res://Levels/bigguy.gd" id="6_36xyc"]
 [ext_resource type="Texture2D" uid="uid://br7jc0yt7pps0" path="res://Sprites/Ui and backgrounds/vile.png" id="7_3hs73"]
 [ext_resource type="Texture2D" uid="uid://dueb0emu6agy2" path="res://Sprites/Ui and backgrounds/Untitled_2.png" id="8_v54gd"]
@@ -20,15 +18,6 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6r6c"]
 bg_color = Color(0.6, 0.6, 0.6, 0.25098)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-border_blend = true
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3hs73"]
-bg_color = Color(0.6, 0.6, 0.6, 0.690196)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -218,40 +207,19 @@ offset_bottom = 96.0
 theme_override_fonts/font = ExtResource("3_36xyc")
 text = "^buy minions"
 
-[node name="littleguy" type="Panel" parent="background/CanvasLayer"]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 16.0
-offset_top = -115.0
-offset_right = 124.0
-offset_bottom = -9.0
-grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_3hs73")
-script = ExtResource("5_s8vc5")
-
-[node name="littleguydialog" type="Label" parent="background/CanvasLayer/littleguy"]
+[node name="littleguydialog" type="Label" parent="background/CanvasLayer/LittleGuyEconomy/buyminionslabel"]
 layout_mode = 0
-offset_left = 2.0
-offset_top = -32.0
-offset_right = 140.0
-offset_bottom = 17.0
+offset_left = 3.0
+offset_top = 461.0
+offset_right = 141.0
+offset_bottom = 504.0
 theme_override_fonts/font = ExtResource("3_36xyc")
 text = "placeholder
 "
 
-[node name="littledialogtimer" type="Timer" parent="background/CanvasLayer/littleguy/littleguydialog"]
+[node name="littledialogtimer" type="Timer" parent="background/CanvasLayer/LittleGuyEconomy/buyminionslabel/littleguydialog"]
 wait_time = 12.0
 autostart = true
-
-[node name="TextureRect" type="TextureRect" parent="background/CanvasLayer/littleguy"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = -2.0
-offset_right = 209.0
-offset_bottom = 230.0
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("6_3hs73")
 
 [node name="bigguy" type="Panel" parent="background/CanvasLayer"]
 anchors_preset = 1
@@ -525,9 +493,9 @@ theme_override_fonts/font = ExtResource("3_36xyc")
 text = "$10"
 
 [node name="goldscountpanel" type="Panel" parent="background/CanvasLayer"]
-offset_left = 132.0
+offset_left = 14.0
 offset_top = 602.0
-offset_right = 248.0
+offset_right = 122.0
 offset_bottom = 630.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_d21ai")
 
